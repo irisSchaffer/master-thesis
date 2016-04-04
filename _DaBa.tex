@@ -1,0 +1,68 @@
+%% File encoding: UTF-8
+%% äöüÄÖÜß  <-- keine deutschen Umlaute hier? UTF-faehigen Editor verwenden!
+
+\documentclass[master,english]{hgbthesis}
+% Zulässige Class Options: 
+%   Typ der Arbeit: diplom, master (default), bachelor, praktikum 
+%   Hauptsprache: german (default), english
+%%------------------------------------------------------------
+
+\RequirePackage[utf8]{inputenc}		% remove when using lualatex oder xelatex!
+
+\graphicspath{{images/}}    % name of directory containing the images
+\logofile{logo}							% name of logo-PDF in images/ (or use \logofile{} for no logo)
+\bibliography{literatur}  	% name of the BibTeX (.bib) file
+
+
+%%%----------------------------------------------------------
+\begin{document}
+%%%----------------------------------------------------------
+
+% Einträge für ALLE Arbeiten: --------------------------------
+\title{Mobile Device Usage in Interactive, Co-located Presentations}
+\author{Iris M.\ Schaffer}
+\studiengang{Interactive Media}
+\studienort{Hagenberg}
+\abgabedatum{2016}{06}{27}	% {YYYY}{MM}{DD}
+
+%%%----------------------------------------------------------
+\frontmatter
+\maketitle
+\tableofcontents
+%%%----------------------------------------------------------
+
+\include{vorwort}		% ggfs. weglassen
+\include{kurzfassung}		
+\include{abstract}			
+
+%%%----------------------------------------------------------
+\mainmatter         % Hauptteil (ab hier arab. Seitenzahlen)
+%%%----------------------------------------------------------
+
+\include{implementation}
+%\include{einleitung}%
+%\include{diplomschrift}%
+%\include{latex}%
+%\include{abbildungen}%
+%\include{mathematik}%
+%\include{literatur}%
+%\include{drucken}%
+%\include{schluss}%
+
+%%%----------------------------------------------------------
+%%%Anhang
+\appendix
+\include{anhang_a}	% Technische Ergänzungen
+\include{anhang_b}	% Inhalt der CD-ROM/DVD
+\include{anhang_c}	% Chronologische Liste der Änderungen
+\include{anhang_d}	% Quelltext dieses Dokuments
+
+
+%%%----------------------------------------------------------
+\MakeBibliography
+%%%----------------------------------------------------------
+
+%%%Messbox zur Druckkontrolle
+\include{messbox}
+
+\end{document}
