@@ -365,6 +365,9 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT _DaBa.toc
 INPUT _DaBa.toc
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 OUTPUT _DaBa.toc
 OUTPUT vorwort.aux
 INPUT vorwort.tex
@@ -380,14 +383,12 @@ INPUT abstract.tex
 OUTPUT implementation.aux
 INPUT implementation.tex
 INPUT implementation.tex
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 OUTPUT anhang_a.aux
 INPUT anhang_a.tex
 INPUT anhang_a.tex
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
-INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
@@ -467,6 +468,7 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmss9.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy9.pfb
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtk10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt12.pfb
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt9.pfb
