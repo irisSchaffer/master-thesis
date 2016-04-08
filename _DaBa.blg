@@ -1,9 +1,2 @@
-[0] Config.pm:324> INFO - This is Biber 2.1
-[0] Config.pm:327> INFO - Logfile is '_DaBa.blg'
-[74] biber-darwin:276> INFO - === Thu Mar 31, 2016, 19:01:15
-[75] Biber.pm:333> INFO - Reading '_DaBa.bcf'
-[195] Biber.pm:645> INFO - Found 0 citekeys in bib section 0
-[195] Utils.pm:146> WARN - The file '_DaBa.bcf' does not contain any citations!
-[218] bbl.pm:505> INFO - Writing '_DaBa.bbl' with encoding 'UTF-8'
-[218] bbl.pm:596> INFO - Output to _DaBa.bbl
-[219] Biber.pm:106> INFO - WARNINGS: 1
+[0] 05015a72.pm:324> INFO - This is Biber 2.1
+[0] 05015a72.pm:327> INFO - Logfile is '_DaBa.blg'

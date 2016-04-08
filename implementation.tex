@@ -1,22 +1,43 @@
 \chapter{Implementation}
 \label{cha:implementation}
 % short overview; why web -- use references!
+% speak about quick prototyping possibilities and how it's easier to roll out updates and how nobody needs to download an app on their phone to interact with the presentation
 
 \section{Project Scope}
 \label{sec:implementation-scope}
 % What's the general scope of the project? Why is everything on the client and 
 % not the server? etc.
+As the aim of the present work is to explore ways of incorporating mobile devices into presentation workflows, the goal of the project was to use an easily extensible presentation library to then build the mechanisms discussed in the previous chapter \ref{cha:mechanisms}.
+As the focus was placed on the interaction possibilities between speaker and audience, the creation of the presentation for the speaker or the management of slides and presentations were out of the project scope. Therefore the server used for connecting different users to the presentation was kept as simple as possible, allowing any potential other developer to work with their own servers and technology stacks.
+
+In total, a system with several ways of interacting with the presentation from mobile or desktop devices was created, putting emphasise on mobile-optimised views and navigation possibilities. This system includes synchronisation of navigation state and state changes between viewers and speaker, the possibility to add sub-slides during the presentation for the audience, a speaker-view showing the next slides and controls, real-time voting (both created on-the-fly and prepared beforehands) and the possibility to create different paths through the presentation. In the following the technologies used in the project will be analysed and described to then go into details on the implementation, problems and solutions of the mentioned components.
 
 \section{Technologies}
 \label{sec:implementation-technologies}
 % Which technologies were chosen and why?
 % How do they generally work? To a level on which the reader can
 % understand the rest of the implementation details
+% A few words about responsive design and media queries would probs be good
+% a few words about babel and es6
+
+The project generally tries to follow best-practices in web development and utilises modern CSS3 and JavaScript features and frameworks. The software is written in ECMA\-Script\-2015, makes use of the \textit{node package manager}\footnote{https://www.npmjs.com/} for managing dependencies and \textit{Babel} to compile to ECMA\-Script\-5. Additonally to relying on CSS3 features, this project also uses \textit{SASS}\footnote{http://sass-lang.com/} as a CSS pre-processor.
+
+
+
+\subsection[ECMAScript2015 and Babel]%             {ECMAScript2015 and Babel%             \protect\footnote{\url{https://babeljs.io/}}}%
+\label{sec:implementation-architecture-es6}
 
 \subsection{react.js}
 \label{sec:implementation-architecture-react}
 % explain base concept of having re-usable components and how they are defined!
 % get some HTML code in there :)
+
+\subsection{rx.js}
+\label{sec:implementation-architecture-rxjs}
+
+\subsection{socket.io}
+\label{sec:implementation-architecture-socketio}
+% problematic, talk about alternatives and problems in production, maybe even HTTP2
 
 \section{Architecture}
 \label{sec:implementation-architecture}
@@ -26,12 +47,15 @@
 % explain why different repos and how they are all own npm packages that can 
 % easily be included in other projects
 
+In general, the application is build on top of \textit{unveil.js}\footnote{\url{https://github.com/ostera/unveil.js}}, an open-source JavaScript library for presentations which was developed by Leandro Ostera and myself in the beginning of the project and which I extended and adapted to my needs during the project.
+
 \subsection{Core library -- \texttt{unveil.js}}
 \label{sec:implementation-architecture-core}
 % explain how this was developed together with Leandro, explain general parts
 % like router, navigator, UnveilApp
 % and concepts like modes, presenters, controls
 % give overview over controls in here.
+% also talk about the mobile style sheets / responsive design and the TouchControls, which I also implemented alone.
 
 \subsection{Network synchronisation library -- \texttt{unveil-network-sync}}
 \label{sec:implementation-architecture-network-sync}

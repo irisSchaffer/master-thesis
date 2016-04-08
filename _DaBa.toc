@@ -28,54 +28,60 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Technologies}{1}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}react.js}{1}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}ECMAScript2015 and Babel}{2}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Architecture}{1}{section.1.3}
+\contentsline {subsection}{\numberline {1.2.2}react.js}{2}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Core library -- \texttt {unveil.js}}{1}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.2.3}rx.js}{2}{subsection.1.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Network synchronisation library -- \texttt {unveil-network-sync}}{1}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.2.4}socket.io}{2}{subsection.1.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.3}Interactive library -- \texttt {unveil-interactive}}{1}{subsection.1.3.3}
+\contentsline {section}{\numberline {1.3}Architecture}{2}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.4}Example application -- \texttt {unveil-client-server}}{1}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.1}Core library -- \texttt {unveil.js}}{2}{subsection.1.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Technische Informationen}{2}{appendix.A}
+\contentsline {subsection}{\numberline {1.3.2}Network synchronisation library -- \texttt {unveil-network-sync}}{2}{subsection.1.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Aktuelle Dateiversionen}{2}{section.A.1}
+\contentsline {subsection}{\numberline {1.3.3}Interactive library -- \texttt {unveil-interactive}}{2}{subsection.1.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Details zur aktuellen Version}{2}{section.A.2}
+\contentsline {subsection}{\numberline {1.3.4}Example application -- \texttt {unveil-client-server}}{2}{subsection.1.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Allgemeine technische Voraussetzungen}{2}{subsection.A.2.1}
+\contentsline {chapter}{\numberline {A}Technische Informationen}{3}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.2}Verwendung unter Windows}{2}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.1}Aktuelle Dateiversionen}{3}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.3}Verwendung unter Mac~OS}{3}{subsection.A.2.3}
+\contentsline {section}{\numberline {A.2}Details zur aktuellen Version}{3}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Inhalt der CD-ROM/DVD}{4}{appendix.B}
+\contentsline {subsection}{\numberline {A.2.1}Allgemeine technische Voraussetzungen}{3}{subsection.A.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Format:}{4}{appendix.B}
+\contentsline {subsection}{\numberline {A.2.2}Verwendung unter Windows}{3}{subsection.A.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}PDF-Dateien}{4}{section.B.1}
+\contentsline {subsection}{\numberline {A.2.3}Verwendung unter Mac~OS}{4}{subsection.A.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Pfad:}{4}{section.B.1}
+\contentsline {chapter}{\numberline {B}Inhalt der CD-ROM/DVD}{5}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.2}La\discretionary {-}{}{}TeX\xspace -Dateien}{4}{section.B.2}
+\contentsline {paragraph}{Format:}{5}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Pfad:}{4}{section.B.2}
+\contentsline {section}{\numberline {B.1}PDF-Dateien}{5}{section.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.3}Style/Class-Dateien}{5}{section.B.3}
+\contentsline {paragraph}{Pfad:}{5}{section.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Pfad:}{5}{section.B.3}
+\contentsline {section}{\numberline {B.2}La\discretionary {-}{}{}TeX\xspace -Dateien}{5}{section.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.4}Sonstiges}{5}{section.B.4}
+\contentsline {paragraph}{Pfad:}{5}{section.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Pfad:}{5}{section.B.4}
+\contentsline {section}{\numberline {B.3}Style/Class-Dateien}{6}{section.B.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Chronologische Liste der \IeC {\"A}nderungen}{6}{appendix.C}
+\contentsline {paragraph}{Pfad:}{6}{section.B.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {D}La\discretionary {-}{}{}TeX\xspace -Quellkode}{13}{appendix.D}
+\contentsline {section}{\numberline {B.4}Sonstiges}{6}{section.B.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Anmerkung:}{14}{appendix.D}
+\contentsline {paragraph}{Pfad:}{6}{section.B.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{15}{appendix*.6}
+\contentsline {chapter}{\numberline {C}Chronologische Liste der \IeC {\"A}nderungen}{7}{appendix.C}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {D}La\discretionary {-}{}{}TeX\xspace -Quellkode}{14}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Anmerkung:}{15}{appendix.D}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{16}{appendix*.6}
