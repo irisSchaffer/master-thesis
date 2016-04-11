@@ -20,24 +20,33 @@ In total, a system with several ways of interacting with the presentation from m
 % A few words about responsive design and media queries would probs be good
 % a few words about babel and es6
 
-The project generally tries to follow best-practices in web development and utilises modern CSS3 and JavaScript features and frameworks. The software is written in ECMA\-Script\-2015, makes use of the \textit{node package manager}\footnote{https://www.npmjs.com/} for managing dependencies and \textit{Babel} to compile to ECMA\-Script\-5. Additonally to relying on CSS3 features, this project also uses \textit{SASS}\footnote{http://sass-lang.com/} as a CSS pre-processor.
+The project generally tries to follow best-practices in web development and utilises modern CSS3 and JavaScript features and frameworks. The software is written in ECMA\-Script\-2015, makes use of the \emph{node package manager}\footnote{\url{https://www.npmjs.com/}}(short \emph{npm}) for managing dependencies and \emph{Babel} to transpile to ECMA\-Script\-5. Additonally to relying on CSS3 features, this project also uses \emph{Sass}\footnote{\url{http://sass-lang.com/}} as a CSS pre-processor. Media-queries allow for mobile-friendly views.
 
-
+On the front end, which this project focuses on, the JavaScript library \emph{React} is the framework of choice, additionally applying the \emph{reactive programming} paradigm using \emph{RxJS} to allow for a simpler interface for event-driven operations. The communication between client and server is handled by \emph{socket.io}\footnote{\url{http://socket.io/}}.
+This section tries to introduce the reader to the main technologies used to establish a base on which the following technical implementation details can be understood.
 
 \subsection[ECMAScript2015 and Babel]%             {ECMAScript2015 and Babel%             \protect\footnote{\url{https://babeljs.io/}}}%
 \label{sec:implementation-architecture-es6}
+% it's a recommendation, but it takes long until browsers implement it and users update their browsers.
+JavaScript undoubtly is an integral part of front end web development and since the emergence of server-side JavaScript with Node.js and its package manager npm has developed into a programming language widely used by web developers. Both PYPL\footnote{\url{http://pypl.github.io/PYPL.html}} and TIOBE\footnote{\url{http://www.tiobe.com/tiobe_index}} programming language indices rank JavaScript among the top 10 programming languages (PYPL at 5, TIOBE at 7 at the time of writing). Stack Overflow's 2015 Developer Survey even places JavaScript as the number 1, most-used programming language with 54.4\% and JavaScript, Node.js and AngularJS all three rank amongst the top 5 languages developers expressed an interest in developing with (\cite{stackoverflow-developer-survey}).
 
-\subsection{react.js}
+However, like any front end technology, JavaScript suffers from slow end user adoption, as a multitude of browser versions exist for different devices and operating systems and many people still do not auto-update their browsers. Another factor is the time it takes for browser-vendors to implement new ECMAScript standards (the standard behind JavaScript) and roll out said updates. This is exactly what is happening with the new ECMAScript standard, ECMA-262, commonly known as ECMAScript 2015 or ES6: Although the General Assembly has adopted the new standard in June 2015 (\cite{ecma2015}), \emph{Kangax' ECMAScript compatibility tables}\footnote{\url{https://kangax.github.io/compat-table/es6/}} still show a fairly low level of adoption, especially among mobile browsers. ES6 makes JavaScript easier and more efficient to write by providing new semantics for default values, arrow-functions, template-literals, the spread operator or object destructuring (\cite{es6}). It also makes JavaScript easier to understand and safer to develop, with the introduction of block-scoped variables (\texttt{let} and \texttt{const}) and finally offers native support of modules and promises (\cite{es6}).
+As these features are all included in the new ECMAScript standard, it is safe to assume browser-vendors will implement them in the near future. Until then, developers who want to already make use of them, can make use of so-called \emph{transpilers}, compiling ECMAScript 2015 code into ECMAScript 5, which is exactly what Babel does. With over $650000$ downloads in March 2015 (according to npm) and companies like facebook, netflix, mozilla, Yahoo or PayPall using it (\cite{babel-users}), Babel is the de facto standard solution transpile to ECMAScript 5 and was also chosen for this project.
+
+\subsection[React]%             {React%             \protect\footnote{\url{https://facebook.github.io/react/index.html}}}%
 \label{sec:implementation-architecture-react}
 % explain base concept of having re-usable components and how they are defined!
 % get some HTML code in there :)
 
-\subsection{rx.js}
+\subsection{Reactive Programming}
 \label{sec:implementation-architecture-rxjs}
 
-\subsection{socket.io}
+\subsection[socket.io]%             {socket.io%             \protect\footnote{\url{http://socket.io/}}}%
 \label{sec:implementation-architecture-socketio}
 % problematic, talk about alternatives and problems in production, maybe even HTTP2
+% e.g. safari conntection issues
+% broadcasting functionality didn't quite work
+% corporate firewalls can be a problem! big, in comparison to others
 
 \section{Architecture}
 \label{sec:implementation-architecture}
@@ -56,6 +65,7 @@ In general, the application is build on top of \textit{unveil.js}\footnote{\url{
 % and concepts like modes, presenters, controls
 % give overview over controls in here.
 % also talk about the mobile style sheets / responsive design and the TouchControls, which I also implemented alone.
+% mention that this part is unit tested with jest(https://facebook.github.io/jest/)
 
 \subsection{Network synchronisation library -- \texttt{unveil-network-sync}}
 \label{sec:implementation-architecture-network-sync}

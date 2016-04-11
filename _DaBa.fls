@@ -398,6 +398,7 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss9.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
@@ -405,7 +406,6 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmss9.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 OUTPUT anhang_a.aux
 INPUT anhang_a.tex
