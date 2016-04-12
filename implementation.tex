@@ -28,21 +28,108 @@ This section tries to introduce the reader to the main technologies used to esta
 \subsection[ECMAScript2015 and Babel]%             {ECMAScript2015 and Babel%             \protect\footnote{\url{https://babeljs.io/}}}%
 \label{sec:implementation-architecture-es6}
 % it's a recommendation, but it takes long until browsers implement it and users update their browsers.
-JavaScript undoubtly is an integral part of front end web development and since the emergence of server-side JavaScript with Node.js and its package manager npm has developed into a programming language widely used by web developers. Both PYPL\footnote{\url{http://pypl.github.io/PYPL.html}} and TIOBE\footnote{\url{http://www.tiobe.com/tiobe_index}} programming language indices rank JavaScript among the top 10 programming languages (PYPL at 5, TIOBE at 7 at the time of writing). Stack Overflow's 2015 Developer Survey even places JavaScript as the number 1, most-used programming language with 54.4\% and JavaScript, Node.js and AngularJS all three rank amongst the top 5 languages developers expressed an interest in developing with (\cite{stackoverflow-developer-survey}).
+JavaScript undoubtly is an integral part of front end web development and since the emergence of server-side JavaScript with Node.js and its package manager npm has developed into a programming language widely used by web developers (\cite{gpm-meta-transcompiler}). Both PYPL\footnote{\url{http://pypl.github.io/PYPL.html}} and TIOBE\footnote{\url{http://www.tiobe.com/tiobe_index}} programming language indices rank JavaScript among the top 10 programming languages (PYPL at 5, TIOBE at 7 at the time of writing) (\cite{gpm-meta-transcompiler}). Stack Overflow's 2015 Developer Survey even places JavaScript as the number 1, most-used programming language with 54.4\% and JavaScript, Node.js and AngularJS all three rank amongst the top 5 languages developers expressed an interest in developing with (\cite{stackoverflow-developer-survey}).
 
 However, like any front end technology, JavaScript suffers from slow end user adoption, as a multitude of browser versions exist for different devices and operating systems and many people still do not auto-update their browsers. Another factor is the time it takes for browser-vendors to implement new ECMAScript standards (the standard behind JavaScript) and roll out said updates. This is exactly what is happening with the new ECMAScript standard, ECMA-262, commonly known as ECMAScript 2015 or ES6: Although the General Assembly has adopted the new standard in June 2015 (\cite{ecma2015}), \emph{Kangax' ECMAScript compatibility tables}\footnote{\url{https://kangax.github.io/compat-table/es6/}} still show a fairly low level of adoption, especially among mobile browsers. ES6 makes JavaScript easier and more efficient to write by providing new semantics for default values, arrow-functions, template-literals, the spread operator or object destructuring (\cite{es6}). It also makes JavaScript easier to understand and safer to develop, with the introduction of block-scoped variables (\texttt{let} and \texttt{const}) and finally offers native support of modules and promises (\cite{es6}).
-As these features are all included in the new ECMAScript standard, it is safe to assume browser-vendors will implement them in the near future. Until then, developers who want to already make use of them, can make use of so-called \emph{transpilers}, compiling ECMAScript 2015 code into ECMAScript 5, which is exactly what Babel does. With over $650000$ downloads in March 2015 (according to npm) and companies like facebook, netflix, mozilla, Yahoo or PayPall using it (\cite{babel-users}), Babel is the de facto standard solution transpile to ECMAScript 5 and was also chosen for this project.
+As these features are all included in the new ECMAScript standard, it is safe to assume browser-vendors will implement them in the near future. Until then, developers who want to already make use of them, can \emph{transpile} ECMAScript 2015 code into ECMAScript 5, which is exactly what Babel does. With over $650000$ downloads in March 2015 (according to npm) and companies like facebook, netflix, mozilla, Yahoo or PayPal using this transpiler (\cite{babel-users}), Babel is the de facto standard solution to transpile to ECMAScript 5 and was also chosen for this project.
+
+\subsection{Reactive Programming}
+\label{sec:implementation-architecture-rxjs}
+
+Another problem with JavaScript, although integral part of the reason for its high popularity, is its asynchronous nature. Especially when working with highly interactive parts, the prime example being user interfaces, sequential programming quickly gets too inflexible to handle complex, event-driven applications (\cite{reactive-programming-survey}). But also on the server, the possibility to concurrently serve a multitude of different clients, is crucial. In these cases JavaScript offers \emph{event listeners} -- functions called once a certain event happens. However, these event listeners or \emph{asynchronous callback} (\cite{reactive-programming-survey}), oftentimes executes more asynchronous code and in turn has to wait for another event, and another one, and another one... which can result in something known and dreaded by most any JavaScript developer: \emph{Callback Hell} (see programm \ref{prog:implementation-architecture-rxjs-callback-hell}).
+
+\begin{program}
+\caption{\emph{Callback Hell} -- Nested callbacks in JavaScript. Simplified method taken from a previous project, which authenticates a user, creates a new google calendar for them and then saves the user to one\'s own database, to then redirect them. \texttt{\{...\}} is used to shorten the code, error-handling was also omitted in the example for simplicity.}
+\label{prog:implementation-architecture-rxjs-callback-hell}
+\begin{JsCode}
+router.get('/callback', function(req, res, next) {
+  var code = req.query.code;
+  var name = JSON.parse(req.query.state);
+
+  // get token from oauth library
+  oauth2Client.getToken(code, function (err, tokens) {
+    // load configuration
+    Configuration.findOne({}, function (err, configuration) {
+      var calendar = google.calendar('v3');
+      // save to google calendar
+      calendar.calendars.insert({...}, function (err, cal) {
+        var member = new Member({...});
+        // save member to own database
+        member.save(function(err, member) {
+          return res.redirect(getRedirectionUrl(name) + '&success=true')
+        });
+      });
+    });
+  });
+});
+\end{JsCode}
+\end{program}
+
+Different approaches have been employed to lower the hurdle of writing asynchronous code, one of them being \emph{promises}: A promise is a value, yet to be computed (\cite{reactive-vs-promises}). A promise can be a) pending (if it has not been assigned a value yet), b) resolved (if it has been assigned a value) or c) rejected (if an error occurred). In ECMAScript 2015 promises these objects can then be queued using the \texttt{then} keyword, to execute asynchronous code in a certain sequence (see programm \ref{prog:implementation-architecture-rxjs-promises}).
+
+\begin{program}
+\caption{\emph{Promises} -- Simple example of chaining ECMAScript 2015 promises with \texttt{then} and \texttt{catch}.}
+\label{prog:implementation-architecture-rxjs-promises}
+\begin{JsCode}
+var promise = new Promise(function(resolve, reject) {
+  asyncCall(function(error, data) {
+    if (error) {
+      reject(error); // reject the pending promise
+    } else {
+      resolve(data); // resolve the pending promise
+    }
+  })
+})
+
+promise
+  .then(function(data) {
+    // this is executed after asyncCall returns
+    // other asyncronous calls can be placed here
+  })
+  .catch(function(error) {
+    // this is executed if an error occurs somwehere along the way
+  })
+\end{JsCode}
+\end{program}
+
+However, promises can still create nested callbacks, especially when chaining promises that rely on other promises\' resolution (\cite{reactive-vs-promises}). This is where \emph{reactive programming} comes in: The reactive programming paradigm works with streams of events, in which every event is handled as a new value and all other parts depending on this value are re-computed upon arrival of such a new value. To demonstrate this I would like to use Bainomugisha et al.\'s illustrative example of a simple addition \cite{reactive-programming-survey}:
+
+\begin{JsCode}
+var v1 = 1
+var v2 = 2
+var v3 = var1 + var 2
+\end{JsCode}
+%
+In sequentially executed code, \texttt{v3} will hold the value $3$, no matter if or how \texttt{v1} or \texttt{v2} change. In reactive programming, however, \texttt{v3} will be re-computed as soon as either one of the values it depends on change (\cite{reactive-programming-survey}). This way for a drag-and-drop feature, for example, the move of the mouse, continuously sending its location, could directly alter the position of an element in a page. JavaScript does not directly support reactive programming, but other, more functional languages, which can be transpiled to JavaScript, do. Another way of adding reactive programming concepts to JavaScript is using a library, such as \emph{Bacon.js}\footnote{\url{https://baconjs.github.io/}} or the one chosen for this project, \emph{ReactiveX}\footnote{\url{http://reactivex.io/}}. ReactiveX provides libraries for a multitude of different programming languages, C#, C++, Java and of course JavaScript among them. The latter, called \emph{The Reactive Extensions for JavaScript} or short \emph{RxJs}, allows for the simple creation of event streams (\emph{Observables}) from browser events or promises directly and uses the same method names JavaScript developers are familiar with from array-methods, most notably and well-known \texttt{map}, to apply a method to every element in the incoming stream and \texttt{filter}, to only let a subset of events pass. These methods can be chained to sequentially alter a value (see programm \ref{prog:implementation-architecture-rxjs}).
+
+\begin{program}
+\caption{\emph{RxJS} -- simplified example of the touch controls used to swipe to the next or previous slide. An Observable is created from the browser's \texttt{touchmove} event and is then transformed with \texttt{map} and \texttt{filter}, to in the end call the \texttt{navigate()} method with the direction the user swiped into.}
+\label{prog:implementation-architecture-rxjs}
+\begin{JsCode}
+this.moveObservable = Observable.fromEvent(document, 'touchmove')
+  // data: event object with array of touches
+  .filter(this.touchStarted) // only procede if touchstart is set to true
+  .map(this.toXY) // transform initial event data to latest touch's xy position
+  // data: \{x: xPosition, y: yPosition\}
+  .map(this.toDirection) // transform xy position to direction literal
+  // data: right/left/up/down
+  .do(this.resetTouchStart) // set this.touchStarted to false
+  // data: right/left/up/down
+  .subscribe(this.navigate); // call this.navigate() with direction data
+\end{JsCode}
+\end{program}
+
+Additionally to Observables, RxJs also knows \emph{Subjects}, which combine both a source of events and a consumer of such. Subjects are Observables, but also Observers at the same time and can be used to broadcast values to several consumers (\cite{rxjs-docu}).
 
 \subsection[React]%             {React%             \protect\footnote{\url{https://facebook.github.io/react/index.html}}}%
 \label{sec:implementation-architecture-react}
 % explain base concept of having re-usable components and how they are defined!
 % get some HTML code in there :)
 
-\subsection{Reactive Programming}
-\label{sec:implementation-architecture-rxjs}
 
-\subsection[socket.io]%             {socket.io%             \protect\footnote{\url{http://socket.io/}}}%
-\label{sec:implementation-architecture-socketio}
+
+%\subsection[socket.io]%%             {socket.io%%             \protect\footnote{\url{http://socket.io/}}}%
+%\label{sec:implementation-architecture-socketio}
 % problematic, talk about alternatives and problems in production, maybe even HTTP2
 % e.g. safari conntection issues
 % broadcasting functionality didn't quite work
