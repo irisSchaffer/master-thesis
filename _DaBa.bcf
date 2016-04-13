@@ -2249,6 +2249,10 @@
     <bcf:citekey order="12">reactive-programming-survey</bcf:citekey>
     <bcf:citekey order="13">reactive-programming-survey</bcf:citekey>
     <bcf:citekey order="14">rxjs-docu</bcf:citekey>
+    <bcf:citekey order="15">react-benchmarks</bcf:citekey>
+    <bcf:citekey order="16">introduction-to-react</bcf:citekey>
+    <bcf:citekey order="17">react-benchmarks</bcf:citekey>
+    <bcf:citekey order="18">react-docu</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>

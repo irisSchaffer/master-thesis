@@ -527,12 +527,12 @@
     </object>
     <object type="TEXFILE" id="z132">
         <attribute name="wasopen" type="bool">1</attribute>
-        <attribute name="visiblerect" type="string">{{0, 3666}, {984, 651}}</attribute>
-        <attribute name="lasteditdate" type="date">482180719.26977699995040893555</attribute>
+        <attribute name="visiblerect" type="string">{{0, 5476}, {984, 651}}</attribute>
+        <attribute name="lasteditdate" type="date">482257810.66311401128768920898</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482180719.55690497159957885742</attribute>
+        <attribute name="fileloaddate" type="date">482257811.05597800016403198242</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{14342, 0}</attribute>
+        <attribute name="cursor" type="string">{18267, 0}</attribute>
         <attribute name="sortindex" type="int32">2</attribute>
         <attribute name="name" type="string">implementation.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
@@ -545,12 +545,12 @@
     </object>
     <object type="FILE" id="z133">
         <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="visiblerect" type="string">{{0, 739}, {990, 651}}</attribute>
-        <attribute name="lasteditdate" type="date">482179847.74321502447128295898</attribute>
+        <attribute name="visiblerect" type="string">{{0, 936}, {990, 651}}</attribute>
+        <attribute name="lasteditdate" type="date">482251598.69640797376632690430</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482179848.03886002302169799805</attribute>
+        <attribute name="fileloaddate" type="date">482251601.44891202449798583984</attribute>
         <attribute name="extension" type="string">bib</attribute>
-        <attribute name="cursor" type="string">{1955, 0}</attribute>
+        <attribute name="cursor" type="string">{2231, 0}</attribute>
         <attribute name="sortindex" type="int32">1</attribute>
         <attribute name="name" type="string">literature.bib</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>

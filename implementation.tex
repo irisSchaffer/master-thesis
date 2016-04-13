@@ -2,6 +2,7 @@
 \label{cha:implementation}
 % short overview; why web -- use references!
 % speak about quick prototyping possibilities and how it's easier to roll out updates and how nobody needs to download an app on their phone to interact with the presentation
+% say something about open source and why all the code is online on github!
 
 \section{Project Scope}
 \label{sec:implementation-scope}
@@ -126,7 +127,78 @@ Additionally to Observables, RxJs also knows \emph{Subjects}, which combine both
 % explain base concept of having re-usable components and how they are defined!
 % get some HTML code in there :)
 
-As this project concentrates on the front end, a mature JavaScript framework was searched for. After previous experience with the big and complex, but slow AngularJS, because of promising performance benchmarks (\cite{react-benchmarks}) and simply to explore new JavaScript libraries, I decided to give React a try. Since Facebook started developing React in 2013, it has challenged existing approaches and set new standards in front end web development (\cite{introduction-to-react}). Instead of creating an entire MVC framework for the front end, React really concentrates on the View by offering a way of creating independent, lightweight view components. The arguably most important method these components implement is the \texttt{render} function, defining what HTML or JSX\footnote{\url{https://facebook.github.io/jsx/}} should be rendered by the browser.
+As this project concentrates on the front end, a mature JavaScript framework was searched for. After previous experience with the big and complex, but slow AngularJS, because of promising performance benchmarks (\cite{react-benchmarks}) and simply to explore new JavaScript libraries, I decided to give React a try. Since Facebook started developing React in 2013, it has challenged existing approaches and set new standards in front end web development (\cite{introduction-to-react}). Instead of creating an entire MVC framework for the front end, React really concentrates on the view by offering a way of creating independent, lightweight view components. This gives React the huge advantage of beating other front end frameworks by far in performance benchmarks (\cite{react-benchmarks}).
+The arguably most important method these re-usable, lightweight components implement is the \texttt{render} method, defining what HTML or JSX\footnote{\url{https://facebook.github.io/jsx/}} should be rendered by the browser:
+\begin{JsCode}
+export default class HelloWorld extends Component {
+  render() {
+    return (<h1>Hello World!</h1>);
+  }
+}
+\end{JsCode}
+%
+The created Component can then be rendered into the virtual React DOM, JSX makes it possible to simply use the name of the component to create it:
+%
+\begin{JsCode}
+ReactDOM.render(
+  <HelloWorld />,
+  document.getElementsByTagName('body')[0]
+);
+\end{JsCode}
+%
+This would simply put an \texttt{h1} element with the text \texttt{Hello World!} into the \texttt{body} element of the HTML page. Additionally to the \texttt{render} method, components also have a \emph{state} and \emph{properties}(\texttt{props}), through which they can communicate with other components and maintain their inner state. \texttt{props} are passed in to the component during creation, in JSX this can be achieved by simply passing them in as XML attributes:
+%
+\begin{JsCode}
+  <HelloWorld greeting="Hi" />
+\end{JsCode}
+%
+This could in turn be used in the \texttt{HelloWorld} component's \texttt{render} method:
+%
+\begin{JsCode}
+  render() {
+    return (<h1>{this.props.greeting} World!</h1>);
+  }
+\end{JsCode}
+%
+The children of a component are also available through \texttt[this.props.children]. The \texttt{state} variable, on the other hand, is responsible for handling internal updates e.g. through user interactions (\cite{react-docu}). To alter the state, the method \texttt{setState} can be used, which will cause an update and re-rendering of the component. So if in the above example, the word ``World'' should be changed to something else by the user, a text field with an event handler can be added inside the component:
+%
+\begin{JsCode}
+// set default state and props...
+
+componentWillMount() {
+  // create observable from change event on input
+  this.observable = Observable.fromEvent('change', this.refs.input)
+    .pluck('target', 'value') // extract input text
+    .subscribe(this.update) // call update with value
+}
+
+componentWillUnmount() { this.observable.unsubscribe() }
+
+update(text) { this.setState({name: text}) }
+
+render = () => (
+  <div>
+    <h1>{this.props.greeting} {this.state.name}!</h1>
+    <input value={this.state.name} ref="input" />
+  </div>
+)
+\end{JsCode}
+%
+Now, whenever a user changes the text in the \texttt{input} field, the RxJS Observable will receive a new value (a change event). The \texttt{value} of the field is extracted on line $6$ and used to then update the state in the \texttt{update} method, which is implicitly called with the value passed through the Observable chain.
+
+The two methods \texttt{com\-po\-nent\-Will\-Mount}, \texttt{com\-po\-nent\-Will\-Un\-mount} as well as \texttt{com\-po\-nent\-Did\-Mount}, \texttt{should\-Com\-po\-nent\-Up\-date}, \texttt{com\-po\-nent\-Will\-Up\-date}, \texttt{com\-po\-nent\-Did\-Up\-date} and \texttt{com\-po\-nent\-Will\-Re\-ceive\-Props} are \emph{lifecycle methods}, called whenever the component is created, updated or destroyed.
+
+As an end note on React, and a transition to the architecture of the application, I want to add that React components can be nested in each other, which is at the core of the project developed for the present thesis. To make it as easy as possible for other developers to use the created libraries, a presentation is built like a usual HTML page, using JSX to reference the custom React components:
+%
+\begin{JsCode}
+<UnveilApp}>
+  <Slide name="start">
+    <h1>Unveil</h1>
+    <h2>a meta presentation</h2>
+    <Notes>Greet people and welcome everyone</Notes>
+  </Slide>
+</UnveilApp>
+\end{JsCode}
 
 %\subsection[socket.io]%%             {socket.io%%             \protect\footnote{\url{http://socket.io/}}}%
 %\label{sec:implementation-architecture-socketio}
