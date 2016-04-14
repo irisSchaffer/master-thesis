@@ -21,38 +21,39 @@
 \newlabel{prog:implementation-technologies-rxjs}{{1.3}{5}{\emph {RxJS} -- simplified example of the touch controls used to swipe to the next or previous slide. An Observable is created from the browser's \texttt {touchmove} event and is then transformed with \texttt {map} and \texttt {filter}, to in the end call the \texttt {navigate()} method with the direction the user swiped into.\relax }{program.1.3}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}React}{6}{subsection.1.2.3}}
 \newlabel{sec:implementation-technologies-react}{{1.2.3}{6}{React}{subsection.1.2.3}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Repositories.\relax }}{8}{figure.caption.6}}
-\newlabel{fig:implementation-structure-repos}{{1.1}{8}{Repositories.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}unveil.js}{7}{subsection.1.2.4}}
+\newlabel{sec:implementation-technologies-unveil}{{1.2.4}{7}{unveil.js}{subsection.1.2.4}{}}
+\@writefile{lop}{\defcounter {refsection}{0}\relax }\@writefile{lop}{\contentsline {program}{\numberline {1.4}{\ignorespaces Nested React components. In this example, a 1-slide-long presentation is created.\relax }}{8}{program.1.4}}
+\newlabel{prog:implementation-technologies-react}{{1.4}{8}{Nested React components. In this example, a 1-slide-long presentation is created.\relax }{program.1.4}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.3}Project Structure}{8}{section.1.3}}
 \newlabel{sec:implementation-structure}{{1.3}{8}{Project Structure}{section.1.3}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Core Library:}{8}{figure.caption.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Network Synchronisation Library:}{8}{figure.caption.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Interactive Library:}{9}{figure.caption.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Example Presentation and Server:}{9}{figure.caption.6}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.4}General Concepts}{9}{section.1.4}}
-\newlabel{sec:implementation-concepts}{{1.4}{9}{General Concepts}{section.1.4}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.5}Core library}{9}{section.1.5}}
-\newlabel{sec:implementation-core}{{1.5}{9}{Core library}{section.1.5}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.6}Network Synchronisation Library}{9}{section.1.6}}
-\newlabel{sec:implementation-network-sync}{{1.6}{9}{Network Synchronisation Library}{section.1.6}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.7}Interactive Library}{9}{section.1.7}}
-\newlabel{sec:implementation-interactive}{{1.7}{9}{Interactive Library}{section.1.7}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.8}Server}{9}{section.1.8}}
-\newlabel{sec:implementation-server}{{1.8}{9}{Server}{section.1.8}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.9}Example Application}{9}{section.1.9}}
-\newlabel{sec:implementation-client}{{1.9}{9}{Example Application}{section.1.9}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. The \texttt  {KeyControls} listen for key events and process them, to then send a navigation request to go \emph  {right} to the \texttt  {Navigator}. This component then maps the direction to the next slide's indices (in this case $1$). \texttt  {UnveilApp} then adds other information necessary for the \texttt  {Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt  {UnveilApp} receives this event and re-renders the presentation.\relax }}{9}{figure.caption.6}}
+\newlabel{fig:implementation-technologies-unveil-navigation}{{1.1}{9}{Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. The \texttt {KeyControls} listen for key events and process them, to then send a navigation request to go \emph {right} to the \texttt {Navigator}. This component then maps the direction to the next slide's indices (in this case $1$). \texttt {UnveilApp} then adds other information necessary for the \texttt {Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt {UnveilApp} receives this event and re-renders the presentation.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Network Synchronisation Layer:}{9}{section.1.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Interactive Extension:}{9}{section.1.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Server and Example Presentation:}{10}{section.1.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.4}Extended unveil.js}{10}{section.1.4}}
+\newlabel{sec:implementation-unveil}{{1.4}{10}{Extended unveil.js}{section.1.4}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.5}Network Synchronisation Library}{10}{section.1.5}}
+\newlabel{sec:implementation-network-sync}{{1.5}{10}{Network Synchronisation Library}{section.1.5}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.6}Interactive Library}{10}{section.1.6}}
+\newlabel{sec:implementation-interactive}{{1.6}{10}{Interactive Library}{section.1.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.7}Server}{10}{section.1.7}}
+\newlabel{sec:implementation-server}{{1.7}{10}{Server}{section.1.7}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.8}Example Application}{10}{section.1.8}}
+\newlabel{sec:implementation-client}{{1.8}{10}{Example Application}{section.1.8}{}}
 \@setckpt{implementation}{
-\setcounter{page}{10}
+\setcounter{page}{11}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{17}
+\setcounter{footnote}{18}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{1}
-\setcounter{section}{9}
+\setcounter{section}{8}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
@@ -60,7 +61,7 @@
 \setcounter{figure}{1}
 \setcounter{table}{0}
 \setcounter{Item}{0}
-\setcounter{Hfootnote}{17}
+\setcounter{Hfootnote}{18}
 \setcounter{bookmark@seq@number}{17}
 \setcounter{parentequation}{0}
 \setcounter{float@type}{32}
@@ -73,7 +74,7 @@
 \setcounter{ALG@blocknr}{10}
 \setcounter{ALG@storecount}{0}
 \setcounter{ALG@tmpcounter}{0}
-\setcounter{program}{3}
+\setcounter{program}{4}
 \setcounter{@abgabetag}{27}
 \setcounter{@abgabemonat}{6}
 \setcounter{@abgabejahr}{2016}

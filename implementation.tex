@@ -188,10 +188,14 @@ Now, whenever a user changes the text in the \texttt{input} field, the RxJS Obse
 
 The two methods \texttt{com\-po\-nent\-Will\-Mount}, \texttt{com\-po\-nent\-Will\-Un\-mount} as well as \texttt{com\-po\-nent\-Did\-Mount}, \texttt{should\-Com\-po\-nent\-Up\-date}, \texttt{com\-po\-nent\-Will\-Up\-date}, \texttt{com\-po\-nent\-Did\-Up\-date} and \texttt{com\-po\-nent\-Will\-Re\-ceive\-Props} are \emph{lifecycle methods}, called whenever the component is created, updated or destroyed.
 
-As an end note on React, and a transition to the structure of the application, I want to add that React components can be nested, which is at the core of the project developed for the present thesis. To make it as easy as possible for other developers to use the created libraries, a presentation is built just as a usual HTML page, using JSX to reference the custom React components:
+As an end note on React, and a transition to the core presentation library, I want to add that React components can be nested, which is at the core of the project developed for the present thesis. To make it as easy as possible for other developers to use the created libraries, a presentation is built just as a usual HTML page, using JSX to reference the custom React components (see program \ref{prog:implementation-technologies-react}).
 %
+
+\begin{program}
+\caption{Nested React components. In this example, a 1-slide-long presentation is created.}
+\label{prog:implementation-technologies-react}
 \begin{JsCode}
-<UnveilApp}>
+<UnveilApp>
   <Slide name="start">
     <h1>Unveil</h1>
     <h2>a meta presentation</h2>
@@ -199,6 +203,40 @@ As an end note on React, and a transition to the structure of the application, I
   </Slide>
 </UnveilApp>
 \end{JsCode}
+\end{program}
+
+\subsection[unveil.js]%             {unveil.js%             \protect\footnote{\url{https://github.com/ostera/unveil.js}}}    
+\label{sec:implementation-technologies-unveil}
+% explain how this was developed together with Leandro, explain general parts
+% like router, navigator, UnveilApp
+% give overview over controls in here.
+% also talk about the mobile style sheets / responsive design and the TouchControls, which I also implemented alone.
+% (mention that this part is unit tested with jest(https://facebook.github.io/jest/))
+
+As a presentation layer, this project uses the open-source JavaScript library \textit{unveil.js}, which was developed by Leandro Ostera and myself in the beginning of the project and which I extended and adapted to my needs in an own fork\footnote{\url{https://github.com/irisSchaffer/unveil.js}} during the project. This fork will be covered in section \ref{sec:implementation-unveil} of this chapter, until then, a short overview of the different parts of unveil.js is given and key concepts of the library are discussed.
+
+Generally, unveil.js operates in a $2$-dimensional slide-space: Every slide can have a next and previous slide in $x$, as well as in $y$-direction. To generate the $y$ axis, slides can be nested in other slides. These slides have an optional unique name as well as an index in the slide-tree, which they are identified by. As shown in program \ref{prog:implementation-technologies-react}, slides are created inside the component \texttt{UnveilApp}, the core of unveil.js. This component configures and sets up the entire application based on optional configuration passed in as properties.
+There are a few concepts unveil.js is built around to allow for extensibility and configurability, namely \emph{presenters}, \emph{controls} and \emph{modes}:
+%
+\begin{itemize}
+\item \textbf{Presenters} define the way slides are rendered, e.g. show notes, upcoming slide or hide them.
+\item \textbf{Controls} control a part of the application, e.g. navigating from one slide to the next using the arrow keys on the keyboard.
+\item \textbf{Modes} are what allows a speaker to have different presenter and controls from a member from the audience. Each mode defines its own presenter and set of controls, the mode is determined by the url query parameter \texttt{mode}.
+\end{itemize}
+This allows anybody using unveil.js to define new modes, presenters and controls and thereby extending the base library as they wish. A few of these are already defined, namely a default \texttt{Presenter}, \texttt{UIControls} to navigate using buttons, \texttt{KeyControls} to navigate using the keyboard and \texttt{TouchControls} to navigate with swipe-gestures on touch screens.
+
+For these controls and the entire presentation to be navigatable, \texttt{UnveilApp} is responsible for the creation of two very important classes: \texttt{Router} and \texttt{Navigator}. These can be defined outside and passed into \texttt{UnveilApp} as properties, allowing users to customise their navigation logic.
+%
+\begin{itemize}
+\item \textbf{Router} is the class handling everything connected to the current url. It gets the slides-tree and can compute the indices of a slide by its name and vice versa. Whenever the browser history changes, the router finds the corresponding slide-indices, computes an array of possible directions to go into from this slide and propagates the event to \texttt{UnveilApp}, which can then re-render the application.
+\item \textbf{Navigator} in turn receives these directions and is responsible for the mapping of directions (\emph{left}, \emph{right}, \emph{up}, \emph{down}) to slide-indices. Controls know the navigator and can push 
+\end{itemize}
+
+
+
+
+\begin{figure}\centering\includegraphics[width=.85\textwidth]{navigation}\caption{Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. The \texttt{KeyControls} listen for key events and process them, to then send a navigation request to go \emph{right} to the \texttt{Navigator}. This component then maps the direction to the next slide's indices (in this case $1$). \texttt{UnveilApp} then adds other information necessary for the \texttt{Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt{UnveilApp} receives this event and re-renders the presentation.}
+\label{fig:implementation-technologies-unveil-navigation}\end{figure}
 
 %\subsection[socket.io]%%             {socket.io%%             \protect\footnote{\url{http://socket.io/}}}%
 %\label{sec:implementation-architecture-socketio}
@@ -213,29 +251,18 @@ As an end note on React, and a transition to the structure of the application, I
 % Which repos do I have and what do they include functionality-wise?
 % explain why different repos and how they are all own npm packages that can easily be included in other projects
 
-\begin{figure}\centering\includegraphics[width=.75\textwidth]{repos}\caption{Repositories.}\label{fig:implementation-structure-repos}\end{figure}
+%\begin{figure}%\centering%\includegraphics[width=.8\textwidth]{repos}%\caption{Overview over GitHub repositories involved in the project. The higher ones rely on the lower ones.}%\label{fig:implementation-structure-repos}%\end{figure}
 
-As the puropose of this project was not only to experiment with different ways of interacting with presentations using mobile devices, but also to create something worthwhile and contribute back to the vibrant open-source community, the project is separated into different repositories (see figure \ref{fig:implementation-structure-repos}), which are all available on Github. These can be installed using npm therefore allowing them to rely only on the parts they really need.
+As the puropose of this project was not only to experiment with different ways of interacting with presentations using mobile devices, but also to create something worthwhile and contribute back to the vibrant open-source community, the project is separated into different repositories, which are all available on GitHub. These can be installed using npm, therefore allowing developers to rely only on the parts they really need.
 
-\paragraph{Core Library:} In general, these libraries are built on top of \textit{unveil.js}\footnote{\url{https://github.com/ostera/unveil.js}}, a JavaScript presentation library which was developed by Leandro Ostera and myself in the beginning of the project and which I extended and adapted to my needs during the project. This core library and specifically the parts I worked on, will be covered in section \ref{sec:implementation-core} of this chapter and includes all basic components and styles to create a presentation and to navigate through it using a keyboard, UI elements or swipe-gestures on a phone, as well as an example presentation.
+\paragraph{Network Synchronisation Layer:} The first library of direct importance for the interaction between speaker and audience through personal devices is \textit{unveil-network-sync}\footnote{\url{https://github.com/irisSchaffer/unveil-network-sync}}. This rather small library relies on unveil.js and is responsible for connecting the client and the server through web sockets and enables the synchronisation of the current slide displayed between speaker, audience and projector. The implementation of the features will be discussed in detail in section \ref{sec:implementation-network-sync}.
 
-\paragraph{Network Synchronisation Library:} The first library of direct importance for the interaction between speaker and audience through personal devices is \textit{unveil-network-sync}\footnote{\url{https://github.com/irisSchaffer/unveil-network-sync}}. This rather small library relies on unveil.js and is responsible for connecting the client and the server through web sockets and enables the synchronisation of the current slide displayed between speaker, audience and projector. The implementation of the features will be discussed in detail in section \ref{sec:implementation-network-sync}.
+\paragraph{Interactive Extension:} As the name already suggests, this library is at the core of the present thesis: It sets up a dedicated view for the speaker, implements the insertion of additional slides and subslides and by that allows for sharing of content from the audience. The voting mechanism, as well as the creation of new votings on-the-fly, also live within this library. The repository, called \emph{unveil-interactive}\footnote{\url{https://github.com/irisSchaffer/unveil-interactive}} relies on unveil-network-sync for the socket-interaction. The library will be covered in section \ref{sec:implementation-interactive} of this chapter.
 
-\paragraph{Interactive Library:} As the name already suggests, this library is at the core of the present thesis: It sets up a dedicated view for the speaker, implements the insertion of additional slides and subslides and by that allows for sharing of content from the audience. The voting mechanism, as well as the creation of new votings on-the-fly, also live within this library. The repository, called \emph{unveil-interactive}\footnote{\url{https://github.com/irisSchaffer/unveil-interactive}} relies on unveil-network-sync for the socket-interaction. The library will be covered in section \ref{sec:implementation-interactive} of this chapter.
+\paragraph{Server and Example Presentation:} The last repository connected to this thesis is \emph{unveil-client-server}\footnote{\url{https://github.com/irisSchaffer/unveil-client-server}}, which includes a simple server as well as a real-world example of a presentation, which was used in the intermediate thesis project presentation as part of the Interactive Media course IM690, on the 2\textsuperscript{nd}\xspace of February, 2016. In this chapter, a whole section was dedicated to the server (\ref{sec:implementation-server}), as well as to the example application (\ref{sec:implementation-client}), to separate concerns a bit more clearly and be able to conclude the chapter with a demonstration of how all parts discussed earlier play together in the final presentation.
 
-\paragraph{Example Presentation and Server:} The last repository connected to this thesis is \emph{unveil-client-server}\footnote{\url{https://github.com/irisSchaffer/unveil-client-server}}, which includes a simple server as well as a real-world example of a presentation, which was used in the intermediate thesis project presentation as part of the Interactive Media course IM690, on the 2\textsuperscript{nd}\xspace of February, 2016. In this chapter, a whole section was dedicated to the server (\ref{sec:implementation-server}), as well as to the example application (\ref{sec:implementation-client}), to separate concerns a bit more clearly and be able to conclude the chapter with a demonstration of how all parts discussed earlier play together in the final presentation.
-
-\section{General Concepts}
-\label{sec:implementation-concepts}
-% and concepts like modes, presenters, controls
-
-\section{Core library}
-\label{sec:implementation-core}
-% explain how this was developed together with Leandro, explain general parts
-% like router, navigator, UnveilApp
-% give overview over controls in here.
-% also talk about the mobile style sheets / responsive design and the TouchControls, which I also implemented alone.
-% (mention that this part is unit tested with jest(https://facebook.github.io/jest/))
+\section{Extended unveil.js}
+\label{sec:implementation-unveil}
 
 \section{Network Synchronisation Library}
 \label{sec:implementation-network-sync}
