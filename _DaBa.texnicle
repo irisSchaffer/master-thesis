@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>916CD38E-709D-4186-BE67-8133E2680EEC</UUID>
-        <nextObjectID>133</nextObjectID>
+        <nextObjectID>134</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -71,17 +71,17 @@
         <attribute name="dops2pdf" type="bool">1</attribute>
         <attribute name="doliveupdate" type="bool">0</attribute>
         <attribute name="dobibtex" type="bool">1</attribute>
-        <attribute name="bibtexcommand" type="string">biber</attribute>
+        <attribute name="bibtexcommand" type="string">bibtex</attribute>
         <relationship name="project" type="1/1" destination="PROJECT" idrefs="z104"></relationship>
     </object>
     <object type="UISETTINGS" id="z103">
         <attribute name="pdfviewscrollrect" type="string">{{0, 0}, {0, 0}}</attribute>
         <attribute name="showpdfthumbnails" type="bool">0</attribute>
-        <attribute name="selectedcontrolstab" type="int16">6</attribute>
+        <attribute name="selectedcontrolstab" type="int16">0</attribute>
         <attribute name="maxoutlinedepth" type="int16">7</attribute>
         <attribute name="logoutputlevel" type="int16">0</attribute>
-        <attribute name="editorwidth" type="float">1074</attribute>
-        <attribute name="controlswidth" type="float">220</attribute>
+        <attribute name="editorwidth" type="float">788</attribute>
+        <attribute name="controlswidth" type="float">230</attribute>
         <attribute name="consoleview" type="int16">0</attribute>
         <relationship name="project" type="1/1" destination="PROJECT" idrefs="z104"></relationship>
     </object>
@@ -93,15 +93,15 @@
         <relationship name="selected" type="1/1" destination="FILE" idrefs="z132"></relationship>
         <relationship name="settings" type="1/1" destination="SETTINGS" idrefs="z102"></relationship>
         <relationship name="uisettings" type="1/1" destination="UISETTINGS" idrefs="z103"></relationship>
-        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z123 z129 z122 z108 z109 z106 z125 z130 z110 z116 z120 z127 z124 z131 z128 z132 z111 z126 z105 z117 z133 z112 z115 z119 z121 z114 z118 z107"></relationship>
+        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z115 z106 z105 z133 z110 z120 z128 z121 z107 z131 z109 z118 z129 z132 z127 z125 z111 z116 z108 z123 z130 z117 z112 z119 z114 z126 z124 z122"></relationship>
     </object>
     <object type="TEXFILE" id="z105">
-        <attribute name="visiblerect" type="string">{{0, 0}, {866, 651}}</attribute>
-        <attribute name="cursor" type="string">{615, 0}</attribute>
+        <attribute name="visiblerect" type="string">{{0, 720}, {751, 874}}</attribute>
+        <attribute name="cursor" type="string">{1886, 0}</attribute>
         <attribute name="wasopen" type="bool">-1</attribute>
-        <attribute name="lasteditdate" type="date">482093354.04836201667785644531</attribute>
+        <attribute name="lasteditdate" type="date">482785476.74464297294616699219</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482090088.33456802368164062500</attribute>
+        <attribute name="fileloaddate" type="date">482785476.97300899028778076172</attribute>
         <attribute name="extension" type="string">tex</attribute>
         <attribute name="sortindex" type="int32">3</attribute>
         <attribute name="name" type="string">_DaBa.tex</attribute>
@@ -526,13 +526,13 @@
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="TEXFILE" id="z132">
-        <attribute name="wasopen" type="bool">1</attribute>
-        <attribute name="visiblerect" type="string">{{0, 9158}, {1031, 871}}</attribute>
-        <attribute name="lasteditdate" type="date">482699231.17445999383926391602</attribute>
+        <attribute name="wasopen" type="bool">0</attribute>
+        <attribute name="visiblerect" type="string">{{0, 11871}, {745, 874}}</attribute>
+        <attribute name="lasteditdate" type="date">482788511.80399501323699951172</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482699232.95603597164154052734</attribute>
+        <attribute name="fileloaddate" type="date">482788514.09962600469589233398</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{35075, 0}</attribute>
+        <attribute name="cursor" type="string">{42984, 0}</attribute>
         <attribute name="sortindex" type="int32">2</attribute>
         <attribute name="name" type="string">implementation.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
@@ -544,11 +544,11 @@
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="FILE" id="z133">
-        <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="visiblerect" type="string">{{0, 2568}, {703, 319}}</attribute>
-        <attribute name="lasteditdate" type="date">482589639.09301102161407470703</attribute>
+        <attribute name="wasopen" type="bool">1</attribute>
+        <attribute name="visiblerect" type="string">{{0, 1989}, {814, 898}}</attribute>
+        <attribute name="lasteditdate" type="date">482776427.25733000040054321289</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482679433.87294101715087890625</attribute>
+        <attribute name="fileloaddate" type="date">482776427.06347399950027465820</attribute>
         <attribute name="extension" type="string">bib</attribute>
         <attribute name="cursor" type="string">{2990, 0}</attribute>
         <attribute name="sortindex" type="int32">1</attribute>
@@ -560,5 +560,11 @@
         <relationship name="mainfileofproject" type="1/1" destination="PROJECT"></relationship>
         <relationship name="children" type="0/0" destination="PROJECTITEM"></relationship>
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
+    </object>
+    <object type="BOOKMARK" id="z134">
+        <attribute name="text" type="string">\u3c00/Voting\u3e00
+</attribute>
+        <attribute name="linenumber" type="int64">446</attribute>
+        <relationship name="parentfile" type="1/1" destination="FILE"></relationship>
     </object>
 </database>

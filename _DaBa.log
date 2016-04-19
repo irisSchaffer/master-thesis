@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.31)  18 APR 2016 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.31)  19 APR 2016 21:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1315,7 +1315,6 @@ Package biblatex Info: ... file 'german.lbx' found.
 File: german.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 ))
 (./vorwort.aux) (./kurzfassung.aux) (./abstract.aux) (./implementation.aux)
-(./anhang_a.aux) (./anhang_b.aux) (./anhang_c.aux) (./anhang_d.aux)
 (./messbox.aux))
 \openout1 = `_DaBa.aux'.
 
@@ -1419,7 +1418,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/logo.pdf, id=133, 269.93045pt x 269.93045pt>
+<images/logo.pdf, id=93, 269.93045pt x 269.93045pt>
 File: images/logo.pdf Graphic file (type pdf)
  <use images/logo.pdf>
 Package pdftex.def Info: images/logo.pdf used on input line 30.
@@ -1442,13 +1441,13 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2] [3
 
 ]
-(./_DaBa.toc [4
-
-])
+(./_DaBa.toc)
 \tf@toc=\write5
 \openout5 = `_DaBa.toc'.
 
- [5]
+ [4
+
+]
 \openout2 = `vorwort.aux'.
 
  (./vorwort.tex
@@ -1456,6 +1455,10 @@ Overfull \hbox (12.63586pt too wide) in paragraph at lines 4--8
 \T1/lmr/m/n/10.95 Dies ist \T1/lmr/bx/n/10.95 Ver-sion 2015/09/19 \T1/lmr/m/n/1
 0.95 der La-TeX-Dokumentenvorlage für ver-schiedene
  []
+
+
+LaTeX Warning: Reference `ch:TechnischeInfos' on page v undefined on input line
+ 22.
 
 
 Overfull \hbox (3.46303pt too wide) in paragraph at lines 9--23
@@ -1475,7 +1478,7 @@ Overfull \hbox (2.71838pt too wide) in paragraph at lines 42--48
 nte Verbesserung
  []
 
-[6
+[5
 
 
 ]
@@ -1484,10 +1487,10 @@ Overfull \hbox (38.45854pt too wide) in paragraph at lines 65--69
 r und Un-zulänglichkeiten
  []
 
-) [7]
+) [6]
 \openout2 = `kurzfassung.aux'.
 
- (./kurzfassung.tex) [8
+ (./kurzfassung.tex) [7
 
 
 
@@ -1496,7 +1499,8 @@ r und Un-zulänglichkeiten
 
  (./abstract.tex
 
-LaTeX Warning: Reference `sec:englisch' on page ix undefined on input line 15.
+LaTeX Warning: Reference `sec:englisch' on page viii undefined on input line 15
+.
 
 
 Overfull \hbox (9.90517pt too wide) in paragraph at lines 8--19
@@ -1505,14 +1509,14 @@ sung prä-zise umzuset-
  []
 
 
-LaTeX Warning: Reference `sec:sprachumschaltung' on page ix undefined on input 
-line 28.
+LaTeX Warning: Reference `sec:sprachumschaltung' on page viii undefined on inpu
+t line 28.
 
 
-LaTeX Warning: Reference `sec:anfuehrungszeichen' on page ix undefined on input
- line 29.
+LaTeX Warning: Reference `sec:anfuehrungszeichen' on page viii undefined on inp
+ut line 29.
 
-) [9
+) [8
 
 
 
@@ -1691,341 +1695,174 @@ Package csquotes Info: Input encoding change on input line 200.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [7] [8]
-<images/navigation.pdf, id=427, 782.19154pt x 478.25526pt>
+) [7]
+<images/unveil-screenshot.pdf, id=357, 1284.8pt x 803.0pt>
+File: images/unveil-screenshot.pdf Graphic file (type pdf)
+
+<use images/unveil-screenshot.pdf>
+Package pdftex.def Info: images/unveil-screenshot.pdf used on input line 235.
+(pdftex.def)             Requested size: 288.0011pt x 179.9933pt.
+ [8 <./images/unveil-screenshot.pdf>]
+<images/navigation.pdf, id=397, 782.19154pt x 478.25526pt>
 File: images/navigation.pdf Graphic file (type pdf)
 
 <use images/navigation.pdf>
-Package pdftex.def Info: images/navigation.pdf used on input line 239.
+Package pdftex.def Info: images/navigation.pdf used on input line 257.
 (pdftex.def)             Requested size: 306.0022pt x 187.0953pt.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7> on input line 240.
- [9 <./images/navigation.pdf>] [10]
-<images/render-pipeline.pdf, id=498, 1027.84pt x 658.94681pt>
+(Font)              <7> on input line 258.
+ [9] [10 <./images/navigation.pdf>]
+<images/render-pipeline.pdf, id=465, 1027.84pt x 658.94681pt>
 File: images/render-pipeline.pdf Graphic file (type pdf)
 
 <use images/render-pipeline.pdf>
-Package pdftex.def Info: images/render-pipeline.pdf used on input line 284.
-(pdftex.def)             Requested size: 288.0011pt x 184.63455pt.
- [11 <./images/render-pipeline.pdf>]
-Package csquotes Info: Input encoding change on input line 294.
+Package pdftex.def Info: images/render-pipeline.pdf used on input line 295.
+(pdftex.def)             Requested size: 180.0pt x 115.39786pt.
+ [11]
+Package csquotes Info: Input encoding change on input line 305.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
 
 LaTeX Warning: Citation 'socketio-problems' on page 12 undefined on input line 
-306.
+317.
 
-
-Overfull \hbox (7.00887pt too wide) in paragraph at lines 309--311
+[12 <./images/render-pipeline.pdf>]
+Overfull \hbox (7.00887pt too wide) in paragraph at lines 320--322
 []\T1/lmr/m/n/10.95 The setup of the socket is sim-ple: one helper func-tion, c
 alled \T1/lmtt/m/n/10.95 createSocket
  []
 
-Package csquotes Info: Input encoding change on input line 311.
+Package csquotes Info: Input encoding change on input line 322.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 318.
+Package csquotes Info: Input encoding change on input line 329.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 328.
+Package csquotes Info: Input encoding change on input line 339.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [12]) [13]
-\openout2 = `anhang_a.aux'.
-
-
-(./anhang_a.tex
-Appendix A.
-
-LaTeX Warning: Reference `sec:Windows' on page 14 undefined on input line 47.
-
-[14
-
-
-
-]
-Overfull \hbox (0.6814pt too wide) in paragraph at lines 70--74
-\T1/lmr/m/n/10.95 Dieses sollte man zuerst über \T1/lmtt/m/n/10.95 Build $\OMS/
-lmsy/m/n/10.95 !$ \T1/lmtt/m/n/10.95 Define Output Profiles \T1/lmr/m/n/10.95 i
-n TeXnic-
- []
-
-
-LaTeX Warning: Reference `sec:MacOs' on page 15 undefined on input line 81.
-
-
-Overfull \hbox (10.71272pt too wide) in paragraph at lines 88--93
-\T1/lmr/m/n/10.95 gabe-pro-file \T1/lmr/m/it/10.95 La-TeX \T1/lmr/m/n/10.95 ode
-r \T1/lmr/m/it/10.95 pdfLa-TeX \T1/lmr/m/n/10.95 hinge-gen müssen mehrmals aufg
-erufen
- []
-
-) [15]
-\openout2 = `anhang_b.aux'.
-
- (./anhang_b.tex
-Appendix B.
-
-Overfull \hbox (16.86253pt too wide) in paragraph at lines 20--21
-\T1/lmr/m/n/10.95 die zuge-höri-gen La-TeX-Dateien aufzulis-ten (wohl aber pro-
-jek-t-be-zo-gene Dateien,
- []
-
-[16
-
-
-
-]) [17]
-\openout2 = `anhang_c.aux'.
-
- (./anhang_c.tex
-Appendix C.
-
-Underfull \hbox (badness 1571) in paragraph at lines 21--25
-[]\T1/lmr/m/n/10.95 Diverse Ko-r-rek-turen: Cap-tions von Tabellen nach oben
- []
-
-[18
-
-
-
-]
-Underfull \hbox (badness 3375) in paragraph at lines 101--105
-[]\T1/lmr/m/n/10.95 Neues Listing-Environment \T1/lmtt/m/n/10.95 PhpCode\T1/lmr
-/m/n/10.95 ; bei allen Listing-
- []
-
-
-Underfull \hbox (badness 1314) in paragraph at lines 109--111
-[]\T1/lmr/m/n/10.95 Zusätzliche Hin-weise zur MikTeX-Installation (Win-dows)
- []
-
-[19]
-Underfull \hbox (badness 7099) in paragraph at lines 119--126
-\T1/lmr/m/n/10.95 möglicht geziel-ten Zeilenum-bruch in URLs). Im all-ge-meinen
-
- []
-
-
-Underfull \hbox (badness 2662) in paragraph at lines 119--126
-\T1/lmr/m/n/10.95 Setup für \T1/lmtt/m/n/10.95 listings\T1/lmr/m/n/10.95 : \T1/
-lmtt/m/n/10.95 keepspaces=true\T1/lmr/m/n/10.95 ; Ob-so-letes En-vi-ron-ment
- []
-
-
-Underfull \hbox (badness 2521) in paragraph at lines 119--126
-\T1/lmtt/m/n/10.95 sourcecode \T1/lmr/m/n/10.95 deak-tiviert. Escape-Mode für \
-T1/lmtt/m/n/10.95 LaTeXCode\T1/lmr/m/n/10.95 -Umgebung
- []
-
-
-LaTeX Warning: Reference `sec:HagenbergEinstellungen' on page 20 undefined on i
-nput line 148.
-
-[20]
-Underfull \hbox (badness 1675) in paragraph at lines 179--198
-\T1/lmr/m/n/10.95 Überflüssige Makros []\T1/lmtt/m/n/10.95 \damonat \T1/lmr/m/n
-/10.95 und []\T1/lmtt/m/n/10.95 \dajahr \T1/lmr/m/n/10.95 endgültig ent-fernt,
- []
-
-
-Underfull \hbox (badness 1048) in paragraph at lines 179--198
-\T1/lmr/m/n/10.95 statt []\T1/lmtt/m/n/10.95 \abgabemonat \T1/lmr/m/n/10.95 und
- []\T1/lmtt/m/n/10.95 \abgabejahr \T1/lmr/m/n/10.95 ist nun das neue Makro
- []
-
-
-Underfull \hbox (badness 1005) in paragraph at lines 199--203
-\T1/lmr/m/n/10.95 schriften ein-gerichtet. Ti-tel des Quel-len-verze-ich-nisses
- auf "`Quel-
- []
-
-
-Underfull \hbox (badness 5175) in paragraph at lines 199--203
-\T1/lmr/m/n/10.95 len-verze-ich-nis"' (DE) bzw. "`Ref-er-ences"' (EN) fix-iert.
- Makro
- []
-
-
-Underfull \hbox (badness 2662) in paragraph at lines 204--207
-[]\T1/lmr/m/n/10.95 Wegen Än-derun-gen im \T1/lmtt/m/n/10.95 biblatex\T1/lmr/m/
-n/10.95 -package (Ver-sion 1.7,
- []
-
-
-LaTeX Warning: Reference `sec:FormatierungVonProgrammcode' on page 21 undefined
- on input line 211.
-
-
-Underfull \hbox (badness 1817) in paragraph at lines 211--218
-[]\T1/lmr/m/n/10.95 In Ab-schnitt [] zusät-zliche Code-Umgebungen ergänzt:
- []
-
-
-LaTeX Warning: Reference `sec:FormatierungVonProgrammcode' on page 21 undefined
- on input line 219.
-
-
-LaTeX Warning: Reference `sec:FormatierungVonProgrammcode' on page 21 undefined
- on input line 221.
-
-
-LaTeX Warning: Reference `tab:BibKategorien' on page 21 undefined on input line
- 224.
-
-
-LaTeX Warning: Reference `tab:QuellenUndEintragstypen' on page 21 undefined on 
-input line 225.
-
-[21]
-Underfull \hbox (badness 1590) in paragraph at lines 229--280
-\T1/lmr/m/n/10.95 Allgemeine Ein-stel-lun-gen zu \T1/lmr/m/it/10.95 head-ings \
-T1/lmr/m/n/10.95 und \T1/lmr/m/it/10.95 bibla-tex \T1/lmr/m/n/10.95 wur-den aus
-
- []
-
-[22]
-Underfull \hbox (badness 5050) in paragraph at lines 281--298
-\T1/lmtt/m/n/10.95 hyperref\T1/lmr/m/n/10.95 -Einstellungen: Ein-fär-bung der L
-inks wieder ent-fernt
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--298
-\T1/lmr/m/n/10.95 (\T1/lmtt/m/n/10.95 colorlinks = false\T1/lmr/m/n/10.95 ), we
-il beim Druck nicht ab-schalt-bar.
- []
-
-
-Underfull \hbox (badness 4279) in paragraph at lines 281--298
-\T1/lmr/m/n/10.95 Stattdessen ein-heitliche (dezente) Rah-men für alle Linkarte
-n.
- []
-
-
-LaTeX Warning: Reference `sec:GraphicOverlays' on page 23 undefined on input li
-ne 306.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
-[]\T1/lmr/m/n/10.95 Anweisung []\T1/lmtt/m/n/10.95 \RequirePackage[utf8]{inpute
-nc} \T1/lmr/m/n/10.95 in die
- []
-
-
-Underfull \hbox (badness 3312) in paragraph at lines 312--316
-\T1/lmr/m/n/10.95 Doku-menten-dateien (\T1/lmtt/m/n/10.95 _xxx.tex\T1/lmr/m/n/1
-0.95 ) ver-schoben (auf An-re-gung von
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--327
-[]\T1/lmtt/m/n/10.95 hgb.sty \T1/lmr/m/n/10.95 aufgeräumt. Makros []\T1/lmtt/m/
-n/10.95 \@savesymbol \T1/lmr/m/n/10.95 und
- []
-
-
-Underfull \hbox (badness 6157) in paragraph at lines 317--327
-[]\T1/lmtt/m/n/10.95 \@restoresymbol \T1/lmr/m/n/10.95 aus \T1/lmtt/m/n/10.95 h
-gb.sty \T1/lmr/m/n/10.95 ent-fernt (wur-den nicht mehr
- []
-
-
-Underfull \hbox (badness 1845) in paragraph at lines 317--327
-\T1/lmr/m/n/10.95 (op-tional break with no hy-phen) auf []\T1/lmtt/m/n/10.95 \o
-bnh \T1/lmr/m/n/10.95 um-be-nannt. Teile
- []
-
-
-Underfull \hbox (badness 3271) in paragraph at lines 317--327
-[]\T1/lmtt/m/n/10.95 \textfraction \T1/lmr/m/n/10.95 auf 0.1 (statt fehlhafter-
-weise 0.01) eingestellt.
- []
-
-
-Underfull \hbox (badness 4291) in paragraph at lines 317--327
-\T1/lmtt/m/n/10.95 hgbbib.sty\T1/lmr/m/n/10.95 : []\T1/lmtt/m/n/10.95 \clearpag
-e \T1/lmr/m/n/10.95 am Be-ginn des Quel-len-verze-ich-nisses
- []
-
-[23]
-Underfull \hbox (badness 3354) in paragraph at lines 328--333
-[]\T1/lmr/m/n/10.95 Alle \T1/lmtt/m/n/10.95 .cls \T1/lmr/m/n/10.95 und \T1/lmtt
-/m/n/10.95 .sty \T1/lmr/m/n/10.95 Dateien sind jetzt ANSI-codiert
- []
-
-
-Underfull \hbox (badness 1117) in paragraph at lines 328--333
-\T1/lmr/m/n/10.95 (Header einge-fügt), wie laut CTAN-Richtlinien vorge-se-hen. 
-Um-
- []
-
-
-Underfull \hbox (badness 7433) in paragraph at lines 328--333
-\T1/lmr/m/n/10.95 ist weit-er-hin UTF-8 (we-gen notwendi-ger lit-eraler Um-laut
-e).
- []
-
-
-Underfull \hbox (badness 3428) in paragraph at lines 334--337
-\T1/lmr/m/n/10.95 Einträgen (Eige-nart von bibla-tex) durch passendes Makro in
- []
-
-
-LaTeX Warning: Reference `sec:Software' on page 24 undefined on input line 338.
-
-
-) [24]
-\openout2 = `anhang_d.aux'.
-
- (./anhang_d.tex
-Appendix D.
-File: _DaBa.tex  (verbatim)
-
-Overfull \hbox (8.54929pt too wide) in paragraph at lines 7--7
-[]\T1/lmtt/m/n/9 \logofile{logo} % name of logo-PDF in images/ (or use \logofil
-e{} for no logo)[] 
- []
-
-[25
-
-
-
-]) [26]
-
-LaTeX Warning: Empty bibliography on input line 72.
-
-
-LaTeX Warning: Empty bibliography on input line 72.
-
-
-LaTeX Warning: Empty bibliography on input line 72.
-
-[27
+) [13]
+<images/media-accepted-screenshot.pdf, id=586, 1284.8pt x 803.0pt>
+File: images/media-accepted-screenshot.pdf Graphic file (type pdf)
+
+<use images/media-accepted-screenshot.pdf>
+Package pdftex.def Info: images/media-accepted-screenshot.pdf used on input lin
+e 375.
+(pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
+
+<images/presentation-screenshot-mobile.png, id=587, 870.25125pt x 1767.60374pt>
+File: images/presentation-screenshot-mobile.png Graphic file (type png)
+<use images/presentation-screenshot-mobile.png>
+Package pdftex.def Info: images/presentation-screenshot-mobile.png used on inpu
+t line 383.
+(pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
+
+<images/speaker-presenter-screenshot-mobile.png, id=589, 870.25125pt x 1767.603
+74pt>
+File: images/speaker-presenter-screenshot-mobile.png Graphic file (type png)
+ <use images/speaker-presenter-screenshot-mobile.png>
+Package pdftex.def Info: images/speaker-presenter-screenshot-mobile.png used on
+ input line 384.
+(pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
+
+<images/voting-screenshot-mobile.png, id=590, 870.25125pt x 1767.60374pt>
+File: images/voting-screenshot-mobile.png Graphic file (type png)
+
+<use images/voting-screenshot-mobile.png>
+Package pdftex.def Info: images/voting-screenshot-mobile.png used on input line
+ 385.
+(pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
+
+<images/voting-results-screenshot-mobile.png, id=591, 870.25125pt x 1767.60374p
+t>
+File: images/voting-results-screenshot-mobile.png Graphic file (type png)
+ <use images/voting-results-screenshot-mobile.png>
+Package pdftex.def Info: images/voting-results-screenshot-mobile.png used on in
+put line 386.
+(pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
+ [14]
+Package csquotes Info: Input encoding change on input line 396.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+) [15 <./images/media-accepted-screenshot.pdf> <./images/presentation-screensho
+t-mobile.png> <./images/speaker-presenter-screenshot-mobile.png> <./images/voti
+ng-screenshot-mobile.png> <./images/voting-results-screenshot-mobile.png>]
+<images/media-screenshot-mobile.png, id=627, 870.25125pt x 1767.60374pt>
+File: images/media-screenshot-mobile.png Graphic file (type png)
+
+<use images/media-screenshot-mobile.png>
+Package pdftex.def Info: images/media-screenshot-mobile.png used on input line 
+412.
+(pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
+
+<images/media-acceptor-screenshot.pdf, id=628, 1284.8pt x 803.0pt>
+File: images/media-acceptor-screenshot.pdf Graphic file (type pdf)
+
+<use images/media-acceptor-screenshot.pdf>
+Package pdftex.def Info: images/media-acceptor-screenshot.pdf used on input lin
+e 414.
+(pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
+
+<images/media-pipeline.pdf, id=629, 793.77756pt x 453.41736pt>
+File: images/media-pipeline.pdf Graphic file (type pdf)
+
+<use images/media-pipeline.pdf>
+Package pdftex.def Info: images/media-pipeline.pdf used on input line 423.
+(pdftex.def)             Requested size: 288.0011pt x 164.51006pt.
+
+<images/voting-creation-screenshot.pdf, id=632, 1284.8pt x 803.0pt>
+File: images/voting-creation-screenshot.pdf Graphic file (type pdf)
+
+<use images/voting-creation-screenshot.pdf>
+Package pdftex.def Info: images/voting-creation-screenshot.pdf used on input li
+ne 435.
+(pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
+ [16 <./images/media-screenshot-mobile.png> <./images/media-acceptor-screenshot
+.pdf>]
+Package csquotes Info: Input encoding change on input line 441.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
+) [17 <./images/media-pipeline.pdf> <./images/voting-creation-screenshot.pdf>]
+
+LaTeX Warning: Reference `prog:implementation-interactive-voting-local-storage'
+ on page 18 undefined on input line 454.
+
+) [18]
+
+LaTeX Warning: Empty bibliography on input line 76.
+
+
+LaTeX Warning: Empty bibliography on input line 76.
+
+
+LaTeX Warning: Empty bibliography on input line 76.
+
+[19
 
 
 ]
 \openout2 = `messbox.aux'.
 
- (./messbox.tex) [28
+ (./messbox.tex) [20
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
  (./_DaBa.aux (./vorwort.aux) (./kurzfassung.aux)
-(./abstract.aux) (./implementation.aux) (./anhang_a.aux) (./anhang_b.aux)
-(./anhang_c.aux) (./anhang_d.aux) (./messbox.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
+(./abstract.aux) (./implementation.aux) (./messbox.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
 Package rerunfilecheck Info: File `_DaBa.out' has not changed.
-(rerunfilecheck)             Checksum: 1EC238FD60ED7C8DA5EAED60D2EAA6A6;4420.
+(rerunfilecheck)             Checksum: A37CD8789CA954FE3A049711EDF0C59F;2579.
 
 
 LaTeX Warning: There were undefined references.
@@ -2040,41 +1877,35 @@ Package logreq Info: Writing requests to '_DaBa.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23485 strings out of 493089
- 357586 string characters out of 6134842
- 968371 words of memory out of 5000000
- 26127 multiletter control sequences out of 15000+600000
- 114768 words of font info for 91 fonts, out of 8000000 for 9000
+ 23491 strings out of 493089
+ 359399 string characters out of 6134842
+ 960355 words of memory out of 5000000
+ 26163 multiletter control sequences out of 15000+600000
+ 111454 words of font info for 89 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 67i,12n,96p,1608b,2791s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,12n,96p,1642b,2791s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/t
-exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/
-fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
-dvips/lm/lm-ts1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
-mbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
-ic/lm/lmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/public/lm/lmss10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/lm/lmss9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lms
-y10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ./_DaBa.pdf (37 pages, 684610 bytes).
+exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/
+fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
+mbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+lm/lmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/lm/lmtt9.pfb>
+Output written on ./_DaBa.pdf (28 pages, 4027185 bytes).
 PDF statistics:
- 871 PDF objects out of 1000 (max. 8388607)
- 744 compressed objects within 8 object streams
- 233 named destinations out of 1000 (max. 500000)
- 284 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
+ 221 named destinations out of 1000 (max. 500000)
+ 254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

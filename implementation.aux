@@ -21,40 +21,58 @@
 \newlabel{prog:implementation-technologies-rxjs}{{1.3}{5}{\emph {RxJS} -- simplified example of the touch controls used to swipe to the next or previous slide. An Observable is created from the browser's \texttt {touchmove} event and is then transformed with \texttt {map} and \texttt {filter}, to in the end call the \texttt {navigate()} method with the direction the user swiped into.\relax }{program.1.3}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}React}{6}{subsection.1.2.3}}
 \newlabel{sec:implementation-technologies-react}{{1.2.3}{6}{React}{subsection.1.2.3}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}unveil.js}{7}{subsection.1.2.4}}
-\newlabel{sec:implementation-technologies-unveil}{{1.2.4}{7}{unveil.js}{subsection.1.2.4}{}}
 \@writefile{lop}{\defcounter {refsection}{0}\relax }\@writefile{lop}{\contentsline {program}{\numberline {1.4}{\ignorespaces Nested React components. In this example, a 1-slide-long presentation is created.\relax }}{8}{program.1.4}}
 \newlabel{prog:implementation-technologies-react}{{1.4}{8}{Nested React components. In this example, a 1-slide-long presentation is created.\relax }{program.1.4}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. \texttt  {KeyControls} listen for key events and process them, to then send a navigation request to go \emph  {right} to the \texttt  {Navigator}. This component then maps the direction to the next slide's indices ($1$). \texttt  {UnveilApp} then adds other information necessary for the \texttt  {Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt  {UnveilApp} receives this event and re-renders the presentation.\relax }}{9}{figure.caption.6}}
-\newlabel{fig:implementation-technologies-unveil-navigation}{{1.1}{9}{Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. \texttt {KeyControls} listen for key events and process them, to then send a navigation request to go \emph {right} to the \texttt {Navigator}. This component then maps the direction to the next slide's indices ($1$). \texttt {UnveilApp} then adds other information necessary for the \texttt {Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt {UnveilApp} receives this event and re-renders the presentation.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Screenshot of an example slide with unveil.js.\relax }}{8}{figure.caption.6}}
+\newlabel{fig:implementation-technologies-unveil-screenshots}{{1.1}{8}{Screenshot of an example slide with unveil.js.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}unveil.js}{8}{subsection.1.2.4}}
+\newlabel{sec:implementation-technologies-unveil}{{1.2.4}{8}{unveil.js}{subsection.1.2.4}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.3}Project Structure}{9}{section.1.3}}
 \newlabel{sec:implementation-structure}{{1.3}{9}{Project Structure}{section.1.3}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. \texttt  {KeyControls} listen for key events and process them, to then send a navigation request to go \emph  {right} to the \texttt  {Navigator}. This component then maps the direction to the next slide's indices ($1$). \texttt  {UnveilApp} then adds other information necessary for the \texttt  {Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt  {UnveilApp} receives this event and re-renders the presentation.\relax }}{10}{figure.caption.7}}
+\newlabel{fig:implementation-technologies-unveil-navigation}{{1.2}{10}{Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. \texttt {KeyControls} listen for key events and process them, to then send a navigation request to go \emph {right} to the \texttt {Navigator}. This component then maps the direction to the next slide's indices ($1$). \texttt {UnveilApp} then adds other information necessary for the \texttt {Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt {UnveilApp} receives this event and re-renders the presentation.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Extended unveil.js:}{10}{section.1.3}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Network Synchronisation Layer:}{10}{section.1.3}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Interactive Extension:}{10}{section.1.3}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Server and Example Presentation:}{10}{section.1.3}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.4}Extended unveil.js}{10}{section.1.4}}
-\newlabel{sec:implementation-unveil}{{1.4}{10}{Extended unveil.js}{section.1.4}{}}
-\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Overview over the render-flow of the application in the extended version of unveil.js. \texttt  {UnveilApp} renders the presenter, which then takes care of rendering the (current) slide and all controls.\relax }}{11}{figure.caption.7}}
-\newlabel{fig:implementation-unveil-render-pipeline}{{1.2}{11}{Overview over the render-flow of the application in the extended version of unveil.js. \texttt {UnveilApp} renders the presenter, which then takes care of rendering the (current) slide and all controls.\relax }{figure.caption.7}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {paragraph}{Server and Example Presentation:}{11}{section.1.3}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.4}Extended unveil.js}{11}{section.1.4}}
+\newlabel{sec:implementation-unveil}{{1.4}{11}{Extended unveil.js}{section.1.4}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Overview over the render-flow of the application in the extended version of unveil.js. \texttt  {UnveilApp} renders the presenter, which then takes care of rendering the (current) slide and all controls.\relax }}{12}{figure.caption.8}}
+\newlabel{fig:implementation-unveil-render-pipeline}{{1.3}{12}{Overview over the render-flow of the application in the extended version of unveil.js. \texttt {UnveilApp} renders the presenter, which then takes care of rendering the (current) slide and all controls.\relax }{figure.caption.8}{}}
 \@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.5}Network Synchronisation Layer}{12}{section.1.5}}
 \newlabel{sec:implementation-network-sync}{{1.5}{12}{Network Synchronisation Layer}{section.1.5}{}}
 \@writefile{lop}{\defcounter {refsection}{0}\relax }\@writefile{lop}{\contentsline {program}{\numberline {1.5}{\ignorespaces Shortened version of \texttt  {NavigationReceiver}. First the inherited context properties are set up, then an observable waiting for \texttt  {state:change} events from the socket is created. If the incoming request is not the currently displayed slide, the navigator will be pushed a new value.\relax }}{13}{program.1.5}}
 \newlabel{prog:implementation-network-sync-navigation-receiver}{{1.5}{13}{Shortened version of \texttt {NavigationReceiver}. First the inherited context properties are set up, then an observable waiting for \texttt {state:change} events from the socket is created. If the incoming request is not the currently displayed slide, the navigator will be pushed a new value.\relax }{program.1.5}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.6}Interactive Extension}{13}{section.1.6}}
-\newlabel{sec:implementation-interactive}{{1.6}{13}{Interactive Extension}{section.1.6}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.7}Server}{13}{section.1.7}}
-\newlabel{sec:implementation-server}{{1.7}{13}{Server}{section.1.7}{}}
-\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.8}Example Application}{13}{section.1.8}}
-\newlabel{sec:implementation-client}{{1.8}{13}{Example Application}{section.1.8}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.6}Interactive Extension}{14}{section.1.6}}
+\newlabel{sec:implementation-interactive}{{1.6}{14}{Interactive Extension}{section.1.6}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.1}Speaker Presenter}{14}{subsection.1.6.1}}
+\newlabel{sec:implementation-interactive-speaker-presenter}{{1.6.1}{14}{Speaker Presenter}{subsection.1.6.1}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.2}Media}{14}{subsection.1.6.2}}
+\newlabel{sec:implementation-interactive-media}{{1.6.2}{14}{Media}{subsection.1.6.2}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Screenshot of the speaker presenter with the current main slide, the upcoming slide to the right, available actions (muting and adding votings) and speaker notes.\relax }}{15}{figure.caption.9}}
+\newlabel{fig:implementation-interactive-speaker-presenter}{{1.4}{15}{Screenshot of the speaker presenter with the current main slide, the upcoming slide to the right, available actions (muting and adding votings) and speaker notes.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Mobile view of a presentation slide in (a) default mode and (b) speaker mode as well as (c) voting view before voting and (d) voting view after voting. Mind the share button in the left upper corner in (a) as well as the buttons to mute content requests and create votings in (b).\relax }}{15}{figure.caption.10}}
+\newlabel{fig:implementation-interactive-mobile}{{1.5}{15}{Mobile view of a presentation slide in (a) default mode and (b) speaker mode as well as (c) voting view before voting and (d) voting view after voting. Mind the share button in the left upper corner in (a) as well as the buttons to mute content requests and create votings in (b).\relax }{figure.caption.10}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Screenshots of sharing content. (a) media sender on mobile phone shares youtube link (b) speaker receives content request.\relax }}{16}{figure.caption.11}}
+\newlabel{fig:implementation-interactive-media}{{1.6}{16}{Screenshots of sharing content. (a) media sender on mobile phone shares youtube link (b) speaker receives content request.\relax }{figure.caption.11}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.3}Voting}{16}{subsection.1.6.3}}
+\newlabel{sec:implementation-interactive-voting}{{1.6.3}{16}{Voting}{subsection.1.6.3}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Flow of adding content, monospaced text symbolises type and name of events. First the \texttt  {MediaSender} of the default mode sends a request, which the speaker mode's \texttt  {MediaAcceptor} listens to. If the request is accepted by the speaker or requests are muted, another socket event is broadcast, which the \texttt  {MediaReceiver} waits for. This component is enabled in all modes and emits the state subject event to add a new slide, which \texttt  {UnveilApp} reacts to.\relax }}{17}{figure.caption.12}}
+\newlabel{fig:implementation-interactive-media-pipeline}{{1.7}{17}{Flow of adding content, monospaced text symbolises type and name of events. First the \texttt {MediaSender} of the default mode sends a request, which the speaker mode's \texttt {MediaAcceptor} listens to. If the request is accepted by the speaker or requests are muted, another socket event is broadcast, which the \texttt {MediaReceiver} waits for. This component is enabled in all modes and emits the state subject event to add a new slide, which \texttt {UnveilApp} reacts to.\relax }{figure.caption.12}{}}
+\@writefile{lof}{\defcounter {refsection}{0}\relax }\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Screenshot of the desktop speaker mode, creating a new voting, on-the-fly, during a presentation.\relax }}{17}{figure.caption.13}}
+\newlabel{fig:implementation-interactive-voting}{{1.8}{17}{Screenshot of the desktop speaker mode, creating a new voting, on-the-fly, during a presentation.\relax }{figure.caption.13}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.7}Server}{18}{section.1.7}}
+\newlabel{sec:implementation-server}{{1.7}{18}{Server}{section.1.7}{}}
+\@writefile{toc}{\defcounter {refsection}{0}\relax }\@writefile{toc}{\contentsline {section}{\numberline {1.8}Example Application}{18}{section.1.8}}
+\newlabel{sec:implementation-client}{{1.8}{18}{Example Application}{section.1.8}{}}
 \@setckpt{implementation}{
-\setcounter{page}{14}
+\setcounter{page}{19}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
 \setcounter{enumiv}{0}
-\setcounter{footnote}{18}
+\setcounter{footnote}{19}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{1}
@@ -63,11 +81,11 @@
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{2}
+\setcounter{figure}{8}
 \setcounter{table}{0}
 \setcounter{Item}{0}
-\setcounter{Hfootnote}{18}
-\setcounter{bookmark@seq@number}{17}
+\setcounter{Hfootnote}{19}
+\setcounter{bookmark@seq@number}{20}
 \setcounter{parentequation}{0}
 \setcounter{float@type}{32}
 \setcounter{ContinuedFloat}{0}
@@ -83,7 +101,7 @@
 \setcounter{@abgabetag}{27}
 \setcounter{@abgabemonat}{6}
 \setcounter{@abgabejahr}{2016}
-\setcounter{lstnumber}{17}
+\setcounter{lstnumber}{6}
 \setcounter{tabx@nest}{0}
 \setcounter{listtotal}{0}
 \setcounter{listcount}{0}
