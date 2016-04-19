@@ -390,7 +390,11 @@ The last group of components connected to the interactive extension covered in t
 
 \begin{figure}\centering\includegraphics[width=.65\textwidth]{voting-creation-screenshot}\caption{Screenshot of the desktop speaker mode, creating a new voting, on-the-fly, during a presentation.}\label{fig:implementation-interactive-voting}\end{figure}
 
-The main presentational component involved in the voting process is \texttt{Voting}, which keeps track of the current voting scores and has a \texttt{Question} and a number of \texttt{Answer} components as children:
+The main presentational component involved in the voting process is \texttt{Voting}, which keeps track of the current voting scores and has a \texttt{Question} and a number of \texttt{Answer} components as children (see program \ref{prog:implementation-interactive-structure}). \texttt{Voting} also remembers if an audience member has already voted and if so, displays \texttt{Result} components. In speaker and presenter mode only these results are shown.
+
+\begin{program}
+\caption{Example code for preparing a slide with voting.}
+\label{prog:implementation-interactive-structure}
 \begin{JsCode}
 <Voting name="like">
   <Question>Do you like these slides?</Question>
@@ -398,8 +402,7 @@ The main presentational component involved in the voting process is \texttt{Voti
   <Answer value="no">No</Answer>
 </Voting>
 \end{JsCode}
-%
-\texttt{Voting} also remembers if an audience member has already voted and if so, displays \texttt{Result} components. In speaker and presenter mode only these results are shown.
+\end{program}
 
 The audience can start voting as soon as the speaker navigates to the slide with the voting, until then the vote button is disabled. Once the voting has started, the possibility for all audience members to navigate to a different slide is disabled. This happens in the \texttt{VotingNavigatableSetter}, which is only installed for default mode. The voting start event, as well as the voting end event are broadcast by the \texttt{VotingController}, which checks the speaker's current slide for the occurence of a \texttt{Voting}.
 

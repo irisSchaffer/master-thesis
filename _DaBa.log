@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.31)  19 APR 2016 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.3.31)  19 APR 2016 22:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1826,16 +1826,12 @@ ne 435.
 (pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
  [16 <./images/media-screenshot-mobile.png> <./images/media-acceptor-screenshot
 .pdf>]
-Package csquotes Info: Input encoding change on input line 441.
+Package csquotes Info: Input encoding change on input line 445.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [17 <./images/media-pipeline.pdf> <./images/voting-creation-screenshot.pdf>]
-
-LaTeX Warning: Reference `prog:implementation-interactive-voting-local-storage'
- on page 18 undefined on input line 454.
-
-) [18]
+) [17 <./images/media-pipeline.pdf> <./images/voting-creation-screenshot.pdf>])
+ [18]
 
 LaTeX Warning: Empty bibliography on input line 76.
 
@@ -1877,9 +1873,9 @@ Package logreq Info: Writing requests to '_DaBa.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23491 strings out of 493089
+ 23492 strings out of 493089
  359399 string characters out of 6134842
- 960355 words of memory out of 5000000
+ 960431 words of memory out of 5000000
  26163 multiletter control sequences out of 15000+600000
  111454 words of font info for 89 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
@@ -1902,10 +1898,10 @@ al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive
 f-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
 blic/lm/lmtt9.pfb>
-Output written on ./_DaBa.pdf (28 pages, 4027185 bytes).
+Output written on ./_DaBa.pdf (28 pages, 4027371 bytes).
 PDF statistics:
- 833 PDF objects out of 1000 (max. 8388607)
- 682 compressed objects within 7 object streams
- 221 named destinations out of 1000 (max. 500000)
+ 835 PDF objects out of 1000 (max. 8388607)
+ 684 compressed objects within 7 object streams
+ 222 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
