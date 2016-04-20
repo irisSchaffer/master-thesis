@@ -10,7 +10,7 @@
             <plist version="1.0">
                 <dict>
                     <key>NSPersistenceFrameworkVersion</key>
-                    <integer>641</integer>
+                    <integer>526</integer>
                     <key>NSStoreModelVersionHashes</key>
                     <dict>
                         <key>Bookmark</key>
@@ -67,7 +67,7 @@
         <attribute name="openconsole" type="bool">0</attribute>
         <attribute name="ncompile" type="int16">3</attribute>
         <attribute name="language" type="string">en</attribute>
-        <attribute name="enginename" type="string">pdflatex</attribute>
+        <attribute name="enginename" type="string">latexmk</attribute>
         <attribute name="dops2pdf" type="bool">1</attribute>
         <attribute name="doliveupdate" type="bool">0</attribute>
         <attribute name="dobibtex" type="bool">1</attribute>
@@ -75,25 +75,25 @@
         <relationship name="project" type="1/1" destination="PROJECT" idrefs="z104"></relationship>
     </object>
     <object type="UISETTINGS" id="z103">
-        <attribute name="pdfviewscrollrect" type="string">{{0, 0}, {0, 0}}</attribute>
+        <attribute name="pdfviewscrollrect" type="string">{{0, 0}, {603.99999999995623, 1908.1932116043047}}</attribute>
         <attribute name="showpdfthumbnails" type="bool">0</attribute>
-        <attribute name="selectedcontrolstab" type="int16">0</attribute>
+        <attribute name="selectedcontrolstab" type="int16">6</attribute>
         <attribute name="maxoutlinedepth" type="int16">7</attribute>
         <attribute name="logoutputlevel" type="int16">0</attribute>
-        <attribute name="editorwidth" type="float">788</attribute>
-        <attribute name="controlswidth" type="float">230</attribute>
+        <attribute name="editorwidth" type="float">731</attribute>
+        <attribute name="controlswidth" type="float">235</attribute>
         <attribute name="consoleview" type="int16">0</attribute>
         <relationship name="project" type="1/1" destination="PROJECT" idrefs="z104"></relationship>
     </object>
     <object type="PROJECT" id="z104">
         <attribute name="type" type="string">PDFLaTeX</attribute>
         <attribute name="name" type="string">_DaBa</attribute>
-        <attribute name="folder" type="string">/Users/irisschaffer/Master Thesis/master-thesis</attribute>
+        <attribute name="folder" type="string">/Users/iris/FH/IM/Semester 4/Master Thesis/master-thesis</attribute>
         <relationship name="mainfile" type="1/1" destination="FILE" idrefs="z105"></relationship>
         <relationship name="selected" type="1/1" destination="FILE" idrefs="z132"></relationship>
         <relationship name="settings" type="1/1" destination="SETTINGS" idrefs="z102"></relationship>
         <relationship name="uisettings" type="1/1" destination="UISETTINGS" idrefs="z103"></relationship>
-        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z115 z106 z105 z133 z110 z120 z128 z121 z107 z131 z109 z118 z129 z132 z127 z125 z111 z116 z108 z123 z130 z117 z112 z119 z114 z126 z124 z122"></relationship>
+        <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z114 z126 z105 z129 z116 z120 z119 z124 z112 z122 z130 z108 z131 z110 z111 z106 z118 z133 z121 z117 z107 z128 z115 z125 z109 z132 z123 z127"></relationship>
     </object>
     <object type="TEXFILE" id="z105">
         <attribute name="visiblerect" type="string">{{0, 720}, {751, 874}}</attribute>
@@ -526,13 +526,13 @@
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="TEXFILE" id="z132">
-        <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="visiblerect" type="string">{{0, 11259}, {745, 874}}</attribute>
-        <attribute name="lasteditdate" type="date">482788963.43019098043441772461</attribute>
+        <attribute name="wasopen" type="bool">1</attribute>
+        <attribute name="visiblerect" type="string">{{0, 0}, {689, 802}}</attribute>
+        <attribute name="lasteditdate" type="date">482863624.87073898315429687500</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482788963.81027901172637939453</attribute>
+        <attribute name="fileloaddate" type="date">482863625.39866000413894653320</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{42813, 0}</attribute>
+        <attribute name="cursor" type="string">{2030, 0}</attribute>
         <attribute name="sortindex" type="int32">2</attribute>
         <attribute name="name" type="string">implementation.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
@@ -544,13 +544,13 @@
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="FILE" id="z133">
-        <attribute name="wasopen" type="bool">1</attribute>
-        <attribute name="visiblerect" type="string">{{0, 1989}, {814, 898}}</attribute>
-        <attribute name="lasteditdate" type="date">482776427.25733000040054321289</attribute>
+        <attribute name="wasopen" type="bool">0</attribute>
+        <attribute name="visiblerect" type="string">{{0, 102}, {694, 802}}</attribute>
+        <attribute name="lasteditdate" type="date">482863395.97795498371124267578</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">482776427.06347399950027465820</attribute>
+        <attribute name="fileloaddate" type="date">482863399.41033798456192016602</attribute>
         <attribute name="extension" type="string">bib</attribute>
-        <attribute name="cursor" type="string">{2990, 0}</attribute>
+        <attribute name="cursor" type="string">{241, 0}</attribute>
         <attribute name="sortindex" type="int32">1</attribute>
         <attribute name="name" type="string">literature.bib</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>

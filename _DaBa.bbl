@@ -1,0 +1,328 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{babel-users}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=53718118d84d26983528d262b37ea0be}{{Babel}}{B\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=53718118d84d26983528d262b37ea0be}{{Babel}}{B\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{53718118d84d26983528d262b37ea0be}
+      \strng{fullhash}{53718118d84d26983528d262b37ea0be}
+      \field{sortinit}{B}
+      \field{labeltitle}{See who's using Babel · Babel}
+      \field{title}{See who's using Babel · Babel}
+      \field{urlday}{11}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://babeljs.io/users/
+      \endverb
+    \endentry
+    \entry{reactive-programming-survey}{article}{}
+      \name{labelname}{5}{}{%
+        {{hash=834132b74a49e5313196e6319cac7091}{Bainomugisha}{B\bibinitperiod}{Engineer}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=06bd965582c77bfa2c79157b11a6471f}{Carreton}{C\bibinitperiod}{Andoni\bibnamedelima Lombide}{A\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=0280915fc0c634929bc1cb5d9bf1dde8}{Cutsem}{C\bibinitperiod}{Tom\bibnamedelima van}{T\bibinitperiod\bibinitdelim v\bibinitperiod}{}{}{}{}}%
+        {{hash=fc04b51f072153813b3af4cd434895ae}{Mostinckx}{M\bibinitperiod}{Stijn}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=228f7eb13504da3b54f3ce75e79e19f5}{Meuter}{M\bibinitperiod}{Wolfgang\bibnamedelima de}{W\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{5}{}{%
+        {{hash=834132b74a49e5313196e6319cac7091}{Bainomugisha}{B\bibinitperiod}{Engineer}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=06bd965582c77bfa2c79157b11a6471f}{Carreton}{C\bibinitperiod}{Andoni\bibnamedelima Lombide}{A\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=0280915fc0c634929bc1cb5d9bf1dde8}{Cutsem}{C\bibinitperiod}{Tom\bibnamedelima van}{T\bibinitperiod\bibinitdelim v\bibinitperiod}{}{}{}{}}%
+        {{hash=fc04b51f072153813b3af4cd434895ae}{Mostinckx}{M\bibinitperiod}{Stijn}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=228f7eb13504da3b54f3ce75e79e19f5}{Meuter}{M\bibinitperiod}{Wolfgang\bibnamedelima de}{W\bibinitperiod\bibinitdelim d\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{3a72b7d2f37c7e55e3b2cc756ccd737b}
+      \strng{fullhash}{cea7b024abae03e9e5f40150368bec97}
+      \field{sortinit}{B}
+      \field{labeltitle}{A Survey on Reactive Programming}
+      \field{issn}{0360-0300}
+      \field{journaltitle}{ACM Comput. Surv.}
+      \field{month}{08}
+      \field{number}{4}
+      \field{title}{A Survey on Reactive Programming}
+      \field{volume}{45}
+      \field{year}{2013}
+      \field{pages}{52:1\bibrangedash 52:34}
+      \verb{doi}
+      \verb 10.1145/2501654.2501666
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2501654.2501666
+      \endverb
+      \keyw{Reactive programming,dataflow programming,event-driven applications,functional reactive programming,interactive applications,reactive systems}
+    \endentry
+    \entry{socketio-problems}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=76a020a4d5bd367ec74f870627e6aa42}{Britton}{B\bibinitperiod}{Rob}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=76a020a4d5bd367ec74f870627e6aa42}{Britton}{B\bibinitperiod}{Rob}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{76a020a4d5bd367ec74f870627e6aa42}
+      \strng{fullhash}{76a020a4d5bd367ec74f870627e6aa42}
+      \field{sortinit}{B}
+      \field{labeltitle}{Why We Ditched Socket.IO}
+      \field{day}{10}
+      \field{month}{12}
+      \field{title}{Why We Ditched Socket.IO}
+      \field{urlday}{11}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \field{year}{2013}
+      \verb{url}
+      \verb https://www.robbritton.com/2013/12/10/why-we-ditched-socket-io
+      \endverb
+    \endentry
+    \entry{ecma2015}{manual}{}
+      \name{labelname}{1}{}{%
+        {{hash=4e7475e10bba8a46cff7b6f0d4ce2193}{{Ecma\bibnamedelimb International}}{E\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=4e7475e10bba8a46cff7b6f0d4ce2193}{{Ecma\bibnamedelimb International}}{E\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{4e7475e10bba8a46cff7b6f0d4ce2193}
+      \strng{fullhash}{4e7475e10bba8a46cff7b6f0d4ce2193}
+      \field{sortinit}{E}
+      \field{labeltitle}{ECMAScript 2015 Language Specification}
+      \field{edition}{6}
+      \field{month}{6}
+      \field{title}{ECMAScript 2015 Language Specification}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.ecma-international.org/ecma-262/6.0/
+      \endverb
+    \endentry
+    \entry{react-docu}{manual}{}
+      \name{labelname}{1}{}{%
+        {{hash=2b0e03c50a28e1305252856af7d16516}{{Facebook\bibnamedelimb Inc.}}{F\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=2b0e03c50a28e1305252856af7d16516}{{Facebook\bibnamedelimb Inc.}}{F\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{2b0e03c50a28e1305252856af7d16516}
+      \strng{fullhash}{2b0e03c50a28e1305252856af7d16516}
+      \field{sortinit}{F}
+      \field{note}{Official React Documentation}
+      \field{urlday}{13}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb http://facebook.github.io/react/docs
+      \endverb
+    \endentry
+    \entry{introduction-to-react}{book}{}
+      \name{labelname}{1}{}{%
+        {{hash=2848f04a7847a6fe08b0163d47b0603b}{Gackenheimer}{G\bibinitperiod}{Cory}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=2848f04a7847a6fe08b0163d47b0603b}{Gackenheimer}{G\bibinitperiod}{Cory}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Apress}%
+      }
+      \strng{namehash}{2848f04a7847a6fe08b0163d47b0603b}
+      \strng{fullhash}{2848f04a7847a6fe08b0163d47b0603b}
+      \field{sortinit}{G}
+      \field{labeltitle}{Introduction to React}
+      \field{isbn}{9781484212455}
+      \field{title}{Introduction to React}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://books.google.se/books?id=NZCKCgAAQBAJ
+      \endverb
+    \endentry
+    \entry{reactive-vs-promises}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{hash=5ab538d74ffc57b78b9e37f1aa27b703}{Kambona}{K\bibinitperiod}{Kennedy}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=f5986f6bf36e1233ce081923bd9cbc29}{Boix}{B\bibinitperiod}{Elisa\bibnamedelima Gonzalez}{E\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+        {{hash=8aec08ed0a99ee2f0084cea5c1bbc96f}{De\bibnamedelima Meuter}{D\bibinitperiod\bibinitdelim M\bibinitperiod}{Wolfgang}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=5ab538d74ffc57b78b9e37f1aa27b703}{Kambona}{K\bibinitperiod}{Kennedy}{K\bibinitperiod}{}{}{}{}}%
+        {{hash=f5986f6bf36e1233ce081923bd9cbc29}{Boix}{B\bibinitperiod}{Elisa\bibnamedelima Gonzalez}{E\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
+        {{hash=8aec08ed0a99ee2f0084cea5c1bbc96f}{De\bibnamedelima Meuter}{D\bibinitperiod\bibinitdelim M\bibinitperiod}{Wolfgang}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Montpellier, France}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{d91f25a7bb93722fbf467ac29d6ad78f}
+      \strng{fullhash}{d91f25a7bb93722fbf467ac29d6ad78f}
+      \field{sortinit}{K}
+      \field{labeltitle}{An Evaluation of Reactive Programming and Promises for Structuring Collaborative Web Applications}
+      \field{booktitle}{Proceedings of the 7th Workshop on Dynamic Languages and Applications}
+      \field{isbn}{978-1-4503-2041-2}
+      \field{series}{DYLA '13}
+      \field{title}{An Evaluation of Reactive Programming and Promises for Structuring Collaborative Web Applications}
+      \field{year}{2013}
+      \field{pages}{3:1\bibrangedash 3:9}
+      \verb{doi}
+      \verb 10.1145/2489798.2489802
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2489798.2489802
+      \endverb
+      \keyw{Javascript,behaviours,callbacks,event streams,futures,promises,reactive programming}
+    \endentry
+    \entry{es6}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=01153c92af9ba5ed20d3c73af8084deb}{Kappert}{K\bibinitperiod}{Lars}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=01153c92af9ba5ed20d3c73af8084deb}{Kappert}{K\bibinitperiod}{Lars}{L\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{01153c92af9ba5ed20d3c73af8084deb}
+      \strng{fullhash}{01153c92af9ba5ed20d3c73af8084deb}
+      \field{sortinit}{K}
+      \field{labeltitle}{ECMAScript 6 (ES6): What's New In The Next Version Of JavaScript}
+      \field{day}{28}
+      \field{month}{10}
+      \field{title}{ECMAScript 6 (ES6): What's New In The Next Version Of JavaScript}
+      \field{urlday}{08}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://www.smashingmagazine.com/2015/10/es6-whats-new-next-version-javascript/
+      \endverb
+    \endentry
+    \entry{gpm-meta-transcompiler}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{hash=21f4cbc19a2032e4cdb4502c39fc8745}{Kyriakou}{K\bibinitperiod}{Kyriakos-Ioannis\bibnamedelima D.}{K\bibinithyphendelim I\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=d3e7a630c235b8bc585151742383f087}{Chaniotis}{C\bibinitperiod}{Ioannis\bibnamedelima K.}{I\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{hash=956521b1afc76d8a9cc2133ff9ca8bb7}{Tselikas}{T\bibinitperiod}{Nikolaos\bibnamedelima D.}{N\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=21f4cbc19a2032e4cdb4502c39fc8745}{Kyriakou}{K\bibinitperiod}{Kyriakos-Ioannis\bibnamedelima D.}{K\bibinithyphendelim I\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=d3e7a630c235b8bc585151742383f087}{Chaniotis}{C\bibinitperiod}{Ioannis\bibnamedelima K.}{I\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+        {{hash=956521b1afc76d8a9cc2133ff9ca8bb7}{Tselikas}{T\bibinitperiod}{Nikolaos\bibnamedelima D.}{N\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{1106c53b1c4019c7f40ee5517c7da367}
+      \strng{fullhash}{1106c53b1c4019c7f40ee5517c7da367}
+      \field{sortinit}{K}
+      \field{labeltitle}{The GPM meta-transcompiler: Harmonizing JavaScript-oriented Web development with the upcoming ECMAScript 6 #x201C;Harmony #x201D; specification}
+      \field{booktitle}{2015 12th Annual IEEE Consumer Communications and Networking Conference (CCNC)}
+      \field{issn}{2331-9852}
+      \field{month}{01}
+      \field{title}{The GPM meta-transcompiler: Harmonizing JavaScript-oriented Web development with the upcoming ECMAScript 6 #x201C;Harmony #x201D; specification}
+      \field{year}{2015}
+      \field{pages}{176\bibrangedash 181}
+      \verb{doi}
+      \verb 10.1109/CCNC.2015.7157973
+      \endverb
+      \keyw{Java;authoring languages;grammars;program compilers;specification languages;ECMAScript 6 harmony specification;GPM metatranscompiler;JavaScript-oriented Web development;feedback loop;grammar packaged module;work-in-progress specification;Browsers;Complexity theory;Computer languages;Documentation;Libraries;Standards;Syntactics;ECMAScript;JavaScript;compile-to-Javascript languages;transpilers}
+    \endentry
+    \entry{react-benchmarks}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=856b3d6b718c627e531ae72088dcf109}{Peyrott}{P\bibinitperiod}{Sebastián}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=856b3d6b718c627e531ae72088dcf109}{Peyrott}{P\bibinitperiod}{Sebastián}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{856b3d6b718c627e531ae72088dcf109}
+      \strng{fullhash}{856b3d6b718c627e531ae72088dcf109}
+      \field{sortinit}{P}
+      \field{labeltitle}{More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Mithril.js vs cito.js vs The Rest}
+      \field{day}{12}
+      \field{month}{1}
+      \field{title}{More Benchmarks: Virtual DOM vs Angular 1 & 2 vs Mithril.js vs cito.js vs The Rest}
+      \field{urlday}{11}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb https://auth0.com/blog/2016/01/11/updated-and-improved-more-benchmarks-virtual-dom-vs-angular-12-vs-mithril-js-vs-the-rest
+      \endverb
+    \endentry
+    \entry{rxjs-docu}{manual}{}
+      \name{labelname}{1}{}{%
+        {{hash=cc229767f12338f8e71290551ae4dee5}{{ReactiveX}}{R\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=cc229767f12338f8e71290551ae4dee5}{{ReactiveX}}{R\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{cc229767f12338f8e71290551ae4dee5}
+      \strng{fullhash}{cc229767f12338f8e71290551ae4dee5}
+      \field{sortinit}{R}
+      \field{note}{RxJS Documentation on Github}
+      \field{urlday}{12}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://github.com/Reactive-Extensions/RxJS
+      \endverb
+    \endentry
+    \entry{stackoverflow-developer-survey}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=fcb3cd0c1efd8afe09d0505e46cefa4c}{{Stack\bibnamedelimb Overflow}}{S\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=fcb3cd0c1efd8afe09d0505e46cefa4c}{{Stack\bibnamedelimb Overflow}}{S\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{fcb3cd0c1efd8afe09d0505e46cefa4c}
+      \strng{fullhash}{fcb3cd0c1efd8afe09d0505e46cefa4c}
+      \field{sortinit}{S}
+      \field{labeltitle}{2015 Developer Survey}
+      \field{title}{2015 Developer Survey}
+      \field{urlday}{11}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://stackoverflow.com/research/developer-survey-2015
+      \endverb
+    \endentry
+    \entry{socket-io-wildcards}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=e0875bffa26b79fb8109f53547381ddf}{Verheij}{V\bibinitperiod}{René}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=e0875bffa26b79fb8109f53547381ddf}{Verheij}{V\bibinitperiod}{René}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e0875bffa26b79fb8109f53547381ddf}
+      \strng{fullhash}{e0875bffa26b79fb8109f53547381ddf}
+      \field{sortinit}{V}
+      \field{day}{27}
+      \field{month}{11}
+      \field{urlday}{20}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://stackoverflow.com/a/33960032/3340229
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

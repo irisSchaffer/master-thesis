@@ -8,7 +8,7 @@
 \label{sec:implementation-scope}
 % What's the general scope of the project? Why is everything on the client and 
 % not the server? etc.
-As the aim of the present work is to explore ways of incorporating mobile devices into presentation workflows, the goal of the project was to use an easily extensible presentation library to then build the mechanisms discussed in the previous chapter \ref{cha:mechanisms}.
+As the aim of the present work is to explore ways of incorporating mobile devices into presentation workflows, the goal of the project was to use an easily extensible presentation library to then build the mechanisms discussed in the previous chapter.
 As the focus was placed on the interaction possibilities between speaker and audience, the creation of the presentation for the speaker or the management of slides and presentations were out of the project scope. Therefore the server used for connecting different users to the presentation was kept as simple as possible, allowing any potential other developer to work with their own servers and technology stacks.
 
 In total, a system with several ways of interacting with the presentation from mobile or desktop devices was created, putting emphasise on mobile-optimised views and navigation possibilities. This system includes synchronisation of navigation state and state changes between viewers and speaker, the possibility to add sub-slides during the presentation for the audience, a speaker-view showing the next slides and controls, real-time voting (both created on-the-fly and prepared beforehands) and the possibility to create different paths through the presentation. In the following the technologies used in the project will be analysed and described to then go into details on the implementation, problems and solutions of the mentioned components.
@@ -221,8 +221,8 @@ As a presentation layer, this project uses the open-source JavaScript library \t
 %\end{tabular}%\caption{Screenshots from desktop (a) and mobile (b) view of unveil.js.}%\label{fig:implementation-technologies-unveil-screenshots}%\end{figure}
 
 \begin{figure}\centering
-\FramePic{\includegraphics[width=0.8\textwidth]{unveil-screenshot}}
-\caption{Screenshot of an example slide with unveil.js.}\label{fig:implementation-technologies-unveil-screenshots}\end{figure}
+\includegraphics[width=0.65\textwidth]{presentation-screenshot}
+\caption{Screenshot of an example slide with unveil.js, using interactive extensions discussed in section \ref{sec:implementation-interactive}.}\label{fig:implementation-technologies-unveil-screenshots}\end{figure}
 
 Generally, unveil.js operates on a $2$-dimensional slide-space: Every slide can have a next and previous slide in $x$, as well as in $y$-direction. To generate the $y$ axis, slides can be nested in other slides. These slides have an optional unique name as well as an index in the slide-tree, which they are identified by. As shown in program \ref{prog:implementation-technologies-react}, slides are created inside the component \texttt{UnveilApp}, the core of unveil.js. This component configures and sets up the entire application based on optional configuration passed in as properties.
 There are a few concepts unveil.js is built around to allow for extensibility and configurability, namely \emph{presenters}, \emph{controls} and \emph{modes}:
@@ -412,9 +412,95 @@ Because the results of the voting should be available throughout the whole prese
 \section{Server}
 \label{sec:implementation-server}
 % shortly talk about server and how any server could really be used for this.
+As shortly outlined before, the focus of this project was never the server, but instead the client. For this reason the server was kept as lightweight and dumb as possible, only handling the most important communication. In reality, it acts as a proxy and broadcaster between the clients and serves the JavaScript and HTML files.
+
+The server developed for the project presentation of the Interactive Media course IM690 runs on Node.js, using Express\footnote{\url{http://expressjs.com/}} as a framework. To emphasise how low the requirements for such a server are, a working example implementation can be found in program \ref{prog:implementation-server-code}. Additionally to this code, the server in the unveil-client-server repository also includes a \texttt{lastState} variable, in which the last navigation state is stored. Every time a new client connects, this state is then emitted with a \texttt{state:initial} event. Moreover, socket.io does not currently support wildcards in events, which is why it was necessary to add the code snippet discussed in \cite{socket-io-wildcards}.
+
+\begin{program}
+\caption{Very simple possible implementation of a server running the thesis project with Node.js and Express. \cite{socket-io-wildcards} describes how wildcard support can be added to socket.io.}
+\label{prog:implementation-server-code}
+\begin{JsCode}
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+// directory 'client' will be served by server
+app.use(express.static(__dirname + '/../client/'));
+
+// setting up of socket io
+io.on('connection', function(socket) {
+  socket.on('*', function(event, data) {
+    io.emit(event, data);
+  });
+});
+
+server.listen(9000, function () {
+  console.log('Unveil server listening on port 9000!');
+});
+\end{JsCode}
+\end{program}
 
 \section{Example Application}
 \label{sec:implementation-client}
 % how is everything defined? what has to be included?
 % what are the steps of building an application with unveil?
 % how are the slides defined? how are they styled? what about the modes?
+
+To conclude this chapter, I want to show how all the discussed libraries in the end can be put together to a presentation. The whole presentation can be found in the unveil-client-server repository.
+
+The first step to use unveil.js and its extensions is to start a new project, require the necessary npm packages and set up an \texttt{index.html} page which includes the necessary stylesheets and scripts.
+The entry point for these scripts is the file \texttt{index.js}, in which the whole presentation is set up and unveil.js is configured by setting up its modes (see program \ref{prog:implementation-client-modes}). As explained before, slides are defined in HTML using the components unveil.js and its extensions provide. An example of this is shown in program \ref{prog:implementation-client-presentation}.
+
+\begin{program}
+\caption{Mode definition for setting up an unveil.js presentation. Speaker and projector modes are omitted to keep the example short but follow the same pattern as the default mode.}
+\label{prog:implementation-client-modes}
+\begin{JsCode}
+const modes = {
+  default: {
+    controls : [
+      KeyControls, TouchControls, UIControls,
+      NavigationReceiver,
+      MediaSender, MediaReceiver,
+      VotingNavigatableSetter, VotingReceiver
+    ],
+    presenter: Presenter
+  },
+  speaker: {...},
+  projector: {...}
+};
+\end{JsCode}
+\end{program}
+
+\begin{program}
+\caption{Creation of presentation using modes from program \ref{prog:implementation-client-modes}. Sets up two slides as an example. The DOM will be attached to the element of id \texttt{unveil} in the base HTML document.}
+\label{prog:implementation-client-presentation}
+\begin{JsCode}
+ReactDOM.render((
+  <UnveilApp modes={modes}>
+    <Slide name="start">
+      <h1>Unveil</h1>
+      <h2>a meta presentation</h2>
+    </Slide>
+    <Slide name="problem">
+      <img src="./img/problem.png" />
+      <Notes>someone always wanted to show something from their device</Notes>
+    </Slide>
+    ...
+  </UnveilApp>
+), document.getElementById('unveil'));
+\end{JsCode}
+\end{program}
+
+The styling of the presentation is handled by CSS. The \texttt{Slide} component automatically adds the name of a slide as its id, allowing to efficiently style slide by slide, as well as applying styles for all slides at once using the \texttt{.slide} class. Program \ref{prog:implementation-client-styles} shows an example of how to style slides.
+
+\begin{program}
+\caption{Example styling for slides using SASS. In this particular piece of code, the font family of all slides is set and a background image is added to the start slide.}
+\label{prog:implementation-client-styles}
+\begin{CssCode}
+  .slide
+    font-family: 'Open Sans'
+  #start
+    background-image: url('../img/explore.jpg')
+\end{CssCode}
+\end{program}
