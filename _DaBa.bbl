@@ -101,6 +101,61 @@
       \verb https://www.robbritton.com/2013/12/10/why-we-ditched-socket-io
       \endverb
     \endentry
+    \entry{Bry:Backstage}{article}{}
+      \name{labelname}{3}{}{%
+        {{hash=662d9131115612bfce590b430e9006d8}{Bry}{B\bibinitperiod}{François}{F\bibinitperiod}{}{}{}{}}%
+        {{hash=b54c88ae4973b1e49f12d5eea57c9d43}{Gehlen-Baum}{G\bibinithyphendelim B\bibinitperiod}{Vera}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=d5b50d05c07fb3fe0508a58b807b88f3}{Pohl}{P\bibinitperiod}{Alexander}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=662d9131115612bfce590b430e9006d8}{Bry}{B\bibinitperiod}{François}{F\bibinitperiod}{}{}{}{}}%
+        {{hash=b54c88ae4973b1e49f12d5eea57c9d43}{Gehlen-Baum}{G\bibinithyphendelim B\bibinitperiod}{Vera}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=d5b50d05c07fb3fe0508a58b807b88f3}{Pohl}{P\bibinitperiod}{Alexander}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{960b40a849a74789299f2728e1ee1101}
+      \strng{fullhash}{960b40a849a74789299f2728e1ee1101}
+      \field{sortinit}{B}
+      \field{labeltitle}{Promoting awareness and participation in large class lectures: The digital backchannel backstage}
+      \field{journaltitle}{Proceedings of the IADIS International Conference e-Society 2011}
+      \field{title}{Promoting awareness and participation in large class lectures: The digital backchannel backstage}
+      \field{year}{2011}
+      \field{pages}{27\bibrangedash 34}
+    \endentry
+    \entry{Cheng:TreebasedOnlinePresentations}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{hash=125719c7ec2882c21a5c2057288d8668}{Cheng}{C\bibinitperiod}{Yufeng}{Y\bibinitperiod}{}{}{}{}}%
+        {{hash=be37e122491f1cc21ba19bf577da672c}{Sun}{S\bibinitperiod}{Jiayu}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=9850c01d6d2b3c8b621d3a122f40296e}{Hu}{H\bibinitperiod}{Junfeng}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{hash=125719c7ec2882c21a5c2057288d8668}{Cheng}{C\bibinitperiod}{Yufeng}{Y\bibinitperiod}{}{}{}{}}%
+        {{hash=be37e122491f1cc21ba19bf577da672c}{Sun}{S\bibinitperiod}{Jiayu}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=9850c01d6d2b3c8b621d3a122f40296e}{Hu}{H\bibinitperiod}{Junfeng}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Vilnius, Lithuania}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{260c1a3516204e5438df27e2d4cfb475}
+      \strng{fullhash}{260c1a3516204e5438df27e2d4cfb475}
+      \field{sortinit}{C}
+      \field{labeltitle}{TOPT: A Tree-based Online Presentation Tool}
+      \field{booktitle}{Proceedings of the 2015 ACM Conference on Innovation and Technology in Computer Science Education}
+      \field{isbn}{978-1-4503-3440-2}
+      \field{series}{ITiCSE '15}
+      \field{title}{TOPT: A Tree-based Online Presentation Tool}
+      \field{year}{2015}
+      \field{pages}{342\bibrangedash 342}
+      \verb{doi}
+      \verb 10.1145/2729094.2754851
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2729094.2754851
+      \endverb
+      \keyw{collaboration,html,online presentation,tree structure}
+    \endentry
     \entry{ecma2015}{manual}{}
       \name{labelname}{1}{}{%
         {{hash=4e7475e10bba8a46cff7b6f0d4ce2193}{{Ecma\bibnamedelimb International}}{E\bibinitperiod}{}{}{}{}{}{}}%
@@ -119,6 +174,37 @@
       \verb{url}
       \verb http://www.ecma-international.org/ecma-262/6.0/
       \endverb
+    \endentry
+    \entry{Esponda:ElectronicVotingOnTheFly}{inproceedings}{}
+      \name{labelname}{1}{}{%
+        {{hash=9a84f935d9b4e86b1c72b8c013b6637e}{Esponda}{E\bibinitperiod}{Margarita}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=9a84f935d9b4e86b1c72b8c013b6637e}{Esponda}{E\bibinitperiod}{Margarita}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Madrid, Spain}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{9a84f935d9b4e86b1c72b8c013b6637e}
+      \strng{fullhash}{9a84f935d9b4e86b1c72b8c013b6637e}
+      \field{sortinit}{E}
+      \field{labeltitle}{Electronic Voting On-the-fly with Mobile Devices}
+      \field{booktitle}{Proceedings of the 13th Annual Conference on Innovation and Technology in Computer Science Education}
+      \field{isbn}{978-1-60558-078-4}
+      \field{series}{ITiCSE '08}
+      \field{title}{Electronic Voting On-the-fly with Mobile Devices}
+      \field{year}{2008}
+      \field{pages}{93\bibrangedash 97}
+      \verb{doi}
+      \verb 10.1145/1384271.1384298
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1384271.1384298
+      \endverb
+      \keyw{classroom response systems,clickers,e-learning,mobile computing}
     \endentry
     \entry{react-docu}{manual}{}
       \name{labelname}{1}{}{%
@@ -158,6 +244,33 @@
       \verb{url}
       \verb https://books.google.se/books?id=NZCKCgAAQBAJ
       \endverb
+    \endentry
+    \entry{Inoue:RealTimeQuestionnaire}{inproceedings}{}
+      \name{labelname}{4}{}{%
+        {{hash=b4727aa5cb5e222a02ed6b1cf4c69603}{Inoue}{I\bibinitperiod}{Ryota}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=5fa797b8bec79aa6b8caed41d536b8f6}{Shiramatsu}{S\bibinitperiod}{Shun}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=5ec95e53f8feaff83d7ec7fd6e338f72}{Ozono}{O\bibinitperiod}{Tadachika}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=a0dcec3fa83005393d4931c4dcb12b7c}{Shintani}{S\bibinitperiod}{Toramatsu}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=b4727aa5cb5e222a02ed6b1cf4c69603}{Inoue}{I\bibinitperiod}{Ryota}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=5fa797b8bec79aa6b8caed41d536b8f6}{Shiramatsu}{S\bibinitperiod}{Shun}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=5ec95e53f8feaff83d7ec7fd6e338f72}{Ozono}{O\bibinitperiod}{Tadachika}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=a0dcec3fa83005393d4931c4dcb12b7c}{Shintani}{S\bibinitperiod}{Toramatsu}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{722b9c2c050aead17e12dc0e2334634f}
+      \strng{fullhash}{c73862f8cbd11599ea9de36c2b12debf}
+      \field{sortinit}{I}
+      \field{labeltitle}{Visualizing Real-Time Questionnaire Results to Promote Participation in Interactive Presentations}
+      \field{booktitle}{Advanced Applied Informatics (IIAIAAI), 2014 IIAI 3rd International Conference on}
+      \field{month}{08}
+      \field{title}{Visualizing Real-Time Questionnaire Results to Promote Participation in Interactive Presentations}
+      \field{year}{2014}
+      \field{pages}{64\bibrangedash 69}
+      \verb{doi}
+      \verb 10.1109/IIAI-AAI.2014.24
+      \endverb
+      \keyw{computer aided instruction;data visualisation;interactive systems;Web application;annotations;audiences feedback;bidirectional communication;hybrid interactive presentation system;lecturers;presentation expressions;presentation slides;questions answering;real-time feedback;real-time questionnaire results visualization;system performance evaluation;Browsers;Delays;Education;Real-time systems;Servers;Software;Synchronization}
     \endentry
     \entry{reactive-vs-promises}{inproceedings}{}
       \name{labelname}{3}{}{%
@@ -301,6 +414,77 @@
       \verb{url}
       \verb http://stackoverflow.com/research/developer-survey-2015
       \endverb
+    \endentry
+    \entry{Teevan:MobileFeedbackDuringPresentation}{inproceedings}{}
+      \name{labelname}{6}{}{%
+        {{hash=1bbfc6d3550769a86de1bfe6a3fe890d}{Teevan}{T\bibinitperiod}{Jaime}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=05971e3ebd484bd3ee5a34bf4923d1c8}{Liebling}{L\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=ea891aadbb0409c2271f29d573d01c2e}{Paradiso}{P\bibinitperiod}{Ann}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=2bbad352a0218839ed8bcf74fdc77fd3}{Garcia\bibnamedelimb Jurado\bibnamedelima Suarez}{G\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim S\bibinitperiod}{Carlos}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=2f4c53ef378a61da9d536c873e5816f3}{Veh}{V\bibinitperiod}{Curtis}{C\bibinitperiod}{von}{v\bibinitperiod}{}{}}%
+        {{hash=5e435680d430cfb1b373291b0a44aa4b}{Gehring}{G\bibinitperiod}{Darren}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{6}{}{%
+        {{hash=1bbfc6d3550769a86de1bfe6a3fe890d}{Teevan}{T\bibinitperiod}{Jaime}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=05971e3ebd484bd3ee5a34bf4923d1c8}{Liebling}{L\bibinitperiod}{Daniel}{D\bibinitperiod}{}{}{}{}}%
+        {{hash=ea891aadbb0409c2271f29d573d01c2e}{Paradiso}{P\bibinitperiod}{Ann}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=2bbad352a0218839ed8bcf74fdc77fd3}{Garcia\bibnamedelimb Jurado\bibnamedelima Suarez}{G\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim S\bibinitperiod}{Carlos}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=2f4c53ef378a61da9d536c873e5816f3}{Veh}{V\bibinitperiod}{Curtis}{C\bibinitperiod}{von}{v\bibinitperiod}{}{}}%
+        {{hash=5e435680d430cfb1b373291b0a44aa4b}{Gehring}{G\bibinitperiod}{Darren}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {San Francisco, California, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{886094f2f103a7ccbf95bad73803ed37}
+      \strng{fullhash}{fb7af5902ea30f606396f6b9da2cef40}
+      \field{sortinit}{T}
+      \field{labeltitle}{Displaying Mobile Feedback During a Presentation}
+      \field{booktitle}{Proceedings of the 14th International Conference on Human-computer Interaction with Mobile Devices and Services}
+      \field{isbn}{978-1-4503-1105-2}
+      \field{series}{MobileHCI '12}
+      \field{title}{Displaying Mobile Feedback During a Presentation}
+      \field{year}{2012}
+      \field{pages}{379\bibrangedash 382}
+      \verb{doi}
+      \verb 10.1145/2371574.2371633
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2371574.2371633
+      \endverb
+      \keyw{feedback,meetings,mobile,presentations}
+    \endentry
+    \entry{Triglianos:InteractiveWebPresentationsImpress}{inproceedings}{}
+      \name{labelname}{2}{}{%
+        {{hash=21c0c4e066ade2c719bfec51669d7ba0}{Triglianos}{T\bibinitperiod}{Vasileios}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=72f4c42f181b1843dc1b20d49f768775}{Pautasso}{P\bibinitperiod}{Cesare}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{hash=21c0c4e066ade2c719bfec51669d7ba0}{Triglianos}{T\bibinitperiod}{Vasileios}{V\bibinitperiod}{}{}{}{}}%
+        {{hash=72f4c42f181b1843dc1b20d49f768775}{Pautasso}{P\bibinitperiod}{Cesare}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Rio de Janeiro, Brazil}%
+      }
+      \list{publisher}{1}{%
+        {International World Wide Web Conferences Steering Committee}%
+      }
+      \strng{namehash}{0d7f757b97449b9a606b47fcefa71653}
+      \strng{fullhash}{0d7f757b97449b9a606b47fcefa71653}
+      \field{sortinit}{T}
+      \field{labeltitle}{ASQ: Interactive Web Presentations for Hybrid MOOCs}
+      \field{booktitle}{Proceedings of the 22Nd International Conference on World Wide Web}
+      \field{isbn}{978-1-4503-2038-2}
+      \field{series}{WWW '13 Companion}
+      \field{title}{ASQ: Interactive Web Presentations for Hybrid MOOCs}
+      \field{year}{2013}
+      \field{pages}{209\bibrangedash 210}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=2487788.2487894
+      \endverb
+      \keyw{html5,hybrid teaching,impress.js,software clicker}
     \endentry
     \entry{socket-io-wildcards}{online}{}
       \name{labelname}{1}{}{%
