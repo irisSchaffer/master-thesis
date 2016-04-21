@@ -413,8 +413,6 @@ INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
-INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
-INPUT /usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 INPUT images/presentation-screenshot.png
 INPUT ./images/presentation-screenshot.png
 INPUT ./images/presentation-screenshot.png

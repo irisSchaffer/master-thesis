@@ -19,6 +19,15 @@
 
 \refsection{0}
   \sortlist{entry}{nty}
+    \entry{npm-babel}{online}{}
+      \field{sortinit}{0}
+      \field{urlday}{21}
+      \field{urlmonth}{04}
+      \field{urlyear}{2016}
+      \verb{url}
+      \verb https://www.npmjs.com/package/babel
+      \endverb
+    \endentry
     \entry{babel-users}{online}{}
       \name{labelname}{1}{}{%
         {{hash=53718118d84d26983528d262b37ea0be}{{Babel}}{B\bibinitperiod}{}{}{}{}{}{}}%

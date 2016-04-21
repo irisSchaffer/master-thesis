@@ -24,31 +24,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.3}React}{6}{subsection.1.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.4}unveil.js}{9}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.4}unveil.js}{8}{subsection.1.2.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Project Structure}{10}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extended unveil.js:}{10}{section.1.3}
+\contentsline {paragraph}{Extended unveil.js:}{11}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Network Synchronisation Layer:}{10}{section.1.3}
+\contentsline {paragraph}{Network Synchronisation Layer:}{11}{section.1.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Interactive Extension:}{11}{section.1.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Server and Example Presentation:}{11}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Extended unveil.js}{12}{section.1.4}
+\contentsline {section}{\numberline {1.4}Extended unveil.js}{11}{section.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.5}Network Synchronisation Layer}{13}{section.1.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.6}Interactive Extension}{14}{section.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.6.1}Speaker Presenter}{15}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.1}Speaker Presenter}{14}{subsection.1.6.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.6.2}Media}{15}{subsection.1.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.6.3}Voting}{18}{subsection.1.6.3}
+\contentsline {subsection}{\numberline {1.6.3}Voting}{16}{subsection.1.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.7}Server}{19}{section.1.7}
+\contentsline {section}{\numberline {1.7}Server}{18}{section.1.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.8}Example Application}{19}{section.1.8}
 \defcounter {refsection}{0}\relax 

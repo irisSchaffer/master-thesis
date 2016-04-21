@@ -1979,22 +1979,23 @@
     <bcf:citekey order="7">ecma2015</bcf:citekey>
     <bcf:citekey order="8">es6</bcf:citekey>
     <bcf:citekey order="9">es6</bcf:citekey>
-    <bcf:citekey order="10">babel-users</bcf:citekey>
-    <bcf:citekey order="11">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="10">npm-babel</bcf:citekey>
+    <bcf:citekey order="11">babel-users</bcf:citekey>
     <bcf:citekey order="12">reactive-programming-survey</bcf:citekey>
-    <bcf:citekey order="13">reactive-vs-promises</bcf:citekey>
+    <bcf:citekey order="13">reactive-programming-survey</bcf:citekey>
     <bcf:citekey order="14">reactive-vs-promises</bcf:citekey>
-    <bcf:citekey order="15">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="15">reactive-vs-promises</bcf:citekey>
     <bcf:citekey order="16">reactive-programming-survey</bcf:citekey>
-    <bcf:citekey order="17">rxjs-docu</bcf:citekey>
-    <bcf:citekey order="18">react-benchmarks</bcf:citekey>
-    <bcf:citekey order="19">introduction-to-react</bcf:citekey>
-    <bcf:citekey order="20">react-benchmarks</bcf:citekey>
-    <bcf:citekey order="21">react-docu</bcf:citekey>
-    <bcf:citekey order="22">socketio-problems</bcf:citekey>
-    <bcf:citekey order="23">socket-io-wildcards</bcf:citekey>
+    <bcf:citekey order="17">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="18">rxjs-docu</bcf:citekey>
+    <bcf:citekey order="19">react-benchmarks</bcf:citekey>
+    <bcf:citekey order="20">introduction-to-react</bcf:citekey>
+    <bcf:citekey order="21">react-benchmarks</bcf:citekey>
+    <bcf:citekey order="22">react-docu</bcf:citekey>
+    <bcf:citekey order="23">socketio-problems</bcf:citekey>
     <bcf:citekey order="24">socket-io-wildcards</bcf:citekey>
     <bcf:citekey order="25">socket-io-wildcards</bcf:citekey>
+    <bcf:citekey order="26">socket-io-wildcards</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="nty">
   <bcf:sorting>

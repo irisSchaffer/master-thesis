@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.18)  20 APR 2016 20:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.18)  21 APR 2016 10:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1373,7 +1373,7 @@ Package biblatex Info: ... file '_DaBa.bbl' found.
 ! Illegal parameter number in definition of \NewValue.
 <to be read again> 
                    x
-l.346 ...t 6 #x201C;Harmony #x201D; specification}
+l.355 ...t 6 #x201C;Harmony #x201D; specification}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1382,7 +1382,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \NewValue.
 <to be read again> 
                    x
-l.346 ...t 6 #x201C;Harmony #x201D; specification}
+l.355 ...t 6 #x201C;Harmony #x201D; specification}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1391,7 +1391,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \NewValue.
 <to be read again> 
                    x
-l.350 ...t 6 #x201C;Harmony #x201D; specification}
+l.359 ...t 6 #x201C;Harmony #x201D; specification}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1400,7 +1400,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \NewValue.
 <to be read again> 
                    x
-l.350 ...t 6 #x201C;Harmony #x201D; specification}
+l.359 ...t 6 #x201C;Harmony #x201D; specification}
                                                   
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1409,7 +1409,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \abx@field@labeltitle.
 <to be read again> 
                    x
-l.357     \endentry
+l.366     \endentry
                    
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1418,7 +1418,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \abx@field@labeltitle.
 <to be read again> 
                    x
-l.357     \endentry
+l.366     \endentry
                    
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1427,7 +1427,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \abx@field@title.
 <to be read again> 
                    x
-l.357     \endentry
+l.366     \endentry
                    
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1436,7 +1436,7 @@ are all screwed up? I'm going to assume that you meant ##.
 ! Illegal parameter number in definition of \abx@field@title.
 <to be read again> 
                    x
-l.357     \endentry
+l.366     \endentry
                    
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
@@ -1628,186 +1628,193 @@ Package csquotes Info: Input encoding change on input line 118.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 ) [6]
-Package csquotes Info: Input encoding change on input line 143.
+Package csquotes Info: Input encoding change on input line 144.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 153.
+Package csquotes Info: Input encoding change on input line 154.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 162.
+Package csquotes Info: Input encoding change on input line 163.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 168.
+Package csquotes Info: Input encoding change on input line 169.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 176.
+Package csquotes Info: Input encoding change on input line 180.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [7]
-Package csquotes Info: Input encoding change on input line 207.
+)
+Overfull \hbox (9.82277pt too wide) in paragraph at lines 175--204
+\T1/lmr/m/n/10.95 The chil-dren of a com-po-nent are also avail-able through \T
+1/lmtt/m/n/10.95 this.props.children\T1/lmr/m/n/10.95 .
+ []
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [8]
-<images/presentation-screenshot.png, id=392, 1284.8pt x 803.0pt>
+[7] <images/presentation-screenshot.png, id=365, 1284.8pt x 803.0pt>
 File: images/presentation-screenshot.png Graphic file (type png)
 
 <use images/presentation-screenshot.png>
 Package pdftex.def Info: images/presentation-screenshot.png used on input line 
-242.
+222.
 (pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
- [9 <./images/presentation-screenshot.png>] <images/navigation.pdf, id=410, 782
-.19154pt x 478.25526pt>
+ [8] [9 <./images/presentation-screenshot.png>] <images/navigation.pdf, id=407,
+ 782.19154pt x 478.25526pt>
 File: images/navigation.pdf Graphic file (type pdf)
 
 <use images/navigation.pdf>
-Package pdftex.def Info: images/navigation.pdf used on input line 264.
+Package pdftex.def Info: images/navigation.pdf used on input line 244.
 (pdftex.def)             Requested size: 306.0022pt x 187.0953pt.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7> on input line 265.
- [10] [11 <./images/navigation.pdf>]
-<images/render-pipeline.pdf, id=480, 1027.84pt x 658.94681pt>
+(Font)              <7> on input line 245.
+ [10 <./images/navigation.pdf>] [11]
+<images/render-pipeline.pdf, id=477, 1027.84pt x 658.94681pt>
 File: images/render-pipeline.pdf Graphic file (type pdf)
 
 <use images/render-pipeline.pdf>
-Package pdftex.def Info: images/render-pipeline.pdf used on input line 302.
+Package pdftex.def Info: images/render-pipeline.pdf used on input line 282.
 (pdftex.def)             Requested size: 180.0pt x 115.39786pt.
- [12 <./images/render-pipeline.pdf>]
-Package csquotes Info: Input encoding change on input line 312.
+
+
+LaTeX Warning: Reference `prog:implementation-technologies-react' on page 12 un
+defined on input line 290.
+
+[12 <./images/render-pipeline.pdf>]
+Package csquotes Info: Input encoding change on input line 292.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (7.00887pt too wide) in paragraph at lines 327--329
+Overfull \hbox (7.00887pt too wide) in paragraph at lines 307--309
 []\T1/lmr/m/n/10.95 The setup of the socket is sim-ple: one helper func-tion, c
 alled \T1/lmtt/m/n/10.95 createSocket
  []
 
-Package csquotes Info: Input encoding change on input line 329.
+Package csquotes Info: Input encoding change on input line 309.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 336.
+Package csquotes Info: Input encoding change on input line 316.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [13]
-Package csquotes Info: Input encoding change on input line 346.
+)
+Package csquotes Info: Input encoding change on input line 326.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [14]
-<images/media-accepted-screenshot.pdf, id=599, 1284.8pt x 803.0pt>
+) [13] [14]
+<images/media-accepted-screenshot.pdf, id=596, 1284.8pt x 803.0pt>
 File: images/media-accepted-screenshot.pdf Graphic file (type pdf)
 
 <use images/media-accepted-screenshot.pdf>
 Package pdftex.def Info: images/media-accepted-screenshot.pdf used on input lin
-e 381.
+e 361.
 (pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
 
-<images/presentation-screenshot-mobile.png, id=600, 870.25125pt x 1767.60374pt>
+<images/presentation-screenshot-mobile.png, id=597, 870.25125pt x 1767.60374pt>
 File: images/presentation-screenshot-mobile.png Graphic file (type png)
 <use images/presentation-screenshot-mobile.png>
 Package pdftex.def Info: images/presentation-screenshot-mobile.png used on inpu
-t line 389.
+t line 369.
 (pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
 
-<images/speaker-presenter-screenshot-mobile.png, id=601, 870.25125pt x 1767.603
+<images/speaker-presenter-screenshot-mobile.png, id=598, 870.25125pt x 1767.603
 74pt>
 File: images/speaker-presenter-screenshot-mobile.png Graphic file (type png)
  <use images/speaker-presenter-screenshot-mobile.png>
 Package pdftex.def Info: images/speaker-presenter-screenshot-mobile.png used on
- input line 390.
+ input line 370.
 (pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
 
-<images/voting-screenshot-mobile.png, id=602, 870.25125pt x 1767.60374pt>
+<images/voting-screenshot-mobile.png, id=599, 870.25125pt x 1767.60374pt>
 File: images/voting-screenshot-mobile.png Graphic file (type png)
 
 <use images/voting-screenshot-mobile.png>
 Package pdftex.def Info: images/voting-screenshot-mobile.png used on input line
- 391.
+ 371.
 (pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
 
-<images/voting-results-screenshot-mobile.png, id=603, 870.25125pt x 1767.60374p
+<images/voting-results-screenshot-mobile.png, id=600, 870.25125pt x 1767.60374p
 t>
 File: images/voting-results-screenshot-mobile.png Graphic file (type png)
  <use images/voting-results-screenshot-mobile.png>
 Package pdftex.def Info: images/voting-results-screenshot-mobile.png used on in
-put line 392.
+put line 372.
 (pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
- [15 <./images/media-accepted-screenshot.pdf>]
-Package csquotes Info: Input encoding change on input line 402.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
+ [15 <./images/media-accepted-screenshot.pdf> <./images/presentation-screenshot
+-mobile.png> <./images/speaker-presenter-screenshot-mobile.png> <./images/votin
+g-screenshot-mobile.png> <./images/voting-results-screenshot-mobile.png>]
+Package csquotes Info: Input encoding change on input line 382.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [16 <./images/presentation-screenshot-mobile.png> <./images/speaker-presenter
--screenshot-mobile.png> <./images/voting-screenshot-mobile.png> <./images/votin
-g-results-screenshot-mobile.png>]
-<images/media-screenshot-mobile.png, id=640, 870.25125pt x 1767.60374pt>
+)
+<images/media-screenshot-mobile.png, id=627, 870.25125pt x 1767.60374pt>
 File: images/media-screenshot-mobile.png Graphic file (type png)
 
 <use images/media-screenshot-mobile.png>
 Package pdftex.def Info: images/media-screenshot-mobile.png used on input line 
-418.
+398.
 (pdftex.def)             Requested size: 71.9989pt x 146.23907pt.
 
-<images/media-acceptor-screenshot.pdf, id=641, 1284.8pt x 803.0pt>
+<images/media-acceptor-screenshot.pdf, id=628, 1284.8pt x 803.0pt>
 File: images/media-acceptor-screenshot.pdf Graphic file (type pdf)
 
 <use images/media-acceptor-screenshot.pdf>
 Package pdftex.def Info: images/media-acceptor-screenshot.pdf used on input lin
-e 420.
+e 400.
 (pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
 
-<images/media-pipeline.pdf, id=642, 793.77756pt x 453.41736pt>
+<images/media-pipeline.pdf, id=629, 793.77756pt x 453.41736pt>
 File: images/media-pipeline.pdf Graphic file (type pdf)
 
 <use images/media-pipeline.pdf>
-Package pdftex.def Info: images/media-pipeline.pdf used on input line 429.
+Package pdftex.def Info: images/media-pipeline.pdf used on input line 409.
 (pdftex.def)             Requested size: 288.0011pt x 164.51006pt.
- [17 <./images/media-screenshot-mobile.png> <./images/media-acceptor-screenshot
-.pdf> <./images/media-pipeline.pdf>]
-<images/voting-creation-screenshot.pdf, id=701, 1284.8pt x 803.0pt>
+
+<images/voting-creation-screenshot.pdf, id=632, 1284.8pt x 803.0pt>
 File: images/voting-creation-screenshot.pdf Graphic file (type pdf)
 
 <use images/voting-creation-screenshot.pdf>
 Package pdftex.def Info: images/voting-creation-screenshot.pdf used on input li
-ne 441.
+ne 421.
 (pdftex.def)             Requested size: 233.9978pt x 146.2369pt.
-Package csquotes Info: Input encoding change on input line 451.
+ [16]
+Package csquotes Info: Input encoding change on input line 431.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-) [18 <./images/voting-creation-screenshot.pdf>]
-Package csquotes Info: Input encoding change on input line 475.
+) [17 <./images/media-screenshot-mobile.png> <./images/media-acceptor-screensho
+t.pdf> <./images/media-pipeline.pdf>] [18 <./images/voting-creation-screenshot.
+pdf>]
+Package csquotes Info: Input encoding change on input line 455.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+) [19]
+Package csquotes Info: Input encoding change on input line 489.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 )
-Package csquotes Info: Input encoding change on input line 511.
+Package csquotes Info: Input encoding change on input line 509.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-)
+) [20]
 Package csquotes Info: Input encoding change on input line 531.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-)
-Package csquotes Info: Input encoding change on input line 553.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
-)) [19] [20]
-[21]
+)) [21]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 79.
@@ -1914,18 +1921,22 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
 Package rerunfilecheck Info: File `_DaBa.out' has not changed.
 (rerunfilecheck)             Checksum: 5064DC5DC11CE3359F200495E24D18CA;2553.
+
+
+LaTeX Warning: There were undefined references.
+
 Package logreq Info: Writing requests to '_DaBa.run.xml'.
 \openout1 = `_DaBa.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23243 strings out of 493308
- 355041 string characters out of 6137815
- 915054 words of memory out of 5000000
- 25820 multiletter control sequences out of 15000+600000
+ 23229 strings out of 493308
+ 354811 string characters out of 6137815
+ 870189 words of memory out of 5000000
+ 25817 multiletter control sequences out of 15000+600000
  111871 words of font info for 90 fonts, out of 8000000 for 9000
  961 hyphenation exceptions out of 8191
- 56i,12n,58p,1646b,3539s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,58p,1646b,2727s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/t
 exmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2013/texmf-dist/fon
@@ -1944,10 +1955,10 @@ al/texlive/2013/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive
 f-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2013/texmf-dist/font
 s/type1/public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
 blic/lm/lmtt9.pfb>
-Output written on _DaBa.pdf (29 pages, 7179024 bytes).
+Output written on _DaBa.pdf (29 pages, 7179426 bytes).
 PDF statistics:
- 1005 PDF objects out of 1200 (max. 8388607)
- 853 compressed objects within 9 object streams
- 297 named destinations out of 1000 (max. 500000)
+ 995 PDF objects out of 1000 (max. 8388607)
+ 843 compressed objects within 9 object streams
+ 288 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 
