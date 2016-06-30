@@ -2254,6 +2254,25 @@
     <bcf:citekey order="17">react-benchmarks</bcf:citekey>
     <bcf:citekey order="18">react-docu</bcf:citekey>
     <bcf:citekey order="19">socketio-problems</bcf:citekey>
+    <bcf:citekey order="20">gpm-meta-transcompiler</bcf:citekey>
+    <bcf:citekey order="21">gpm-meta-transcompiler</bcf:citekey>
+    <bcf:citekey order="22">stackoverflow-developer-survey</bcf:citekey>
+    <bcf:citekey order="23">ecma2015</bcf:citekey>
+    <bcf:citekey order="24">es6</bcf:citekey>
+    <bcf:citekey order="25">es6</bcf:citekey>
+    <bcf:citekey order="26">babel-users</bcf:citekey>
+    <bcf:citekey order="27">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="28">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="29">reactive-vs-promises</bcf:citekey>
+    <bcf:citekey order="30">reactive-vs-promises</bcf:citekey>
+    <bcf:citekey order="31">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="32">reactive-programming-survey</bcf:citekey>
+    <bcf:citekey order="33">rxjs-docu</bcf:citekey>
+    <bcf:citekey order="34">react-benchmarks</bcf:citekey>
+    <bcf:citekey order="35">introduction-to-react</bcf:citekey>
+    <bcf:citekey order="36">react-benchmarks</bcf:citekey>
+    <bcf:citekey order="37">react-docu</bcf:citekey>
+    <bcf:citekey order="38">socketio-problems</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>
