@@ -267,6 +267,8 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+INPUT introduction.aux
+INPUT introduction.aux
 INPUT related_work.aux
 INPUT related_work.aux
 INPUT implementation.aux
@@ -383,6 +385,8 @@ INPUT ./images/feedback-meetings-ms-research.jpeg
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
+INPUT images/feedback-meetings-ms-research.jpeg
+INPUT ./images/feedback-meetings-ms-research.jpeg
 OUTPUT implementation.aux
 INPUT implementation.tex
 INPUT implementation.tex
