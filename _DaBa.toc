@@ -18,11 +18,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Goals}{1}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Related Work}{2}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.1}Classroom-related}{3}{subsection.2.0.1}
+\contentsline {subsection}{\numberline {2.0.1}Classroom related}{3}{subsection.2.0.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.0.2}Meeting-environments and general approaches}{5}{subsection.2.0.2}
+\contentsline {subsection}{\numberline {2.0.2}Office environments}{5}{subsection.2.0.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.0.3}General presentations}{6}{subsection.2.0.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Implementation}{8}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -40,7 +42,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Project Structure}{17}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extended unveil.js:}{17}{section.3.3}
+\contentsline {paragraph}{Extended unveil.js:}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Network Synchronisation Layer:}{18}{section.3.3}
 \defcounter {refsection}{0}\relax 
@@ -64,8 +66,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.8}Example Application}{26}{section.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{29}{appendix*.13}
+\contentsline {chapter}{References}{29}{appendix*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{29}{section*.14}
+\contentsline {section}{Literature}{29}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{31}{section*.14}
+\contentsline {section}{Online sources}{32}{section*.15}
