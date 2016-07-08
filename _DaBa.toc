@@ -40,52 +40,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Resulting Mechanisms}{12}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Remote Control}{12}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Application Design}{13}{chapter.4}
+\contentsline {subsection}{\numberline {3.2.2}Following Slides}{12}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementation}{14}{chapter.5}
+\contentsline {subsection}{\numberline {3.2.3}Paths}{13}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Project Scope}{15}{section.5.1}
+\contentsline {subsection}{\numberline {3.2.4}Reactions}{13}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Technologies}{15}{section.5.2}
+\contentsline {subsection}{\numberline {3.2.5}Asking Questions}{13}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}ECMAScript2015 and Babel}{16}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {3.2.6}Polls}{13}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Reactive Programming}{17}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {3.2.7}Sharing Content}{13}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}React}{19}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {3.2.8}Speaker View}{13}{subsection.3.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}unveil.js}{21}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {4}Application Design}{14}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Project Structure}{23}{section.5.3}
+\contentsline {chapter}{\numberline {5}Implementation}{15}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extended unveil.js:}{24}{section.5.3}
+\contentsline {section}{\numberline {5.1}Project Scope}{16}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Network Synchronisation Layer:}{24}{section.5.3}
+\contentsline {section}{\numberline {5.2}Technologies}{16}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Interactive Extension:}{24}{section.5.3}
+\contentsline {subsection}{\numberline {5.2.1}ECMAScript2015 and Babel}{17}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Server and Example Presentation:}{24}{section.5.3}
+\contentsline {subsection}{\numberline {5.2.2}Reactive Programming}{18}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Extended unveil.js}{24}{section.5.4}
+\contentsline {subsection}{\numberline {5.2.3}React}{20}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Network Synchronisation Layer}{26}{section.5.5}
+\contentsline {subsection}{\numberline {5.2.4}unveil.js}{22}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Interactive Extension}{27}{section.5.6}
+\contentsline {section}{\numberline {5.3}Project Structure}{24}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.1}Speaker Presenter}{27}{subsection.5.6.1}
+\contentsline {paragraph}{Extended unveil.js:}{25}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.2}Media}{28}{subsection.5.6.2}
+\contentsline {paragraph}{Network Synchronisation Layer:}{25}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.3}Voting}{29}{subsection.5.6.3}
+\contentsline {paragraph}{Interactive Extension:}{25}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Server}{31}{section.5.7}
+\contentsline {paragraph}{Server and Example Presentation:}{25}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Example Application}{32}{section.5.8}
+\contentsline {section}{\numberline {5.4}Extended unveil.js}{25}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{35}{appendix*.14}
+\contentsline {section}{\numberline {5.5}Network Synchronisation Layer}{27}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{35}{section*.15}
+\contentsline {section}{\numberline {5.6}Interactive Extension}{28}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{38}{section*.15}
+\contentsline {subsection}{\numberline {5.6.1}Speaker Presenter}{28}{subsection.5.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.2}Media}{29}{subsection.5.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6.3}Voting}{30}{subsection.5.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.7}Server}{32}{section.5.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.8}Example Application}{33}{section.5.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{36}{appendix*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literature}{36}{section*.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Online sources}{39}{section*.15}

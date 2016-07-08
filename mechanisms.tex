@@ -31,7 +31,7 @@ Moreover, the presenter's personal traits, experience and bluntly talent, play a
 To summarise, when developing interaction tools, it is vital to take a participant's personality into consideration. In the context of presentation, shy listeners should be given tools to make them heard; presenters need full control of the mechanisms provided.
 
 \section{Resulting Mechanisms}
-With these aspects and challenges in mind, a multitude of different mechanisms can be derived. 
+With these aspects and challenges in mind, a multitude of different mechanisms can be derived. Although many more are thinkable, this section concentrates on the ones implemented in course of the thesis project. However, we will try to point out other possible features and provide resources to projects focusing on these.
 
 % Speaker: Remote control
 % Speaker: See next slide right and down, notes on phone or tablet/laptop!
@@ -43,6 +43,24 @@ With these aspects and challenges in mind, a multitude of different mechanisms c
 % Reactions (Emojis) -- tell how these can engage the people more, not only about how they provide feedback to presenter!
 % Annotating slides and sharing content (!) --> not really studied yet, so cool!
 
-\subsection{}
+\subsection{Remote Control}
+One mechanism of special importance for speakers is the ability to control slides and navigate through them. As many presentations involve more than just one speaker and can profit from sharing control over slides with others \cite{Chattopadhyay:OfficeSocialRemoteControl}, any amount of presenters should be able to be connected at any given point. Controlling should be possible from any personal device, may it be a laptop, tablet or mobile phone, giving the speakers maximal freedom.
 
+While using arrow-keys in a desktop environment feels natural to navigate between slides, the native equivalent on touch-devices are swipe gestures. These are more accurately and faster when operating a phone with one hand \cite{Lai:SingleHandedThumbInteraction} and are less prone to error when used eye-free \cite{Negulescu:TapSwipeMove} and should therefore be prefered over buttons, clustering the interface.
+
+\subsection{Following Slides}
 % also gives latecomers the chance...
+For members of the audience, one important feature, both in the context of re-visiting slides, to accommodate individual learning paces and even to give latecomers a chance to catch up with the presentation, is to be able to independently follow the slides. This should again be possible on any personal device and focus on the slide content. The mechanism can be designed in many different ways and could even allow listeners to remote control the presentation \cite{Chattopadhyay:OfficeSocialRemoteControl}, our implementation however only provides individual slide navigation on the personal device. Additionally, the progress of the presentation should always be synchronised with the individual devices, allowing listeners to truely follow the slides. This basic mechanism can be extended to offer features such as turning the synchronisation on and off (effectively allowing to navigate freely and jump back to the current state) or to only allow listeners to see the last slide the presenter has already shown.
+
+\subsection{Paths}
+
+\subsection{Reactions}
+
+\subsection{Asking Questions}
+
+\subsection{Polls}
+
+\subsection{Sharing Content}
+
+\subsection{Speaker View}
+Most of the mechanisms presented in this section involve both the speaker and audience. As the name already gives away, this is not the case for the speaker view. As described before, 
