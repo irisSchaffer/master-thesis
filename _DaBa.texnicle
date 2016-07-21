@@ -90,7 +90,7 @@
         <attribute name="name" type="string">_DaBa</attribute>
         <attribute name="folder" type="string">/Users/irisschaffer/Master Thesis/master-thesis</attribute>
         <relationship name="mainfile" type="1/1" destination="FILE" idrefs="z105"></relationship>
-        <relationship name="selected" type="1/1" destination="FILE" idrefs="z138"></relationship>
+        <relationship name="selected" type="1/1" destination="FILE" idrefs="z139"></relationship>
         <relationship name="settings" type="1/1" destination="SETTINGS" idrefs="z102"></relationship>
         <relationship name="uisettings" type="1/1" destination="UISETTINGS" idrefs="z103"></relationship>
         <relationship name="items" type="0/0" destination="PROJECTITEM" idrefs="z112 z121 z132 z122 z126 z105 z135 z125 z117 z123 z133 z106 z107 z128 z127 z115 z139 z118 z116 z124 z129 z108 z111 z119 z110 z136 z109 z131 z114 z130 z120 z138"></relationship>
@@ -526,13 +526,13 @@
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="TEXFILE" id="z132">
-        <attribute name="wasopen" type="bool">4</attribute>
-        <attribute name="visiblerect" type="string">{{0, 636}, {1020.5, 366.5}}</attribute>
-        <attribute name="lasteditdate" type="date">489342110.72694301605224609375</attribute>
+        <attribute name="wasopen" type="bool">-1</attribute>
+        <attribute name="visiblerect" type="string">{{0, 0}, {1020.5, 366.5}}</attribute>
+        <attribute name="lasteditdate" type="date">490816104.79504299163818359375</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">490607527.40981000661849975586</attribute>
+        <attribute name="fileloaddate" type="date">490816105.23658198118209838867</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{949, 0}</attribute>
+        <attribute name="cursor" type="string">{840, 0}</attribute>
         <attribute name="sortindex" type="int32">5</attribute>
         <attribute name="name" type="string">implementation.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
@@ -544,7 +544,7 @@
         <relationship name="bookmarks" type="0/0" destination="BOOKMARK"></relationship>
     </object>
     <object type="FILE" id="z133">
-        <attribute name="wasopen" type="bool">5</attribute>
+        <attribute name="wasopen" type="bool">4</attribute>
         <attribute name="visiblerect" type="string">{{0, 6254}, {1014.5, 366.5}}</attribute>
         <attribute name="lasteditdate" type="date">490607535.98615598678588867188</attribute>
         <attribute name="istext" type="bool">1</attribute>
@@ -629,12 +629,12 @@
     </object>
     <object type="TEXFILE" id="z139">
         <attribute name="wasopen" type="bool">3</attribute>
-        <attribute name="visiblerect" type="string">{{0, 69.5}, {1020.5, 366.5}}</attribute>
-        <attribute name="lasteditdate" type="date">490726480.78833001852035522461</attribute>
+        <attribute name="visiblerect" type="string">{{0, 212}, {1020.5, 366.5}}</attribute>
+        <attribute name="lasteditdate" type="date">490816706.82446402311325073242</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">490726482.63763499259948730469</attribute>
+        <attribute name="fileloaddate" type="date">490816707.16097897291183471680</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{878, 0}</attribute>
+        <attribute name="cursor" type="string">{1912, 0}</attribute>
         <attribute name="sortindex" type="int32">0</attribute>
         <attribute name="name" type="string">design.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>

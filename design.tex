@@ -1,6 +1,18 @@
 \chapter{Application Design}
 \label{cha:design}
 
+After defining the mechanisms which will be implemented, in a next step, the general application flow will be described, as well as offering insight into the user experience design of the parts of the application.
+
+\section{Application Flow}
+The flow and usage of the application is separated into two parts: the creation and authoring of the presentation and giving the presentation. Because the technical details of how slide decks are composed are covered in chapter \ref{cha:implementation}, this chapter focuses on the user interface and interaction design of the software from the speaker's and the audience's point of view, during the presentation.
+
+The slides are generally served either from a publicly accessible server or, if all participants are in the same network, locally from the presenter's computer. This means, at the beginning of the presentation, all attendees have to navigate their personal devices' browsers to the set up address (usually a combination of IP address and port). To make this step easier, QR codes pointing to the address can be shown on the first slide or e-mails can be sent out to all participants before the start of the presentation.
+
+The software supports three different modes out of the box: default (i.e. listener), presenter and projector mode. Depending on the mode, a certain set of features are activated, allowing the presenter to have a different interface and more controls than the listeners and to only show the current slide in projector mode. Modes are activated via query-strings in the url: The speaker navigates the browser of the device connected to the projector to the url of the presentation and adds the query parameter \printtt{mode=projector}. On his or her personal device, the mode is set to \printtt{presenter}. If no query parameter is given, the application defaults to the listener mode.
+
+% Base CSS: responsive, if content is too big, everything is uniformly scaled.
+
+
 % Application Flow, Modes, How does the application work in general?
 % Design aspects, sketches, wireframes, thoughts and überlegungen behind design details
 
