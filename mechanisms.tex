@@ -14,10 +14,8 @@ The general conclusion therefore is that big audiences struggle to connect and i
 % setting: classroom vs. meeting vs. conference etc.
 The environment of a presentation is described by all factors surrounding the presentation. One of them is the setting a talk is given in, in other words, if it is embedded in a meeting, a talk at a conference or a lecture at school or university. Other aspects worth considering are whether the audience is co-located or distributed and which technologies are available. As this work concerns itself only with mobile devices in the context of co-located presentations, difficulties added through remote presentations as well as missing technical equipment will be disregarded in this section. Instead, a closer look will be taken at the setting: In a lecture, it is desirable to measure the students' participation and engagement, as well as their understanding of a topic. In meetings, on the other hand, interactive mechanisms are more likely to aim for the promotion of collaboration between all participants. Conferences might search to foster the interactivity between attendees, to support networking. Instead of taking all possible scenarios into consideration, this work concentrates on business-related settings and explores mechanisms which foster collaboration.
 
-\subsection{Presentation Purpose}
-When speaking of the purpose of a presentation, McClain \cite{McClain:TypeOfPresentations} identifies four major types: informational, motivational, pursuasive and sales. According to him, informational presentations search to educate the listeners, while motivational speeches try to inspire the audience to take action. Pursuasive talks usually present new ideas or directions and have the goal of making the listeners re-think old approaches and consider or even embrace new ones. Sales presentations, lastly, often use elements of the other three categories with the aim of ``obtaining a decision at the presentation's end'' \cite{McClain:TypeOfPresentations}. While motivational, pursuasive and to some extend sales presentations often operate on an emotional level in the present moment, informational talks often include a way for listeners to re-visit the taught material through transcripts, lecture notes or handouts. Moreover, motivational, pursuasive and sales presentations focus on the goal of getting the audience to take action and therefore put more emphasise on the listeners than content-centric informational speeches. This creates two very distinctive needs for interactive mechanisms: on one side the ability for the audience to actively shape the path of the presentation, on the other hand the possibility to re-visit presentation slides (potentially including notes and additional material), after the end of a talk.
+Another part is the purpose of a presentation: McClain \cite{McClain:TypeOfPresentations} identifies four major types: informational, motivational, pursuasive and sales. According to him, informational presentations search to educate the listeners, while motivational speeches try to inspire the audience to take action. Pursuasive talks usually present new ideas or directions and have the goal of making the listeners re-think old approaches and consider or even embrace new ones. Sales presentations, lastly, often use elements of the other three categories with the aim of ``obtaining a decision at the presentation's end'' \cite{McClain:TypeOfPresentations}. While motivational, pursuasive and to some extend sales presentations often operate on an emotional level in the present moment, informational talks often include a way for listeners to re-visit the taught material through transcripts, lecture notes or handouts. Moreover, motivational, pursuasive and sales presentations focus on the goal of getting the audience to take action and therefore put more emphasise on the listeners than content-centric informational speeches. This creates two very distinctive needs for interactive mechanisms: on one side the ability for the audience to actively shape the path of the presentation, on the other hand the possibility to re-visit presentation slides (potentially including notes and additional material), after the end of a talk.
 
-In the context of business-settings, as discussed in the present thesis, one should also take meeting-types into consideration. Böhmer et al. \cite{Bohmer:SmartphoneUseRude} differentiate between conversations, status updates, presentations (``scheduled session with higher level of formality'', not to be confused with the more general concept of presentations examined in this thesis), brainstorming and training. All these can be prepared beforehand and have different requirements and challenges to overcome: In brainstorming sessions, for example, it is vital for every team member to be able to contribute to the end result; in trainings, it is hardly possible to find a pace that fits all participants, etc.
 % welches material wird mitgenommen? wie können lectures erinnert werden? welches material nehmen wir mit? --> nachbereitung/handouts!
 % motivational und pursuasive: mehr im hier und jetzt, memorable auf gefühlsebene!
 % in manchen ist es einfacher das Publikum leiten zu lassen als in anderen (motivational & pursuasive)
@@ -31,7 +29,7 @@ Moreover, the presenter's personal traits, experience and bluntly talent, play a
 To summarise, when developing interaction tools, it is vital to take a participant's personality and their relationship to other ones into consideration. In the context of presentations, shy listeners should be given tools to make them heard; presenters need full control of the mechanisms provided.
 
 \section{Resulting Mechanisms}
-With these aspects and challenges in mind, a multitude of different mechanisms can be derived. Although many more are thinkable, this section concentrates on the ones implemented in course of the thesis project. However, we will try to point out other possible features and provide resources to projects focusing on these. One point to keep in mind is that not all of the presented mechanisms work equally well in every environment but instead have scenarios they are best suited for and others in which they are practically rendered redundant.
+With these aspects and challenges in mind, a multitude of different mechanisms can be derived. Although many more are thinkable, this section concentrates on the ones implemented in course of the thesis project. However, we will try to point out other possible features and provide resources to projects focusing on these. One point to keep in mind is that not all of the presented mechanisms work equally well in every environment but instead have scenarios they are best suited for and others in which they are practically rendered redundant. The ideal settings and key advantages of each of these mechanisms are summarised in table \ref{tab:mechanisms}.
 
 % Speaker: Remote control
 % Speaker: See next slide right and down, notes on phone or tablet/laptop!
@@ -56,7 +54,7 @@ For members of the audience, one important feature, both in the context of re-vi
 Also connected to navigation and following slides is the possibility to offer different paths through the presentation. Especially in informational talks these can account for different backgrounds and levels of knowledge in the audience, they however, also make it possible to get listeners more involved in shaping the presentation. Paths should both be accessible to each audience member individually (for further reference or to catch up on a topic), as well as on the projector (e.g. by polling, as discussed in the next subsection).
 The possibility to flexibly navigate through a presentation has proven to be one of the biggest advantages of canvas-based presentations \cite{Lichtschlag:CanvasPresentationsInTheWild} and have a wide field of application. The scenarios this thesis concentrates on are the following: On one hand, the paths can cover different levels of details (e.g. \emph{overview}, \emph{regular} and \emph{detailed}), as well as providing a way of skipping certain slides without having to navigate through all of them (e.g. skipping the introduction). Another option would be to let the audience decide between entirely different topics, depending on their personal interest. While canvas-based presentation tools like Prezi innately offer this flexibilty, slide-based tools often only make this behaviour possible by manually skipping over slides, which can interrupt the flow of the presentation \cite{Dieberger:NarrativeFlow}. PowerPoint extensions enabeling advanced forms of navigation, as well as the presenter looking through slides before projecting them are discussed in \cite{Dieberger:NarrativeFlow}, \cite{Nelson:PalettePaperInterface} and \cite{Signer:PaperPoint}, the latter, however, will not be part of our implementation.
 
-\subsection{Asking Questions}
+\subsection{Audience Questions}
 Another feature, well-suited for informative talks, is the possibility for members of the audience to ask questions. Another scenarios are big crowds, in which it is hard to be heard as an individual. A tool specifically designed for such settings is sli.do, which was already introduced in chapter \ref{cha:related-work} section \ref{sec:related-work-general}.
 More generally, such mechanism should enable members of the audience to submit questions for the presenter to answer. These questions should either be displayed directly, or collected for the presenter to go through at the end of the presentation, depending on their preference and flexibility. This mechanism also highly depends on the presentation environment: In a classroom, questions should be answered immediately, while conferences usually only allow them at the end of talks. Questions could moreover only be visible to the presenter, or every participant. Concentrating on business-related settings, we propose a question feature which allows audience members to submit questions at any point of the presentation. These should be accessible for every attendee, to spark others' interest and participation. From the presenter's point of view, questions should be displayable instantly, at the end of the talk or any time inbetween, leaving the decision when to react to questions to each individual speaker.
 
@@ -75,3 +73,58 @@ These reactions can either be displayed only to the speaker, or to the entire au
 In contrast to live reactions and questions, content sharing is especially suited for smaller audiences. As discussed before, tools for smaller groups should strengthen the already possible dialogue between all participants. These scenarios make it possible for listeners to actively get involved in the presentation and not only shape the path through, but also the content of such. While adding subslides to a slide deck after a presentation \cite{Cheng:TreebasedOnlinePresentations} and text-based annotations \cite{Inoue:RealTimeQuestionnaire, Myers:CollaborationPDAs} during talks have already been discussed in previous work, to our knowledge, no other study has concerned itself with the possibility of adding listener-generated slides and multi-media content in live presentations. While being an exciting opportunity to explore a widely untouched research subject, this mechanism empowers listeners and transforms presentations entirely by combining classic slides with brainstroming-like interactions and related multi-media content. While the potential of this mechanism will be further discussed in chapter \ref{cha:conclusion}, the requirements for this functionality should shortly be defined: It should be possible for any listener to add their own content to any slide. This content includes text, websites (per link), videos and uploaded images (e.g. taken with their personal devices). Presenters should have a way of deciding whether to accept the contribution and if it should be added as a subslide or main slide. Moreover, this mechanism requires a lot of flexibility from the speaker, which is why it is important to allow them to turn off or silence the functionality, providing sensible fallbacks. While content sharing can transform a presentation into an interactive and collaborative effort in smaller groups, the functionality will likely lead to chaos in big groups, without further interface changes.
 
 Now that the implemented mechanisms are clarified and their requirements defined, the next chapter deals with the design and user experience of the application.
+
+\begin{table}
+\caption{Overview of resulting mechanisms, with their key advantages and optimal usage scenarios.}
+\label{tab:mechanisms}
+\centering
+\def\rr{\rightskip=0pt plus1em \spaceskip=.3333em \xspaceskip=.5em\relax}
+\setlength{\tabcolsep}{1ex}
+\def\arraystretch{1.20}
+\setlength{\tabcolsep}{1ex}
+\small
+\begin{english}
+\begin{tabular}{|p{0.2\textwidth}|p{0.35\textwidth}|p{0.35\textwidth}|}
+\hline
+   \multicolumn{1}{|c}{\emph{Mechanism}} &
+   \multicolumn{1}{|c}{\emph{Improvements}} &
+   \multicolumn{1}{|c|}{\emph{Ideal Scenario}} \\
+\hline\hline
+   {\rr Remote Control} &
+   {\rr More flexibility for presenter(s)} &
+   {\rr Any, especially mutli-speaker presentations}
+   \\
+\hline
+   {\rr Following Slides} &
+   {\rr Accounts for individual pace; can replace hand-outs} &
+   {\rr Any, especially informational presentations for later revision}
+  \\
+\hline
+   {\rr Paths} &
+   {\rr Interactivity and possibility to shape presentation for audience} &
+   {\rr Any, especially informational}
+   \\
+\hline
+   {\rr Audience Questions} &
+   {\rr Anonymity; possibility to be heard in big crowds } &
+   {\rr Big audiences; small groups for anonymity}
+  \\
+\hline
+   {\rr Polls} &
+   {\rr Bond between speaker and audience by querying listeners' interest, mood and knowledge} &
+   {\rr Usage with paths; big audiences; small groups for anonymity}
+   \\
+\hline
+   {\rr Reactions} &
+   {\rr Speaker-audience and listener-listener interaction} &
+   {\rr Big audiences}
+   \\
+\hline
+   {\rr Content Sharing} &
+   {\rr Possibility to shape presentation for audience; slide-content by adding related resources} &
+   {\rr Small groups}
+   \\
+\hline
+\end{tabular}
+\end{english}
+\end{table}

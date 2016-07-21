@@ -34,27 +34,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.2}Presentation Environment}{10}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Presentation Purpose}{10}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}Speaker and Audience}{11}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.4}Speaker and Audience}{11}{subsection.3.1.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Resulting Mechanisms}{12}{section.3.2}
+\contentsline {section}{\numberline {3.2}Resulting Mechanisms}{11}{section.3.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Remote Control}{12}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Following Slides}{12}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Paths}{13}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Paths}{12}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Asking Questions}{13}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Audience Questions}{13}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Polls}{14}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Polls}{13}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.6}Reactions}{14}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}Sharing Content}{15}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Content Sharing}{14}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.8}Speaker View}{15}{subsection.3.2.8}
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\select@language {english}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Application Design}{16}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -98,8 +98,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.8}Example Application}{35}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{38}{appendix*.14}
+\contentsline {chapter}{References}{38}{appendix*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{38}{section*.15}
+\contentsline {section}{Literature}{38}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{42}{section*.15}
+\contentsline {section}{Online sources}{42}{section*.16}
