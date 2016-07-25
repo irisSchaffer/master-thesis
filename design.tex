@@ -8,13 +8,19 @@ The flow and usage of the application is separated into two parts: the creation 
 
 The slides are generally served either from a publicly accessible server or, if all participants are in the same network, locally from the presenter's computer. This means, at the beginning of the presentation, all attendees have to navigate their personal devices' browsers to the set up address (usually a combination of IP address and port). To make this step easier, QR codes pointing to the address can be shown on the first slide or e-mails can be sent out to all participants before the start of the presentation.
 
-The software supports three different modes out of the box: default (i.e. listener), presenter and projector mode. Depending on the mode, a certain set of features are activated, allowing the presenter to have a different interface and more controls than the listeners and to only show the current slide in projector mode. Modes are activated via query-strings in the url: The speaker navigates the browser of the device connected to the projector to the url of the presentation and adds the query parameter \printtt{mode=projector}. On his or her personal device, the mode is set to \printtt{presenter}. If no query parameter is given, the application defaults to the listener mode.
+The software supports three different modes out of the box: listener, speaker and projector mode. Depending on the mode, a certain set of features is activated, allowing the presenter to have a different interface and more controls than the listeners. Modes are activated via query parameters in the url: The speaker navigates the browser of the device connected to the projector to the url of the presentation and adds the query parameter \printtt{mode=projector}. On his or her personal device, the mode is set to \printtt{speaker}. If no query parameter is given, the application defaults to the listener mode. The presentation software developed prior to the start of the thesis project generally offers a two-dimensional slide space, consisting of master slides (left to right) and subslides (top to bottom). Devices in speaker mode can remote-control the presentation and navigate through said slides. All other devices are synchronised with the state of the presenter and automatically follow along in real-time.
 
 % Base CSS: responsive, if content is too big, everything is uniformly scaled.
 
-
 % Application Flow, Modes, How does the application work in general?
 % Design aspects, sketches, wireframes, thoughts and überlegungen behind design details
+
+\section{General Interface Design}
+The general requirement for the interface of the application was to work in all three modes, on any device, from mobile phones to desktops and projectors. When in projector mode, only the content of the current slide, as well as listener reactions are shown (see figure \ref{}). In listener mode, the interface is a lot richer and additionally features buttons for sharing media, links and asking questions, as well as six different reactions (see figure \ref{}), which will be discussed in more detail shortly. It also offers small buttons to click on, to navigate between slides. The speaker interface is the most intricate: Besides showing the current slide, it also includes a smaller preview of the upcoming slides in $x$ (master slide) and $y$ (subslide) direction, as well as speaker notes. Additionally there are buttons to mute incoming requests (media, link and questions) and to create new polls (see figure \ref{}).
+
+\section{General Interaction Design}
+% how can we interact? swipe/arrow keys etc., explain modals, hover states etc.
+
 
 % As described before, it is important for the presenter to be in full control of all mechanisms --> make it easy to add or remove them and to configure!
 
