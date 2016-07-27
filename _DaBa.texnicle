@@ -527,7 +527,7 @@
     </object>
     <object type="TEXFILE" id="z132">
         <attribute name="wasopen" type="bool">0</attribute>
-        <attribute name="visiblerect" type="string">{{0, 10663}, {1014, 885}}</attribute>
+        <attribute name="visiblerect" type="string">{{0, 12429.5}, {1014, 398}}</attribute>
         <attribute name="lasteditdate" type="date">490816104.79504299163818359375</attribute>
         <attribute name="istext" type="bool">1</attribute>
         <attribute name="fileloaddate" type="date">490816105.23658198118209838867</attribute>
@@ -545,7 +545,7 @@
     </object>
     <object type="FILE" id="z133">
         <attribute name="wasopen" type="bool">5</attribute>
-        <attribute name="visiblerect" type="string">{{0, 7187.5}, {1014, 398}}</attribute>
+        <attribute name="visiblerect" type="string">{{0, 8776.5}, {1014, 398}}</attribute>
         <attribute name="lasteditdate" type="date">491239143.09874802827835083008</attribute>
         <attribute name="istext" type="bool">1</attribute>
         <attribute name="fileloaddate" type="date">491239143.46675401926040649414</attribute>
@@ -569,7 +569,7 @@
     </object>
     <object type="TEXFILE" id="z135">
         <attribute name="wasopen" type="bool">2</attribute>
-        <attribute name="visiblerect" type="string">{{0, 1905}, {1020, 398}}</attribute>
+        <attribute name="visiblerect" type="string">{{0, 2994}, {1020, 398}}</attribute>
         <attribute name="lasteditdate" type="date">490727960.52560800313949584961</attribute>
         <attribute name="istext" type="bool">1</attribute>
         <attribute name="fileloaddate" type="date">490727969.37265598773956298828</attribute>
@@ -611,7 +611,7 @@
     </object>
     <object type="TEXFILE" id="z138">
         <attribute name="wasopen" type="bool">3</attribute>
-        <attribute name="visiblerect" type="string">{{0, 2806}, {1020, 398}}</attribute>
+        <attribute name="visiblerect" type="string">{{0, 2442}, {1020, 398}}</attribute>
         <attribute name="lasteditdate" type="date">490812141.43809401988983154297</attribute>
         <attribute name="istext" type="bool">1</attribute>
         <attribute name="fileloaddate" type="date">490812141.66792798042297363281</attribute>
@@ -629,12 +629,12 @@
     </object>
     <object type="TEXFILE" id="z139">
         <attribute name="wasopen" type="bool">4</attribute>
-        <attribute name="visiblerect" type="string">{{0, 1457}, {1020, 398}}</attribute>
-        <attribute name="lasteditdate" type="date">491240284.90403699874877929688</attribute>
+        <attribute name="visiblerect" type="string">{{0, 1000}, {1020, 398}}</attribute>
+        <attribute name="lasteditdate" type="date">491331218.41137802600860595703</attribute>
         <attribute name="istext" type="bool">1</attribute>
-        <attribute name="fileloaddate" type="date">491240285.14117801189422607422</attribute>
+        <attribute name="fileloaddate" type="date">491331218.90004301071166992188</attribute>
         <attribute name="extension" type="string">tex</attribute>
-        <attribute name="cursor" type="string">{5968, 0}</attribute>
+        <attribute name="cursor" type="string">{4870, 0}</attribute>
         <attribute name="sortindex" type="int32">0</attribute>
         <attribute name="name" type="string">design.tex</attribute>
         <attribute name="isexpanded" type="bool">0</attribute>
