@@ -18,100 +18,96 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Goals}{1}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Related Work}{2}{chapter.2}
+\contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Classroom related}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}Classroom related}{4}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Office environments}{5}{section.2.2}
+\contentsline {section}{\numberline {2.2}Office environments}{6}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}General presentations}{6}{section.2.3}
+\contentsline {section}{\numberline {2.3}General presentations}{8}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Interactive Mechanisms}{9}{chapter.3}
+\contentsline {chapter}{\numberline {3}Interactive Mechanisms}{10}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Factors}{9}{section.3.1}
+\contentsline {section}{\numberline {3.1}Factors}{10}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Audience Size}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Audience Size}{10}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Presentation Environment}{10}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Presentation Environment}{11}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Speaker and Audience}{11}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}Speaker and Audience}{12}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Resulting Mechanisms}{11}{section.3.2}
+\contentsline {section}{\numberline {3.2}Resulting Mechanisms}{12}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Remote Control}{12}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Remote Control}{13}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Following Slides}{12}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Following Slides}{13}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Paths}{12}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Paths}{13}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Audience Questions}{13}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Audience Questions}{14}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Polls}{13}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.5}Polls}{14}{subsection.3.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.6}Reactions}{14}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.6}Reactions}{15}{subsection.3.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.7}Content Sharing}{14}{subsection.3.2.7}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
+\contentsline {subsection}{\numberline {3.2.7}Content Sharing}{15}{subsection.3.2.7}
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Application Design}{16}{chapter.4}
+\select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Application Flow}{16}{section.4.1}
+\contentsline {chapter}{\numberline {4}Application Design}{18}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}General Interface}{17}{section.4.2}
+\contentsline {section}{\numberline {4.1}Application Flow}{18}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}General Interaction Principles}{17}{section.4.3}
+\contentsline {section}{\numberline {4.2}General Interface}{19}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Reactions}{20}{section.4.4}
+\contentsline {section}{\numberline {4.3}General Interaction Principles}{19}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Polls}{20}{section.4.5}
+\contentsline {section}{\numberline {4.4}Reactions}{22}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Content Sharing}{20}{section.4.6}
+\contentsline {section}{\numberline {4.5}Polls}{23}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementation}{21}{chapter.5}
+\contentsline {section}{\numberline {4.6}Content Sharing}{23}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Project Scope}{22}{section.5.1}
+\contentsline {chapter}{\numberline {5}Implementation}{24}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Technologies}{22}{section.5.2}
+\contentsline {section}{\numberline {5.1}Project Scope}{25}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}ECMAScript2015 and Babel}{23}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.2}Technologies}{25}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Reactive Programming}{24}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.1}ECMAScript2015 and Babel}{26}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}React}{26}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.2}Reactive Programming}{27}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}unveil.js}{28}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.3}React}{29}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Project Structure}{30}{section.5.3}
+\contentsline {subsection}{\numberline {5.2.4}unveil.js}{31}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extended unveil.js:}{31}{section.5.3}
+\contentsline {section}{\numberline {5.3}Project Structure}{34}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Network Synchronisation Layer:}{31}{section.5.3}
+\contentsline {paragraph}{Extended unveil.js:}{34}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Interactive Extension:}{31}{section.5.3}
+\contentsline {paragraph}{Network Synchronisation Layer:}{34}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Server and Example Presentation:}{31}{section.5.3}
+\contentsline {paragraph}{Interactive Extension:}{34}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Extended unveil.js}{31}{section.5.4}
+\contentsline {paragraph}{Server and Example Presentation:}{34}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Network Synchronisation Layer}{33}{section.5.5}
+\contentsline {section}{\numberline {5.4}Extended unveil.js}{35}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Interactive Extension}{34}{section.5.6}
+\contentsline {section}{\numberline {5.5}Network Synchronisation Layer}{36}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.1}Speaker Presenter}{34}{subsection.5.6.1}
+\contentsline {section}{\numberline {5.6}Interactive Extension}{37}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.2}Media}{35}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.1}Speaker Presenter}{38}{subsection.5.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.3}Voting}{36}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.2}Media}{38}{subsection.5.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Server}{38}{section.5.7}
+\contentsline {subsection}{\numberline {5.6.3}Voting}{41}{subsection.5.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Example Application}{39}{section.5.8}
+\contentsline {section}{\numberline {5.7}Server}{42}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{42}{appendix*.20}
+\contentsline {section}{\numberline {5.8}Example Application}{42}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{42}{section*.21}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{46}{section*.21}
+\contentsline {chapter}{References}{45}{appendix*.22}
