@@ -38,44 +38,70 @@ Another important consideration when it comes to mobile and desktop environments
 Now that the general interaction principles are covered, a more detailed look is taken at the most interesting parts of the implemented features.
 
 \begin{figure}\centering\begin{tabular}{ccc}
-\includegraphics[width=.2\textwidth]{button-state-normal} &
-\includegraphics[width=.2\textwidth]{button-state-hover} &
-\includegraphics[width=.2\textwidth]{button-state-disabled} \\
+\includegraphics[width=.12\textwidth]{button-state-normal} &
+\includegraphics[width=.12\textwidth]{button-state-hover} &
+\includegraphics[width=.12\textwidth]{button-state-disabled} \\
 (a) & (b) & (c)
 \end{tabular}\caption{Button states, (a) normal, (b) hovered or active and (c) disabled.}\label{fig:design-interface-button}\end{figure}
+
+\section{Polls}
+The first mechanism looked at in more detail is the polling feature. Polls can either be prepared before the start of the presentation or can dynamically be created during the presentation through the presenter interface. When Greg and the other listeners navigate through the presentation, they will already see the poll, they however cannot vote until Amy activates the voting by navigating to the slide with the poll. Polling again works in real-time: As soon as Greg chooses an option and presses the \emph{Vote} button, the presenter, projector and all listener interfaces will be updated with his vote immediately. Every listener is only allowed to vote once per poll and the only currently supported poll type is single-choice (see figure \ref{fig:design-polls}). As soon as Greg has voted, he is presented with the current results of the voting. These are displayed in horizontal bar charts (see figure \ref{fig:design-polls}), which are animated. This means, as soon as a new vote is registered, the bars will dynamically adjust their width as the percentages are updated. These results are available on the presenter and projector interfaces as well and also change in real-time.
+While the voting is enabled (by Amy navigating to the slide with the poll and until she navigates away from it again), all other navigation is frozen. This means, in this time, all listener navigation is disabled to ensure everybody is on the same slide and exercises their right to vote; this, however, is not mandatory and listeners can also choose not to vote.
+
+\begin{figure}\centering\begin{tabular}{ccc}
+\includegraphics[width=.4\textwidth]{polls-voting} &
+\includegraphics[width=.4\textwidth]{polls-results} \\
+(a) & (b)
+\end{tabular}\caption{Details of polling interface for listeners before voting (a) and poll result after voting (b).}\label{fig:design-polls}\end{figure}
+
+To create a new poll, the presenter presses or clicks the \emph{new poll} button in the controls section of the speaker interface, which opens a modal (see figure \ref{fig:design-polls-modal}). In the beginning, a question and two answer fields are provided, more answers can be added using the \emph{+} button. Once the question and answer options are entered, pressing the \emph{Create Voting} button will generate a new poll and add it as the next main slide.
+
+\begin{figure}\centering\includegraphics[width=.65\textwidth]{polls-modal}
+\caption{Poll creation modal in presenter mode on tablets, laptops and desktops.}\label{fig:design-polls-modal}\end{figure}
 
 \section{Reactions}
 \label{sec:design-reactions}
 % Emojis
 % Find more studies about this! think: facebook, the conference Paulo went to etc. (maybe add photo of audience showing emoji faces!)
 % It is therefore important to provide more detailed feedback. Following the evaluation in \cite{Teevan:MobileFeedbackDuringPresentation}, the mechanism proposed in this thesis offers three emotions (approval, laughter, boredom) and three request types (louder, speed up, slow down).
-Although binary digital reactions to a presentation are not an entirely new idea \cite{Teevan:MobileFeedbackDuringPresentation}, versatile feedback that goes beyond positive and negative, to our knowledge, has not yet been explored. From the evaluation in \cite{Teevan:MobileFeedbackDuringPresentation} and \cite{Isaacs:InteractivePresentationsDistributedAudience} and from observing presentations and meetings, a pool of possible reactions has been narrowed down to six --  three emotions (approval, laughter, boredom) and three request types (louder, speed up, slow down) (see figure \ref{fig:design-reactions}). The reason behind the missing disapproval is on one hand that test subjects in \cite{Teevan:MobileFeedbackDuringPresentation} felt less comfortable giving negative feedback and the button was used less than the positive one and included reactions such as \emph{boredom} or \emph{speed up} and \emph{slow down}, on the other side we hope this will encourage more elaborate feedback of disagreement using the content sharing functionality instead.
+Although binary digital reactions in presentations are not an entirely new idea \cite{Teevan:MobileFeedbackDuringPresentation}, versatile feedback that goes beyond positive and negative, to our knowledge, has not yet been explored. The way this mechanism was implemented, our listener Greg can press a button to react to what the speaker Amy said or presented. The reactions are collected on a per-slide basis, allowing Amy to re-visit the slides afterwards, analysing which slides sparked most feedback. When Greg reacts to a slide, the feedback will immediately be displayed in the presenter view, as well as -- if enabled -- the projector interface.
 
-Since the presentation of feedback in \cite{Teevan:MobileFeedbackDuringPresentation} was perceived as a distraction from the presentation, the feedback mechanism proposed in the present work is either only shown to the presenter or displayed in the right corner of the projector, with a small badge symbolising how many people have sent this feedback for the current slide (see figure \ref{fig:design-reactions-details} (a)).
+Greg by default can choose from six pre-defined reactions: From the evaluation in \cite{Teevan:MobileFeedbackDuringPresentation} and \cite{Isaacs:InteractivePresentationsDistributedAudience} and from observing presentations and meetings, a pool of possible reactions has been narrowed down three emotions (approval, laughter, boredom) and three request types (louder, speed up, slow down) (see figure \ref{fig:design-reactions}). The reason behind the missing disapproval on one hand is that test subjects in \cite{Teevan:MobileFeedbackDuringPresentation} felt less comfortable giving negative feedback, the button was generally used less than the positive one and it also included feedback such as \emph{boredom} or \emph{speed up} and \emph{slow down}, which we have included own reactions for. On the other side, we hope this will encourage more elaborate feedback of disapproval using the content sharing functionality instead. This holds the potential of sparking a discussion instead of merely showing disagreement with the presented content.
 
-Another challenge with displaying non-binary feedback was to find an intuitive and familiar visualisation which would not take up too much space on smaller screens. Since the introduction of emoji on Apple's keyboard in 2011 and on Android's one in 2013, emoji have become a ubiquitous, language-independent means of communicating \cite{Instagramm:Emoji, Cappallo:EmojiVideoSearch}. Instagram has found that almost half of its comments and captions nowadays include emoji. With Google \cite{Google:Emoji} and Bing \cite{Bing:Emoji} adding support for emoji-search and companies like Facebook \cite{Facebook:Reactions} and GitHub \cite{Github:Reactions} offering emoji-based reaction systems, it is safe to assume the majority of digital natives is familiar with the concept and meaning of emojis. Although it would be possible to include a complete emoji-keyboard we feel it is easier for less technology-oriented users to offer only a sub-set including a short description of each reaction (see figure \ref{fig:design-reactions}). However, this sub-set can easily be extended or overwritten by the presenter.
+The biggest challenge with displaying non-binary reactions was to find an intuitive and familiar visualisation which would not take up too much space on smaller screens. Since the introduction of emoji on Apple's keyboard in 2011 and on Android's one in 2013, emoji have become a ubiquitous, language-independent means of communication \cite{Instagramm:Emoji, Cappallo:ImageToEmoji}. Instagram has found that almost half of its comments and captions nowadays include emoji \cite{Instagramm:Emoji} and with Google \cite{Google:Emoji} and Bing \cite{Bing:Emoji} adding support for emoji-search and companies such as Facebook \cite{Facebook:Reactions} and GitHub \cite{Github:Reactions} offering emoji-based reaction systems, it is safe to assume the majority of regular internet users is familiar with the concept and meaning of emoji \cite{Cappallo:EmojiVideoSearch}. Although it would be possible to include a complete emoji-keyboard to allow for even more versatile feedback, we feel it is easier for less technology-oriented users to be provided only with a sub-set including a short description of each reaction (see figure \ref{fig:design-reactions}). However, it is worth noting that this sub-set can easily be extended or overwritten by the presenter.
 
-Another detail worth mentioning is the hover-effect of the emoji, which is of special importance on desktops (see figure \ref{fig:design-reactions-details} (b)).
+When it comes to displaying the reactions sent by the audience, as the presentation of feedback in \cite{Teevan:MobileFeedbackDuringPresentation} was perceived as a distraction from the presentation, the feedback mechanism proposed in the present work is either only shown to the presenter or displayed without any animations, in the lower-right corner of the projector interface, with only a small badge symbolising how many people have sent this reaction for the current slide (see figure \ref{fig:design-reactions-details} (a)). On the side of the listener, one detail worth mentioning is the styling of the hover-state. Especially on computers it is important to offer intuitive hover-states, to give the user a sense of what they are pointing at and if they can interact with the currently focused element \cite{hover}. The hover-state designed for this purpose includes a magnifying-effect as well as a light shadow around the emoji (see figure \ref{fig:design-reactions-details} (b)).
 
 \begin{figure}\centering
 \includegraphics[width=.65\textwidth]{reactions}
-\caption{All six possible reactions and their emoji (from left): \emph{approval}, \emph{laughter}, \emph{boredom}, \emph{louder}, \emph{speed up} and \emph{slow down}. The \emph{speed up} emoji is in hover-state.}\label{fig:design-reactions}\end{figure}
+\caption{All six possible reactions and their emoji (from left): \emph{approval}, \emph{laughter}, \emph{boredom}, \emph{louder}, \emph{speed up} and \emph{slow down}.}\label{fig:design-reactions}\end{figure}
 
 \begin{figure}\centering\begin{tabular}{ccc}
 \includegraphics[width=.2\textwidth]{reactions-badge} &
 \includegraphics[width=.2\textwidth]{reactions-hover} \\
 (a) & (b)
-\end{tabular}\caption{Details of visualisation of reactions (a) with number of reactions as found in the presenter view and optionally the projector and (b) with hover status as found on listener interface.}\label{fig:design-reactions-details}\end{figure}
-
-% could theoretically also use all emojis, for even more interesting feedback and freedom!
-
-
-\section{Polls}
-% Polls: Describe why freeze navigation while voting and only allow voting when started by presenter
-% Growing balken!
-% Wie kann eine neue erstellt werden?
+\end{tabular}\caption{Details of visualisation of reactions (a) with number of reactions as found in the presenter view and optionally the projector and (b) reaction in listener interface with (right) and without hover-state (left).}\label{fig:design-reactions-details}\end{figure}
 
 \section{Content Sharing}
 % Sharing: show that it's possible to take photos on the phone directly!
 % Explain muting
 % Maybe use greg and amy again to show how greg copies a youtube link over or something
+The last big module developed for the present thesis is the content sharing functionality. At the time of writing, the software allows for sharing photos (via links or from the computer or phone), websites, youtube videos and free text (including questions). In an earlier iteration, only one \emph{sharing} button was available in the interface, but feedback cycles with other web developers and designers have shown that it was not clear and intuitive enough which kind of content could be shared, which is why the functionality was now separated into three buttons: \emph{Media}, \emph{Link} and \emph{Question}. Coming back to Greg and Amy, Amy has just talked about functional programming and Greg wants to share a related video, of his favourite youtube channel funfunfunction\footnote{\url{https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q}}. He opens the youtube app on his phone, searches for the video he wants to share and copies its link into the provided text field (see figure \ref{fig:design-sharing-youtube} (a)). When pressing the \emph{Share} button, Amy will receive a pop-up in which she can review the request and then accept it as a new main or subslide or dismiss it (see figure \ref{fig:design-sharing-youtube} (b)). If she accepts, the video will be inserted in a new slide relative to the slide Greg sent the request from. Youtube videos and links to websites are embedded into the presentation, similarly to images and links to images, which are also directly included into the created slide. Text is simply displayed as a second-order heading.
+
+\begin{figure}\centering\begin{tabular}{ccc}
+\includegraphics[width=.165\textwidth]{sharing-listener-youtube} &
+\includegraphics[width=.59\textwidth]{sharing-presenter-youtube} \\
+(a) & (b)
+\end{tabular}\caption{Sharing of a youtube video. Request from listener on a phone (a) and accepting-modal in presenter-view on a computer (b).}\label{fig:design-sharing-youtube}\end{figure}
+
+What was important to be able to include personal notes, is the ability to take photos and upload them to the presentation. This is possible in the \emph{Media} part of the content sharing feature (see figure \ref{fig:design-sharing-picture}) and makes use of the mobile operating system's native file uploads.
+
+\begin{figure}\centering\begin{tabular}{ccc}
+\includegraphics[width=.165\textwidth]{sharing-listener-1} &
+\includegraphics[width=.165\textwidth]{sharing-listener-2} &
+\includegraphics[width=.165\textwidth]{sharing-listener-3} \\
+(a) & (b) & (c)
+\end{tabular}\caption{Sharing of a picture from an iPhone's browser (Google Chrome on iOS $9.3.4$) in listener mode. First, the listener opens the \emph{Media} sharing feature (a). Then a file can be chosen from different sources, such as the camera roll, or a new picture can be taken (b). In a last step, the picture is uploaded to the application and can then be shared (c).}\label{fig:design-sharing-picture}\end{figure}
+
+Since such mechanisms can be fairly stressful for the presenter \cite{Teevan:MobileFeedbackDuringPresentation, Wacker:PresenterExperience}, we also built a feature to mute these requests. When muted, requests are automatically added as subslides to the slide the request was sent from, allowing all contributions to be collected without disturbing the flow of the presentation for the speaker \cite{Dieberger:NarrativeFlow}.
+

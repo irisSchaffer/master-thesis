@@ -68,46 +68,46 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.5}Polls}{23}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Content Sharing}{23}{section.4.6}
+\contentsline {section}{\numberline {4.6}Content Sharing}{24}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Implementation}{24}{chapter.5}
+\contentsline {chapter}{\numberline {5}Implementation}{27}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Project Scope}{25}{section.5.1}
+\contentsline {section}{\numberline {5.1}Project Scope}{28}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Technologies}{25}{section.5.2}
+\contentsline {section}{\numberline {5.2}Technologies}{28}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}ECMAScript2015 and Babel}{26}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}ECMAScript2015 and Babel}{29}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Reactive Programming}{27}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Reactive Programming}{30}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}React}{29}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}React}{32}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}unveil.js}{31}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}unveil.js}{34}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Project Structure}{34}{section.5.3}
+\contentsline {section}{\numberline {5.3}Project Structure}{37}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Extended unveil.js:}{34}{section.5.3}
+\contentsline {paragraph}{Extended unveil.js:}{37}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Network Synchronisation Layer:}{34}{section.5.3}
+\contentsline {paragraph}{Network Synchronisation Layer:}{37}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Interactive Extension:}{34}{section.5.3}
+\contentsline {paragraph}{Interactive Extension:}{37}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Server and Example Presentation:}{34}{section.5.3}
+\contentsline {paragraph}{Server and Example Presentation:}{37}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Extended unveil.js}{35}{section.5.4}
+\contentsline {section}{\numberline {5.4}Extended unveil.js}{38}{section.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.5}Network Synchronisation Layer}{36}{section.5.5}
+\contentsline {section}{\numberline {5.5}Network Synchronisation Layer}{39}{section.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.6}Interactive Extension}{37}{section.5.6}
+\contentsline {section}{\numberline {5.6}Interactive Extension}{40}{section.5.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.1}Speaker Presenter}{38}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.1}Speaker Presenter}{41}{subsection.5.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.2}Media}{38}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.2}Media}{41}{subsection.5.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6.3}Voting}{41}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.3}Voting}{44}{subsection.5.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.7}Server}{42}{section.5.7}
+\contentsline {section}{\numberline {5.7}Server}{45}{section.5.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.8}Example Application}{42}{section.5.8}
+\contentsline {section}{\numberline {5.8}Example Application}{45}{section.5.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{45}{appendix*.22}
+\contentsline {chapter}{References}{48}{appendix*.26}
