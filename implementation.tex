@@ -11,12 +11,15 @@
 % Every slide deck is generally created with HTML and JavaScript and styled with CSS, individual slides are composed of JSX-components (see chapter \ref{cha:implementation}). This means the speaker has to have some knowledge of front-end web technologies to be able to author slides.
 % The finished slide deck is then either uploaded to a publicly accessible web server or, if all audience members are connected to the same wifi, can be served locally from the speaker's computer.
 
-This chapter dives into the technical implementation details of the thesis project and gives an overview of the used technologies and explains why these were chosen over others. Like many other projects in this area \cite{Bry:Backstage, Cheng:TreebasedOnlinePresentations, Esponda:ElectronicVotingOnTheFly, Inoue:RealTimeQuestionnaire, Teevan:MobileFeedbackDuringPresentation, Triglianos:InteractiveWebPresentationsImpress}, the project is realised as a web application. This has many advantages, from modern web technologies' quick prototyping capabilities to the web's general cross-platform and cross-device nature, the project has benefitted from the dynamicity of the internet and the rapid evolvement of JavaScript over the past years.
-Although native sharing features of smartphones cannot be used due to the choice of platform, we believe, the merit that come with this decision outweigh the disadvantages, for both users and developers: as nobody has to download any apps to their devices, it is easier to bring the audience to use the developed application \cite{Triglianos:InteractiveWebPresentationsImpress}. The major advantage for developers on one hand is the ability to only concentrate on one platform instead of developing different applications for different operating systems, on the other hand the web is built for rapid prototyping as it is extremely easy and fast to roll out new updates without having to distribute them through the App Store or Play Store and without the need for users to manually update them. Since the JavaScript render layer this software was developed with also offers a library which can cross-compile JavaScript applications to different operating systems, the core code could stay almost untouched, should the application be ported to other platforms in the future.
+This chapter dives into the technical implementation details, gives an overview of the used technologies and explains why these were chosen over others. Like many other projects in this area \cite{Bry:Backstage, Cheng:TreebasedOnlinePresentations, Esponda:ElectronicVotingOnTheFly, Inoue:RealTimeQuestionnaire, Teevan:MobileFeedbackDuringPresentation, Triglianos:InteractiveWebPresentationsImpress}, this project is realised as a web application.
+% ADD HERE HOW EVERYTHING IS CONNECTED?!
+This has many advantages, from modern web technologies' quick prototyping capabilities to the web's general cross-platform and cross-device nature, the project has benefitted from the dynamicity of the internet and the rapid evolvement of JavaScript over the past years.
+Although native sharing features of smartphones cannot be used due to the choice of platform, we believe, the merits that come with this decision outweigh the disadvantages for both users and developers. As no app has to be downloaded, it is easier to bring the audience to use the developed application \cite{Triglianos:InteractiveWebPresentationsImpress}. The major advantage for developers on one hand is the ability to only focus on one platform instead of developing different applications for different operating systems, on the other hand the web is built for rapid prototyping as it is extremely easy and fast to roll out new updates without having to distribute them through the App Store or Play Store and without the need for users to manually update them. Since the JavaScript render layer this software was developed with also offers a library which can cross-compile JavaScript applications to different operating systems\footnote{\url{https://facebook.github.io/react-native/}}, the core code could potentially stay almost untouched, should the application be ported to other platforms in the future.
 
 As it was important to achieve high response times and since \emph{WebSockets} have successfully been leveraged in the real-time features of other presentation tools \cite{Inoue:RealTimeQuestionnaire, Triglianos:InteractiveWebPresentationsImpress}, the presented thesis project also employs this technology.
+% ADD HERE HOW EVERYTHING IS CONNECTED?!
 
-A few words should also be said about the distribution of this project. Without the vibrant open-source community, many of the frameworks and libraries used in this project would not exist. For this reason, and to give back to the community, all the libraries developed during this project have been published as open-source on GitHub\footnote{\href{https://github.com/irisSchaffer?tab=repositories}{\textsf{https://github.com/irisSchaffer/}}} and are freely available for anyone to use.
+Finally, a few words should also be said about the distribution of this project. Without the vibrant open-source community, many of the frameworks and libraries used in this project would not exist. For this reason, and to give back to the community, all the libraries developed during this project have been published as open-source on GitHub\footnote{\href{https://github.com/irisSchaffer?tab=repositories}{\textsf{https://github.com/irisSchaffer/}}} and are freely available for anyone to use.
 
 \section{Project Scope}
 \label{sec:implementation-scope}
@@ -25,7 +28,7 @@ A few words should also be said about the distribution of this project. Without 
 Before jumping into technical details, the scope of the project should be discussed. As the aim of the present work is to explore ways of incorporating mobile devices into presentation workflows, the goal of the project was to use an easily extensible presentation library to then build the mechanisms discussed in the previous chapters on top of it.
 As the focus was placed on the interaction possibilities between speaker and audience, the creation of the presentation for the speaker or the management of slides and presentations were out of scope. Therefore the server used for connecting different users to the presentation was kept as simple as possible, allowing any potential other developer to work with their own servers and technology stacks.
 
-In total, a system with several ways of interacting with the presentation from mobile or desktop devices was created, putting emphasise on mobile-optimised views and navigation possibilities. This system extends an existing presentation library with synchronisation of navigation state and state changes between listeners and speaker(s), a speaker-view as well as the possibility to dynamically add content during the presentation. In the following the technologies used in the project will be analysed and described to then discuss implementation details, problems and solutions of the mentioned components.
+In total, a system with several ways of interacting with a presentation, both from mobile and desktop devices was created, putting emphasise on mobile-optimised views and navigation possibilities. This system extends an existing presentation library with synchronisation of navigation state and state changes between listeners and speaker(s), a speaker-view as well as the possibility to dynamically add content during the presentation. In the following, the technologies used in the project will be analysed and described to then discuss implementation details, problems and solutions for the mentioned features.
 
 \section{Technologies}
 \label{sec:implementation-technologies}
@@ -35,10 +38,9 @@ In total, a system with several ways of interacting with the presentation from m
 % A few words about responsive design and media queries would probs be good
 % a few words about babel and es6
 
-The project generally follows modern best-practices in web development and utilises modern CSS3 and JavaScript features and frameworks. The software is written in ECMA\-Script\-2015, makes use of the \emph{node package manager}\footnote{\url{https://www.npmjs.com/}}(short \emph{npm}) for managing dependencies and \emph{Babel} to transpile to ECMA\-Script\-5. Additonally to relying on CSS3 features, this project also uses \emph{Sass}\footnote{\url{http://sass-lang.com/}} as a CSS pre-processor. The listener-interface was developed mobile-first and the speaker-view with mobile in mind; media-queries allow for these optimisations.
+The project generally follows modern best-practices in web development and utilises modern CSS3 and JavaScript features and frameworks. The software is written in ECMA\-Script\-2015, makes use of the \emph{node package manager}\footnote{\url{https://www.npmjs.com/}}(short \emph{npm}) for managing dependencies and \emph{Babel} to transpile the code to ECMA\-Script\-5. Additonally to relying on CSS3 features, this project also uses \emph{Sass}\footnote{\url{http://sass-lang.com/}} as a CSS pre-processor. The listener-interface was developed mobile-first and the speaker-view with mobile in mind; media-queries allow for these optimisations.
 
-On the front end, which this project focuses on, the JavaScript library \emph{React} is the framework of choice, additionally applying the \emph{reactive programming} paradigm using \emph{RxJS} to utilize their simpler interface for event-driven operations. The communication between client and server is handled by \emph{socket.io}\footnote{\url{http://socket.io/}}.
-This section tries to introduce the reader to the main technologies used to establish a base on which the following technical implementation details can be understood.
+On the front end, which this project focuses on, the JavaScript library \emph{React} is the framework of choice, additionally applying the \emph{reactive programming} paradigm using \emph{RxJS} to utilize their simpler interface for event-driven operations. The communication between client and server is handled by \emph{socket.io}\footnote{\url{http://socket.io/}}. These technologies will now be introduced to the reader shortly, to establish the knowledge-base necessary to understand the then following technical implementation details.
 
 \subsection[ECMAScript2015 and Babel]%             {ECMAScript2015 and Babel%             \protect\footnote{\url{https://babeljs.io/}}}%
 \label{sec:implementation-technologies-es6}
@@ -51,162 +53,104 @@ As these features are all included in the new ECMAScript standard, it is safe to
 \subsection{Reactive Programming}
 \label{sec:implementation-technologies-rxjs}
 
-Another problem with JavaScript, although integral part of the reason for its high popularity, is its asynchronous nature. Especially when working with highly interactive parts, the prime example being user interfaces, sequential programming quickly gets too inflexible to handle complex, event-driven applications \cite{reactive-programming-survey}. The same is true for the server where the possibility to concurrently serve a multitude of different clients is crucial. In these cases JavaScript offers \emph{event listeners} -- functions called once a certain event occurs. However, these event listeners or \emph{asynchronous callbacks} \cite{reactive-programming-survey}, oftentimes execute more asynchronous code and in turn have to wait for another event, and another one, and another one..., which can result in something known and dreaded by most any JavaScript developer: \emph{Callback Hell} (see programm \ref{prog:implementation-technologies-rxjs-callback-hell}).
+Another problem with JavaScript, although integral part of the reason for its high popularity, is its asynchronous nature. Especially when working with highly interactive parts, the prime example being user interfaces, sequential programming quickly gets too inflexible to handle complex, event-driven applications \cite{reactive-programming-survey}. The same is true for the server where the possibility to concurrently serve a multitude of different clients is crucial. In these cases JavaScript offers \emph{asynchronous callbacks}. These, however, oftentimes execute more asynchronous code and in turn have to wait for another callback to fire, and another one, and another one..., which can result in something known and dreaded by most any JavaScript developer: \emph{Callback Hell} (see programm \ref{prog:implementation-technologies-rxjs-callback-hell}). Since this project has to fulfill many asynchronous tasks, such as the entire communication with the server, and is heavy on the user-interface and thereby JavaScript's event system, it was crucial to find a way of handling this code gracefully. In the following, different ways of handling asynchronous programming are described, the example of an imaginary file upload will be used to demonstrate the differences on a code-level:
+\begin{enumerate}
+\item A file is chosen by the user
+\item The file is read by \texttt{FileReader}
+\item The file is uploaded
+\item The file upload modal is closed with an animation
+\item As soon as the animation is over, a success message is rendered
+\end{enumerate}
 
 \begin{program}
-\caption{\emph{Callback Hell} -- Nested callbacks in JavaScript. Simplified method taken from a previous project, which authenticates a user, creates a new google calendar for them and then saves the user to one's own database, to then redirect them. \texttt{\{...\}} is used to shorten the code, error-handling was also omitted in the example for simplicity.}
+\caption{\emph{Callback Hell} -- Nested asynchronous callbacks to create a file upload.}
 \label{prog:implementation-technologies-rxjs-callback-hell}
 \begin{JsCode}
-router.get('/callback', function(req, res, next) {
-  var code = req.query.code;
-  var name = JSON.parse(req.query.state);
-
-  // get token from oauth library
-  oauth2Client.getToken(code, function (err, tokens) {
-    // load configuration
-    Configuration.findOne({}, function (err, configuration) {
-      var calendar = google.calendar('v3');
-      // save to google calendar
-      calendar.calendars.insert({...}, function (err, cal) {
-        var member = new Member({...});
-        // save member to own database
-        member.save(function(err, member) {
-          return res.redirect(getRedirectionUrl(name) + '&success=true')
-        });
-      });
-    });
-  });
-});
+onFileChange(event) {
+  fileReader.readAsDataURL(event.file, (content, error) => {
+    uploadFile(content, (response, error) => {
+      this.refs.modal.close(() => {
+        updateSuccessMessage(response)
+      })
+    })
+  })
+}
 \end{JsCode}
 \end{program}
 
 Different approaches have been employed to lower the hurdle of writing asynchronous code, one of them being \emph{promises}: A promise is a value, yet to be computed \cite{reactive-vs-promises}. A promise can be a) pending (if it has not been assigned a value yet), b) resolved (if it has been assigned a value) or c) rejected (if an error occurred). With ECMAScript 2015 promises, these objects can then be queued using the \texttt{then} keyword, to execute asynchronous code in a certain sequence (see programm \ref{prog:implementation-technologies-rxjs-promises}).
 
 \begin{program}
-\caption{\emph{Promises} -- Simple example of chaining ECMAScript 2015 promises with \texttt{then} and \texttt{catch}.}
+\caption{\emph{Promises} -- File upload example using ECMAScript 2015 promises.}
 \label{prog:implementation-technologies-rxjs-promises}
 \begin{JsCode}
-var promise = new Promise(function(resolve, reject) {
-  asyncCall(function(error, data) {
-    if (error) {
-      reject(error); // reject the pending promise
-    } else {
-      resolve(data); // resolve the pending promise
-    }
-  })
-})
-
-promise
-  .then(function(data) {
-    // this is executed after asyncCall returns
-    // other asyncronous calls can be placed here
-  })
-  .catch(function(error) {
-    // this is executed if an error occurs somwehere along the way
-  })
+onFileChange(event) {
+  fileReader
+    .readAsDataURL(event.file)
+    .then(uploadFile)
+    .then((response) => {
+      this.refs.modal.close(() => promise.resolve(response))
+    })
+    .then(updateSuccessMessage(response))
+}
 \end{JsCode}
 \end{program}
 
-However, promises can still create nested callbacks, especially when chaining promises that rely on other promises' resolution \cite{reactive-vs-promises}. This is where \emph{reactive programming} shines: The reactive programming paradigm works with streams of events, in which every event is handled as a new value and all other parts depending on this value are re-computed upon arrival of such new value. To demonstrate this I would like to use Bainomugisha et al.'s illustrative example of a simple addition \cite{reactive-programming-survey}:
-
-\begin{JsCode}
-let v1 = 1;
-let v2 = 2;
-let v3 = v1 + v2;
-\end{JsCode}
+However, promises can still create nested callbacks, especially when chaining promises that rely on other promises' resolution \cite{reactive-vs-promises}. This is where \emph{reactive programming} shines: The reactive programming paradigm works with streams of events, in which every event is handled as a new value and all other parts depending on that value are re-computed upon arrival of such new value. Bainomugisha et al. use the illustrative example of a simple addition to demonstrate this \cite{reactive-programming-survey}: In sequential programming, $c$ the expression
 %
-In sequentially executed code, \texttt{v3} will hold the value $3$, no matter if or how \texttt{v1} or \texttt{v2} change. In reactive programming, however, \texttt{v3} will be re-computed as soon as either one of the values it depends on changes \cite{reactive-programming-survey}. This way, for a drag-and-drop feature, for example, the move of the mouse, continuously sending its location, could directly alter the position of an element in a page. JavaScript does not directly support reactive programming, but other, more functional languages, which can be transpiled to JavaScript, do. Another way of adding reactive programming concepts to JavaScript is using a library, such as \emph{Bacon.js}\footnote{\url{https://baconjs.github.io/}} or the one chosen for this project, \emph{ReactiveX}\footnote{\url{http://reactivex.io/}}. ReactiveX provides libraries for a multitude of different programming languages, C#, C++, Java and of course JavaScript among them. The latter, called \emph{The Reactive Extensions for JavaScript} or short \emph{RxJs}, allows for the simple creation of event streams (\emph{Observables}) from browser events or promises directly and uses the same method names JavaScript developers are familiar with from array-methods, most notably and well-known \texttt{map}, to apply a method to every element in the incoming stream and \texttt{filter}, to only let a subset of events pass. These methods can be chained to sequentially alter a value (see programm \ref{prog:implementation-technologies-rxjs}).
+$$c = a + b$$
+%
+with $a = 1$ and $b = 2$ will always be $3$, until assigned a different value. With reactive programming, however, should $a$ or $b$ change, the value of $c$ is automatically re-computed.
+JavaScript does not directly support reactive programming, but more functional languages like Elm\footnote{url{http://elm-lang.org/}}, which can be transpiled to JavaScript, do. Another way of adding reactive programming concepts to JavaScript is using a library, such as \emph{Bacon.js}\footnote{\url{https://baconjs.github.io/}} or the one chosen for this project, \emph{ReactiveX}\footnote{\url{http://reactivex.io/}}. ReactiveX provides libraries for a multitude of different programming languages, C#, C++, Java and of course JavaScript among them. The latter, called \emph{The Reactive Extensions for JavaScript} or short \emph{RxJs}, allows for the processing of event streams (\emph{Observables}) as if they were simple JavaScript arrays. Instead of writing sequential code, method after method, if asynchronous or not, is applied to every element in the incoming event stream, using the array-methods such as, most notably and well-known, \texttt{map} (to apply a method to every element in the incoming stream) and \texttt{filter} (to only let a subset of events pass) (see programm \ref{prog:implementation-technologies-rxjs}).
 
 \begin{program}
-\caption{\emph{RxJS} -- simplified example of the touch controls used to swipe to the next or previous slide. An Observable is created from the browser's \texttt{touchmove} event and is then transformed with \texttt{map} and \texttt{filter}, to in the end call the \texttt{navigate()} method with the direction the user swiped into.}
+\caption{\emph{RxJS} -- File upload example with reactive programming in RxJS.}
 \label{prog:implementation-technologies-rxjs}
 \begin{JsCode}
-this.moveObservable = Observable.fromEvent(document, 'touchmove')
-  // data: event object with array of touches
-  .filter(this.touchStarted) // only procede if touchstart is set to true
-  .map(this.toXY) // transform initial event data to latest touch's xy position
-  // data: \{x: xPosition, y: yPosition\}
-  .map(this.toDirection) // transform xy position to direction literal
-  // data: right/left/up/down
-  .do(this.resetTouchStart) // set this.touchStarted to false
-  // data: right/left/up/down
-  .subscribe(this.navigate) // call this.navigate() with direction data
+Observable.fromEvent('change', fileInput)
+  .pluck('file') // pluck event.file
+  .map(fileReader.readAsDataURL)
+  .map(uploadFile)
+  .do(() => this.refs.modal.close)
+  .subscribe(updateSuccessMessage)
 \end{JsCode}
 \end{program}
 
-Additionally to Observables, RxJs also knows \emph{Subjects}, which combine both a source of events and a consumer of such. Subjects are Observables, but also Observers at the same time and can be used to broadcast values to several consumers \cite{rxjs-docu}.
+Additionally to Observables, RxJs also knows \emph{Subjects}, which combine both a source of events and a consumer of such. Subjects are Observables but at the same time also Observers and can be used to broadcast values to several consumers \cite{rxjs-docu}.
 
 \subsection[React]%             {React%             \protect\footnote{\url{https://facebook.github.io/react/index.html}}}%
 \label{sec:implementation-technologies-react}
 % explain base concept of having re-usable components and how they are defined!
 % get some HTML code in there :)
 
-As this project concentrates on the front end, a mature JavaScript library for front end rendering was needed. After previous experience with the big and complex but slow AngularJS, and because of promising performance benchmarks \cite{react-benchmarks} and simply to explore new JavaScript libraries, React was chosen for the rendering layer of this application. Since Facebook started developing React in 2013, it has challenged existing approaches and set new standards in front end web development \cite{introduction-to-react}. Instead of creating an entire MVC framework for the front end, React really concentrates on the view by offering a way of creating independent, lightweight view components. This gives React the huge advantage of beating other front end frameworks by far in performance benchmarks \cite{react-benchmarks}. Moreover, \emph{React Native}\footnote{\url{https://facebook.github.io/react-native/}}, which uses the same component-based system, makes it possible to port applications to different mobile operation systems.
+As this project focuses on the front end, a mature JavaScript library for front end rendering was needed. After previous experience with the big and complex but slow AngularJS, and because of promising performance benchmarks \cite{react-benchmarks} and simply to explore new JavaScript libraries, React was chosen for the rendering layer of this application. Since Facebook started developing React in 2013, it has challenged existing approaches and set new standards in front end web development \cite{introduction-to-react}. Instead of creating an entire MVC framework for the front end, React really concentrates on the view by offering a way of creating independent, lightweight view components. This gives React the huge advantage of beating other front end frameworks by far in performance benchmarks \cite{react-benchmarks}. Moreover, \emph{React Native}\footnote{\url{https://facebook.github.io/react-native/}}, which uses the same component-based system, makes it possible to port applications to different mobile operation systems.
 
-The arguably most important method these re-usable, lightweight components implement is the \texttt{render} method, defining what HTML or JSX\footnote{\url{https://facebook.github.io/jsx/}} should be rendered by the browser:
-\begin{JsCode}
-export default class HelloWorld extends Component {
-  render() {
-    return (<h1>Hello World!</h1>)
-  }
-}
-\end{JsCode}
-%
-The created Component can then be rendered into the virtual React DOM, JSX makes it possible to simply use the name of the component to create it:
-%
-\begin{JsCode}
-ReactDOM.render(
-  <HelloWorld />,
-  document.getElementsByTagName('body')[0]
-)
-\end{JsCode}
-%
-This would simply put an \texttt{h1} element with the text \texttt{Hello World!} into the \texttt{body} element of the HTML page. Additionally to the \texttt{render} method, components also have a \emph{state} and \emph{properties} (\texttt{props}), through which they can communicate with other components and maintain their internal state. \texttt{props} are passed in to the component during creation, in JSX this can be achieved by simply passing them in as XML attributes:
-%
-\begin{JsCode}
-  <HelloWorld greeting="Hi" />
-\end{JsCode}
-%
-This could in turn be used in the \texttt{HelloWorld} component's \texttt{render} method:
-%
-\begin{JsCode}
-  render() {
-    return (<h1>{this.props.greeting} World!</h1>);
-  }
-\end{JsCode}
-%
-The children of a component are also available through \texttt{this.props.children}. The \texttt{state} variable, on the other hand, is responsible for handling internal updates e.g. through user interaction \cite{react-docu}. To alter the state, the method \texttt{setState} can be used, which will cause an update and re-rendering of the component. So if in the above example, the word ``World'' should be changed to something else by the user, a text field with an event handler can be added inside the component (see program \ref{prog:implementation-technologies-react-state}).
+To define how each of these re-usable, lightweight components is displayed, they implement a \texttt{render} method, returning JSX\footnote{\url{https://facebook.github.io/jsx/}}. The communication with other components happens through \emph{properties} (\texttt{props}), which are passed into the component as XML attributes. Their own internal state, which can be manipulated e.g. through user interactions, is maintained in the \texttt{state} member \cite{react-docu}. Every state (internally) or property (externally) change causes a re-render of the component, an example \texttt{HelloWorld} component can be found in program\ref{prog:implementation-technologies-react-state}).
 %
 \begin{program}
-\caption{Example code snippet using state in a React component. Whenever the text input changes (i.e. a user types something), the \texttt{update()} method will be called and set the state and cause a re-render.}
+\caption{Example code snippet using properties and state in a React component. Whenever the text input changes (i.e. a user types something), the state will be updated and the component re-rendered. The component can be used in other components as \texttt{<HelloWorld greeting=''Hi''/>}.}
 \label{prog:implementation-technologies-react-state}
 \begin{JsCode}
-// set default state and props...
+export default class HelloWorld extends Component {
+  static propTypes = { greeting : PropTypes.string }
+  static defaultProps = { greeting : 'Hello' }
 
-componentWillMount() {
-  // create observable from change event on input
-  this.observable = Observable.fromEvent('change', this.refs.input)
-    .pluck('target', 'value') // extract input text
-    .subscribe(this.update) // call update with value
+  constructor(props) {
+    super(props)
+    this.state = { name : 'World' }
+  }
+
+  const render = () => (
+    <div>
+      <h1>{this.props.greeting} {this.state.name}!</h1>
+      <input value={this.state.name} onChange={(name) => this.setState({ name })} />
+    </div>  
+  )
 }
-
-componentWillUnmount() { this.observable.unsubscribe() }
-
-update(text) { this.setState({name: text}) }
-
-render = () => (
-  <div>
-    <h1>{this.props.greeting} {this.state.name}!</h1>
-    <input value={this.state.name} ref="input" />
-  </div>
-)
 \end{JsCode}
 \end{program}
 %
-Now, whenever a user changes the text in the \texttt{input} field, the RxJS Observable will receive a new value (a change event). The \texttt{value} of the field is extracted on line $6$ of program \ref{prog:implementation-technologies-react-state} and used to then update the state in the \texttt{update} method, which is implicitly called with the value passed through the Observable chain.
-
-The two methods \texttt{com\-po\-nent\-Will\-Mount}, \texttt{com\-po\-nent\-Will\-Un\-mount} as well as \texttt{com\-po\-nent\-Did\-Mount}, \texttt{should\-Com\-po\-nent\-Up\-date}, \texttt{com\-po\-nent\-Will\-Up\-date}, \texttt{com\-po\-nent\-Did\-Up\-date} and \texttt{com\-po\-nent\-Will\-Re\-ceive\-Props} are \emph{lifecycle methods}, called whenever the component is created, updated or destroyed.
-
+These updates, as well as construction and destruction of components are handled in \emph{lifecycle methods} \cite{react-docu}.
 As an end note on React, and a transition to the core presentation library, I want to add that React components can be nested, which is at the core of the project developed for the present thesis. To make it as easy as possible for other developers to use the created libraries, a presentation is built just as a usual HTML page, using JSX to reference the custom React components, as will be shown later this chapter in program \ref{prog:implementation-client-presentation}.
 
 \subsection[unveil.js]%             {unveil.js%             \protect\footnote{\url{https://github.com/ostera/unveil.js}}}    
@@ -215,24 +159,27 @@ As an end note on React, and a transition to the core presentation library, I wa
 % Give overview over controls in here.
 % Also talk about the mobile style sheets / responsive design and the TouchControls, which I also implemented alone.
 % (mention that this part is unit tested with jest(https://facebook.github.io/jest/))
-
-As a presentation layer, this project uses the open-source JavaScript library \textit{unveil.js}, which was developed by Leandro Ostera and myself in the beginning of the project and which I extended and adapted to my needs in an own fork\footnote{\url{https://github.com/irisSchaffer/unveil.js}} during the project. This fork will be covered in section \ref{sec:implementation-unveil} of this chapter, until then, a short overview of the different parts of unveil.js is given and key concepts of the library are discussed. Screenshots of what unveil.js looks like can be found in figure \ref{fig:implementation-technologies-unveil-screenshots}.
+Although not initially planned, as a presentation layer, this project builds upon an open-source JavaScript library called \textit{unveil.js}, which we developed prior to this project and that was extended and adapted in an own fork\footnote{\url{https://github.com/irisSchaffer/unveil.js}} during the project. While other alternatives, such as \emph{impress.js}\footnote{\url{http://impress.github.io/impress.js}} or the popular \emph{reveal.js}\footnote{\url{http://lab.hakim.se/reveal-js/}}, exist, extensive research showed that neither of the two libraries offers the flexibility necessary to easily implement the discussed interactive mechanisms. They both were not built unleashing modern web technologies' full potential and practically consist of one big file of JavaScript, handling all functionality in the presentation. We therefore decided to build our own presentation platform, which will shortly be introduced. Screenshots of an unveil.js presentation can be found in figure \ref{fig:implementation-technologies-unveil-screenshots}.
 %
 \begin{figure}\centering
 \includegraphics[width=0.65\textwidth]{presentation-screenshot}
 \caption{Screenshot of an example slide with unveil.js, using interactive extensions discussed in section \ref{sec:implementation-interactive}.}\label{fig:implementation-technologies-unveil-screenshots}\end{figure}
 %
-Generally, unveil.js operates on a $2$-dimensional slide-space: Every slide can have a next and previous slide in $x$, as well as in $y$-direction. To generate the $y$ axis, slides can be nested in other slides. These slides have an optional unique name as well as an index in the slide-tree, which they are identified by. As shown in program \ref{prog:implementation-client-presentation}, slides are created inside the component \texttt{UnveilApp}, the core of unveil.js. This component configures and sets up the entire application based on optional configuration passed in as properties.
-There are a few concepts unveil.js is built around to allow for extensibility and configurability, namely \emph{presenters}, \emph{controls} and \emph{modes}:
+Generally, unveil.js, like impress.js and reveal.js, is a library with which online presentations can be built. All three do not require a web server and can therefore be statically, and also locally served. Instead of building the presentation using a graphical user interface, all slides, transitions and styling are defined in HTML and CSS, meaning the presenter has to be familiar with basic front end web development techniques. Thanks to the use of React, unveil.js, in contrast to reveal.js and impress.js, however, does not depend on the usage of classnames to build a presentation, but instead can make full use of semantically-named components, such as \texttt{<Slide/>} or \texttt{<Notes/>}. An example presentation can be found in program \ref{prog:implementation-client-presentation}.
+
+Like reveal.js, unveil.js operates on a $2$-dimensional slide-space: Every slide can have a next and previous slide in $x$ (main slide), as well as in $y$-direction (sub-slide). To generate the $y$ axis, programatically, slides are nested in other slides.
+To be able to identify slides from a URL, slides have an optional unique name as well as an index in the slide-tree. Both the index and the name can be used to link to a certain slide, making it possible to share not only a whole presentation but also a certain slide.
+
+The core of unveil.js is \texttt{UnveilApp}, which all slides and sub-slides are nested in. This component configures and sets up the entire application based on optional configuration passed in as properties. There are a few concepts we introduced to unveil.js to allow for maximal extensibility and configurability, namely \emph{presenters}, \emph{controls} and \emph{modes}:
 %
 \begin{itemize}
 \item \textbf{Presenters} define the way slides are rendered, e.g. show notes, upcoming slides or hide them.
 \item \textbf{Controls} control a part of the application, e.g. navigating from one slide to the next using the arrow keys on the keyboard.
 \item \textbf{Modes} are what allows a speaker to have a different presenter and controls from an audience member. Each mode defines its own presenter and set of controls, the mode is determined by the url query parameter \texttt{mode}.
 \end{itemize}
-This allows anybody using unveil.js to define new modes, presenters and controls and thereby extend the base library as they wish. A few of these are already defined, namely a default \texttt{Presenter}, \texttt{UIControls} to navigate using buttons, \texttt{KeyControls} to navigate using the keyboard and \texttt{TouchControls} to navigate with swipe-gestures on touch screens. In section \ref{sec:implementation-client}, modes for the audience (\emph{default}), the speaker (\emph{speaker}) and for use on the projection device (\emph{projector}) will be introduced.
+This allows anybody using unveil.js to define new modes, presenters and controls and thereby extend the base library as they wish. A few of these are already defined in the base library, namely a default \texttt{Presenter}, \texttt{UIControls} to navigate using buttons, \texttt{KeyControls} to navigate using the keyboard and \texttt{TouchControls} to navigate with swipe-gestures on touch screens. In section \ref{sec:implementation-client}, modes for the audience (\emph{default}), the speaker (\emph{speaker}) and for use on the projection device (\emph{projector}) will be introduced.
 
-For these controls and the entire presentation to be navigatable, \texttt{Un\-veil\-App} is responsible for the creation of two very important classes: \texttt{Router} and \texttt{Navigator}. These can be defined outside and passed into \texttt{UnveilApp} as properties, allowing users to customise their navigation logic.
+For these controls and the entire presentation to be navigatable, \texttt{Un\-veil\-App} is responsible for the creation of two very important classes: \texttt{Router} and \texttt{Navigator}. These can be defined outside and passed into \texttt{UnveilApp} as properties, allowing other developers to customise their navigation logic.
 %
 The \texttt{Router} is the class handling everything connected to the current url. It receives the slide-tree and can compute the indices of a slide by its name and vice versa. Whenever the browser history changes, the router finds the corresponding slide-indices, computes an array of possible directions to go into from this slide and propagates the event to \texttt{UnveilApp}, which can then re-render the application.
 \texttt{Navigator}, in turn, receives these directions and is responsible for the mapping of directions (\emph{left}, \emph{right}, \emph{up}, \emph{down}) to slide-indices. Controls know the navigator and can push new directions to the navigator subject, thus starting the navigation process described in detail in figure \ref{fig:implementation-technologies-unveil-navigation}.
@@ -254,15 +201,15 @@ The \texttt{Router} is the class handling everything connected to the current ur
 % Which repos do I have and what do they include functionality-wise?
 % explain why different repos and how they are all own npm packages that can easily be included in other projects
 
-As the puropose of this project was not only to experiment with different ways of interacting with presentations using mobile devices, but also to create something worthwhile and contribute back to the vibrant open-source community, the project is enitrely open-source and separated into different repositories, which are all available on GitHub. These can be installed using npm, therefore allowing developers to rely only on the parts they really need.
+As the puropose of this project was not only to experiment with different ways of interacting with presentations using mobile devices, but also to create something worthwhile and contribute back to the vibrant open-source community, the project is enitrely open-source and separated into different repositories. These can be installed using npm, therefore allowing developers to rely only on the parts they really need.
 
-\paragraph{Extended unveil.js:} As discussed in section \ref{sec:implementation-technologies-unveil}, the project is based on the library unveil.js. During the development of the project, certain parts of the base library did not offer the flexibility needed for easy extensibility and so several parts were adapted and new presentation logic was added. This happened in a fork of the original library, which will be examined in section \ref{sec:implementation-unveil}.
+\paragraph{Extended unveil.js:} As discussed in section \ref{sec:implementation-technologies-unveil}, the project is based on the library unveil.js. During the development of the project, certain parts of the base library were improved to allow for even easier extensibility and new presentation logic was added. This happened in a fork of the original library, which will be examined in section \ref{sec:implementation-unveil}.
 
 \paragraph{Network Synchronisation Layer:} The first library of direct importance for the interaction between speaker and audience through personal devices is \textit{unveil-network-sync}\footnote{\url{https://github.com/irisSchaffer/unveil-network-sync}}. This rather small library relies on unveil.js and is responsible for connecting the client and the server through web sockets and enables the synchronisation of the current slide displayed between speaker, audience and projector. The implementation of the features will be discussed in detail in section \ref{sec:implementation-network-sync}.
 
-\paragraph{Interactive Extension:} As the name already suggests, this library is at the core of the present thesis: It includes a dedicated presenter for the speaker, implements the insertion of additional slides and subslides and by that allows the audience to share content with the presentation. The voting mechanism, as well as the creation of new votings on-the-fly, also live within this library. The repository, called \emph{unveil-interactive}\footnote{\url{https://github.com/irisSchaffer/unveil-interactive}} relies on unveil-network-sync for the socket-interaction. The interactive extension will be covered in section \ref{sec:implementation-interactive} of this chapter.
+\paragraph{Interactive Extension:} As the name already suggests, this library is at the core of the present thesis: It includes a dedicated presenter for the speaker, implements the insertion of additional slides and subslides and by that allows the audience to share content with the presentation. Reactions, the voting mechanism, as well as the creation of new votings on-the-fly, also live within this library. The repository, called \emph{unveil-interactive}\footnote{\url{https://github.com/irisSchaffer/unveil-interactive}} relies on unveil-network-sync for the socket-interaction and will be covered in section \ref{sec:implementation-interactive} of this chapter.
 
-\paragraph{Server and Example Presentation:} The last repository connected to this thesis is \emph{unveil-client-server}\footnote{\url{https://github.com/irisSchaffer/unveil-client-server}}, which includes a simple server as well as a real-world example of a presentation, which was used in the intermediate thesis project presentation as part of the Interactive Media course IM690, on the 2\textsuperscript{nd}\xspace of February, 2016. In this chapter, a whole section was dedicated to the server (\ref{sec:implementation-server}), as well as to the example application (\ref{sec:implementation-client}), to separate concerns a bit more clearly and be able to conclude with a demonstration of how all parts discussed earlier play together in a final presentation.
+\paragraph{Server and Example Presentation:} The last repository connected to this thesis is \emph{unveil-client-server}\footnote{\url{https://github.com/irisSchaffer/unveil-client-server}}, which includes a simple server as well as a real-world example of a presentation. In this chapter, a whole section was dedicated to the server (\ref{sec:implementation-server}), as well as to the example application (\ref{sec:implementation-client}), to separate concerns a bit more clearly and be able to conclude with a demonstration of how all parts discussed earlier play together and can be used by other developers.
 
 \section{Extended unveil.js}
 \label{sec:implementation-unveil}
