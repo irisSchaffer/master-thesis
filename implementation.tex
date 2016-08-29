@@ -1,36 +1,59 @@
 \chapter{Implementation}
 \label{cha:implementation}
-% short overview; why web -- use references!
-% speak about quick prototyping possibilities and how it's easier to roll out updates and how nobody needs to download an app on their phone to interact with the presentation
-% say something about open source and why all the code is online on github!
-%
-%
-%
+
 % In Implementation: Give overview of how it works: server on presenter computer (like in Office Social!), IP address is distributed to viewers, they go there and can then follow the presentation.
 
 % Every slide deck is generally created with HTML and JavaScript and styled with CSS, individual slides are composed of JSX-components (see chapter \ref{cha:implementation}). This means the speaker has to have some knowledge of front-end web technologies to be able to author slides.
 % The finished slide deck is then either uploaded to a publicly accessible web server or, if all audience members are connected to the same wifi, can be served locally from the speaker's computer.
 
-This chapter dives into the technical implementation details, gives an overview of the used technologies and explains why these were chosen over others. Like many other projects in this area \cite{Bry:Backstage, Cheng:TreebasedOnlinePresentations, Esponda:ElectronicVotingOnTheFly, Inoue:RealTimeQuestionnaire, Teevan:MobileFeedbackDuringPresentation, Triglianos:InteractiveWebPresentationsImpress}, this project is realised as a web application.
+This chapter dives into the technical implementation details, gives an overview of the used technologies and explains why these were chosen over others. Like many other projects in this area \cite{Bry:Backstage, Cheng:TreebasedOnlinePresentations, Esponda:ElectronicVotingOnTheFly, Inoue:RealTimeQuestionnaire, Teevan:MobileFeedbackDuringPresentation, Triglianos:InteractiveWebPresentationsImpress}, this project is realised using the web as a platform.
 % ADD HERE HOW EVERYTHING IS CONNECTED?!
 This has many advantages, from modern web technologies' quick prototyping capabilities to the web's general cross-platform and cross-device nature, the project has benefitted from the dynamicity of the internet and the rapid evolvement of JavaScript over the past years.
 Although native sharing features of smartphones cannot be used due to the choice of platform, we believe, the merits that come with this decision outweigh the disadvantages for both users and developers. As no app has to be downloaded, it is easier to bring the audience to use the developed application \cite{Triglianos:InteractiveWebPresentationsImpress}. The major advantage for developers on one hand is the ability to only focus on one platform instead of developing different applications for different operating systems, on the other hand the web is built for rapid prototyping as it is extremely easy and fast to roll out new updates without having to distribute them through the App Store or Play Store and without the need for users to manually update them. Since the JavaScript render layer this software was developed with also offers a library which can cross-compile JavaScript applications to different operating systems\footnote{\url{https://facebook.github.io/react-native/}}, the core code could potentially stay almost untouched, should the application be ported to other platforms in the future.
 
-As it was important to achieve high response times and since \emph{WebSockets} have successfully been leveraged in the real-time features of other presentation tools \cite{Inoue:RealTimeQuestionnaire, Triglianos:InteractiveWebPresentationsImpress}, the presented thesis project also employs this technology.
-% ADD HERE HOW EVERYTHING IS CONNECTED?!
-
-Finally, a few words should also be said about the distribution of this project. Without the vibrant open-source community, many of the frameworks and libraries used in this project would not exist. For this reason, and to give back to the community, all the libraries developed during this project have been published as open-source on GitHub\footnote{\href{https://github.com/irisSchaffer?tab=repositories}{\textsf{https://github.com/irisSchaffer/}}} and are freely available for anyone to use.
+Finally, a few words should also be said about the distribution of this project. Without the vibrant open-source community, many of the frameworks and libraries used in this project would not exist. For this reason, and to give back to the community, all the libraries developed during this project have been published as open-source on GitHub\footnote{\href{https://github.com/irisSchaffer?tab=repositories}{\textsf{https://github.com/irisSchaffer/}}} and are freely available for anyone to use. We concentrated on creating an extensible system for any developer to customiste, adapt, plug into and build interactive presentations with; the only requirement being basic HTML, CSS and JavaScript knowledge.
 
 \section{Project Scope}
 \label{sec:implementation-scope}
 % What's the general scope of the project? Why is everything on the client and 
 % not the server? etc.
-Before jumping into technical details, the scope of the project should be discussed. As the aim of the present work is to explore ways of incorporating mobile devices into presentation workflows, the goal of the project was to use an easily extensible presentation library to then build the mechanisms discussed in the previous chapters on top of it.
-As the focus was placed on the interaction possibilities between speaker and audience, the creation of the presentation for the speaker or the management of slides and presentations were out of scope. Therefore the server used for connecting different users to the presentation was kept as simple as possible, allowing any potential other developer to work with their own servers and technology stacks.
+Before jumping into technical details, the scope of the project should be discussed. As the aim of the present work is to explore ways of incorporating mobile devices into presentation workflows, the goal of the project was to build the mechanisms described in the previous chapters on top of a JavaScript presentation library. As the focus was placed on the interaction possibilities between speaker and audience, the creation of the presentation (e.g. using a graphical user interface) or the management of slides and presentations were out of scope. As with most JavaScript presentation libraries, the resulting application is mainly aimed towards developers, both to extend the libraries further as well as to create presentations, as at least basic knowledge of HTML and CSS is necessary to build slides.
 
-In total, a system with several ways of interacting with a presentation, both from mobile and desktop devices was created, putting emphasise on mobile-optimised views and navigation possibilities. This system extends an existing presentation library with synchronisation of navigation state and state changes between listeners and speaker(s), a speaker-view as well as the possibility to dynamically add content during the presentation. In the following, the technologies used in the project will be analysed and described to then discuss implementation details, problems and solutions for the mentioned features.
+In total, a front end heavy system was created which features several ways of interacting with a presentation, both from mobile and desktop devices. Emphasise was put on mobile-optimised views and navigation possibilities. The end product consists of several, highly customisable libraries which can be combined to a presentation library which synchronises navigation state and state changes between listeners and speaker(s), includes three distinct interfaces for listeners, speakers and projects and offers the possibility to dynamically add content during the presentation. In the following, the general architecture and technologies used in the project will be analysed and described to then discuss implementation details, problems and solutions for the main features.
 
-\section{Technologies}
+\begin{figure}\centering
+\includegraphics[width=0.65\textwidth]{implementation-setup}
+\caption{Example application setup. A server serves the presentation and connects all clients (presenter devices, listener devices and projector) through WebSockets.}\label{fig:implementation-architecture-setup}\end{figure}
+
+\section{Server Architecture}
+
+In general, the application consists of two parts: the front end web application, run on every client, as well as a web server (see figure \ref{fig:implementation-architecture-setup}). As described in chapter \ref{cha:design}, this server is either publicly-accessible or -- if all listeners have access to the same network -- run on any computer on the local network. While special attention was paid to the front end libraries developed, the server was kept as simple as possible, allowing any developer to work with their own servers and technology stacks. However, the limitation of having such a lightweight and \emph{dumb} server, is that in the current iteration of the software all state changes are only persisted on the client-side. although good for testing purposes, as a reset is only a page-reload and clearing of local storage away, this means audience members joining the presentation after any additional slides were added, will not have the same state of the presentation. The server's two only requirements are on one hand to serve the static web application to all clients, and on the other hand to connect all of these clients to enable the interaction and synchronisation between them using \emph{WebSockets}. This technology was chosen as low response times for all network-requests were paramount and since the technology has already been successfully leveraged in the real-time features of other presentation tools \cite{Inoue:RealTimeQuestionnaire, Triglianos:InteractiveWebPresentationsImpress}. In our server implementation, the presentation is run from a Node.js server, using Express\footnote{\url{http://expressjs.com/}} as a framework. WebSocket support is added using the popular library \emph{socket.io}\footnote{\url{http://socket.io/}}, which a few more words will be said on in section \ref{sec:implementation-network-sync}.
+To again emphasise how low the requirements for such a server are, a working example implementation can be found in program \ref{prog:implementation-server-code}. Additionally to this, the server developed for this project also includes a \texttt{lastState}, which holds the last client state which is emitted whenever a new client joins. Once the connection between client and server is established, the server starts broadcasting all incoming requests from any client to all other ones (see figure \ref{fig:implementation-client-server-communication}). These requests are then processed on the clients locally, taking into consideration the mode they are currently in. Wherever possible, the clients optimistically update the interface instead of waiting for the response from the server, to make the application feel even faster.
+
+\begin{program}
+\caption{Very simple, possible implementation of a server running this project with Node.js and Express. \cite{socket-io-wildcards} describes how wildcard support can be added to socket.io.}
+\label{prog:implementation-server-code}
+\begin{JsCode}
+var express = require('express'); var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+// directory 'client' will be served by server
+app.use(express.static(__dirname + '/../client/'));
+
+io.on('connection', function(socket) { // setting up socket io
+  socket.on('*', function(event, data) {
+    io.emit(event, data);
+  });
+});
+
+server.listen(9000, function () {
+  console.log('Unveil server listening on port 9000!');
+});
+\end{JsCode}
+\end{program}
+
+\section{Front End Technologies}
 \label{sec:implementation-technologies}
 % Which technologies were chosen and why?
 % How do they generally work? To a level on which the reader can
@@ -38,9 +61,13 @@ In total, a system with several ways of interacting with a presentation, both fr
 % A few words about responsive design and media queries would probs be good
 % a few words about babel and es6
 
+\begin{figure}\centering
+\includegraphics[width=0.65\textwidth]{implementation-server-communication}
+\caption{Client-server communication. The server receives the request from the client and forwards it to all clients.}\label{fig:implementation-client-server-communication}\end{figure}
+
 The project generally follows modern best-practices in web development and utilises modern CSS3 and JavaScript features and frameworks. The software is written in ECMA\-Script\-2015, makes use of the \emph{node package manager}\footnote{\url{https://www.npmjs.com/}}(short \emph{npm}) for managing dependencies and \emph{Babel} to transpile the code to ECMA\-Script\-5. Additonally to relying on CSS3 features, this project also uses \emph{Sass}\footnote{\url{http://sass-lang.com/}} as a CSS pre-processor. The listener-interface was developed mobile-first and the speaker-view with mobile in mind; media-queries allow for these optimisations.
 
-On the front end, which this project focuses on, the JavaScript library \emph{React} is the framework of choice, additionally applying the \emph{reactive programming} paradigm using \emph{RxJS} to utilize their simpler interface for event-driven operations. The communication between client and server is handled by \emph{socket.io}\footnote{\url{http://socket.io/}}. These technologies will now be introduced to the reader shortly, to establish the knowledge-base necessary to understand the then following technical implementation details.
+On the front end, which this project focuses on, the JavaScript library \emph{React} is the framework of choice, additionally applying the \emph{reactive programming} paradigm using \emph{RxJS} to utilize their simpler interface for event-driven operations. These technologies will now be introduced to the reader shortly, to establish the knowledge-base necessary to understand the then following technical implementation details.
 
 \subsection[ECMAScript2015 and Babel]%             {ECMAScript2015 and Babel%             \protect\footnote{\url{https://babeljs.io/}}}%
 \label{sec:implementation-technologies-es6}
@@ -352,36 +379,6 @@ The audience can start voting as soon as the speaker navigates to the slide with
 
 Once the voting has started, internally, the \texttt{Voting} component remembers which answer the user has clicked in the \texttt{answer} state variable. Once the submit button is pressed, a \texttt{state/slide/voting:answer} event is fired and broadcast to all clients, which update their internal voting results.
 Because the results of the voting should be available throughout the whole presentation and not be reset when leaving the slide, \texttt{Voting} also handles the communication with local storage, to store current results.
-
-\section{Server}
-\label{sec:implementation-server}
-% shortly talk about server and how any server could really be used for this.
-As shortly outlined before, the focus of this project was never the server, but instead the client. For this reason the server was kept as lightweight and \emph{dumb} as possible, only handling the most important communication. In reality, it acts as a proxy and broadcaster between the clients and serves the JavaScript and HTML files. This has the advantage that other developers can use their own servers and technology stacks without relying on the architecture chosen for the example presentation. Literally the only requirement for the server is to support Web Sockets. However, the disadvantage is that currently all state changes are only persisted on the client-side. This is good for testing, as a reset is only a page-reload and clearing of local storage away, but means audience members joining the presentation after any additional slides were added, will not have the same state of the presentation.
-
-The server developed for the project presentation of the Interactive Media course IM690 runs on Node.js, using Express\footnote{\url{http://expressjs.com/}} as a framework. To again emphasise how low the requirements for such a server are, a working example implementation can be found in program \ref{prog:implementation-server-code}. Additionally to this code, the server in the unveil-client-server repository also includes a \texttt{lastState} variable, in which the last navigation state is stored. Every time a new client connects, this state is then emitted with a \texttt{state:initial} event. Moreover, socket.io does not currently support wildcards in events, which is why it was necessary to add the code snippet discussed in \cite{socket-io-wildcards}.
-
-\begin{program}
-\caption{Very simple possible implementation of a server running the thesis project with Node.js and Express. \cite{socket-io-wildcards} describes how wildcard support can be added to socket.io.}
-\label{prog:implementation-server-code}
-\begin{JsCode}
-var express = require('express'); var app = express();
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
-
-// directory 'client' will be served by server
-app.use(express.static(__dirname + '/../client/'));
-
-io.on('connection', function(socket) { // setting up socket io
-  socket.on('*', function(event, data) {
-    io.emit(event, data);
-  });
-});
-
-server.listen(9000, function () {
-  console.log('Unveil server listening on port 9000!');
-});
-\end{JsCode}
-\end{program}
 
 \section{Example Application}
 \label{sec:implementation-client}
