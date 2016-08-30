@@ -263,8 +263,8 @@ means a navigation \emph{left} (left arrow key pressed, swipe left etc.) will no
 \section{Network Synchronisation Layer}
 \label{sec:implementation-network-sync}
 % Mention problems with socket io here! --> Corporate firewalls can block socket io entirely, etc.
-As mentioned before, the network synchronisation layer is responsible for the communcation between server and client using web sockets. These are created with socket.io, a library which also provides fallbacks for browsers that do not support web sockets yet. However, this library also has a few drawbacks, especially when it comes to corporate networks. As Rob Britton describes in \cite{socketio-problems}, socket.io seems to have problems getting through firewalls and can be blocked by some anti virus software.
-Because mobile browser support is essential for this project, I decided to still use this library.
+As mentioned before, the network synchronisation layer is responsible for the communcation between server and client using WebSockets. These are created with socket.io, a library which also provides fallbacks for browsers that do not support WebSockets yet. However, this library also has a few drawbacks, especially when it comes to corporate networks. As Rob Britton describes in \cite{socketio-problems}, socket.io seems to have problems getting through firewalls and can be blocked by some anti virus software.
+Because mobile browser support is essential for this project, we still decided in favour of this library.
 
 The setup of the socket is simple: one helper function, called \texttt{createSocket} is called in the main entry point of the application to configure which server to connect to:
 %
