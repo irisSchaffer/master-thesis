@@ -1,0 +1,89 @@
+\chapter{Usage of resulting Library}
+\label{cha:usage}
+
+\section{Example Application}
+\label{sec:implementation-client}
+% how is everything defined? what has to be included?
+% what are the steps of building an application with unveil?
+% how are the slides defined? how are they styled? what about the modes?
+
+To conclude this chapter, I want to show how all the discussed libraries in the end can be put together to a presentation. The whole presentation can be found in the unveil-client-server repository.
+
+The first step to use unveil.js and its extensions is to start a new project, require the necessary npm packages and set up an \texttt{index.html} page which includes the necessary stylesheets and scripts.
+The entry point for these scripts is the file \texttt{index.js}, in which the whole presentation is set up and unveil.js is configured by setting up its modes (see program \ref{prog:implementation-client-modes}). As explained before, slides are defined in HTML using the components unveil.js and its extensions provide. An example of this is shown in program \ref{prog:implementation-client-presentation}.
+
+\begin{program}
+\caption{Mode definition for setting up an unveil.js presentation. Speaker and projector modes are omitted to keep the example short but follow the same pattern as the default mode.}
+\label{prog:implementation-client-modes}
+\begin{JsCode}
+const modes = {
+  default: {
+    controls : [
+      KeyControls, TouchControls, UIControls,
+      NavigationReceiver,
+      MediaSender, MediaReceiver,
+      VotingNavigatableSetter, VotingReceiver
+    ],
+    presenter: Presenter
+  },
+  speaker: {...},
+  projector: {...}
+};
+\end{JsCode}
+\end{program}
+
+\begin{program}
+\caption{Creation of presentation using modes from program \ref{prog:implementation-client-modes}. Sets up two slides as an example. The DOM will be attached to the element of id \texttt{unveil} in the base HTML document.}
+\label{prog:implementation-client-presentation}
+\begin{JsCode}
+ReactDOM.render((
+  <UnveilApp modes={modes}>
+    <Slide name="start">
+      <h1>Unveil</h1>
+      <h2>a meta presentation</h2>
+    </Slide>
+    <Slide name="problem">
+      <img src="./img/problem.png" />
+      <Notes>someone always wanted to show something from their device</Notes>
+    </Slide>
+    ...
+  </UnveilApp>
+), document.getElementById('unveil'));
+\end{JsCode}
+\end{program}
+
+The styling of the presentation is handled by CSS. The \texttt{Slide} component automatically adds the name of a slide as its id, allowing to efficiently style slide by slide, as well as applying styles for all slides at once using the \texttt{.slide} class. Program \ref{prog:implementation-client-styles} shows an example of how to style slides.
+
+\begin{program}
+\caption{Example styling for slides using Sass. In this particular piece of code, the font family of all slides is set and a background image is added to the start slide.}
+\label{prog:implementation-client-styles}
+\begin{CssCode}
+  .slide
+    font-family: 'Open Sans'
+  #start
+    background-image: url('../img/explore.jpg')
+\end{CssCode}
+\end{program}
+
+\begin{program}
+\caption{Shortened version of \texttt{NavigationReceiver}. First the inherited context properties are set up, then an observable waiting for \texttt{state:change} events from the socket is created. If the incoming request is not the currently displayed slide, the navigator will be pushed a new value.}
+\label{prog:usage-network-sync-navigation-receiver}
+\begin{JsCode}
+// imports...
+
+export default class NavigationReceiver extends React.Component {
+  static contextTypes = {
+    navigator:   React.PropTypes.object.isRequired,
+    routerState: React.PropTypes.object.isRequired
+  }
+
+  componentDidMount () {
+    this.observable = Observable.fromEvent(SocketIO, 'state:change')
+      .filter((e) => !this.context.routerState.indices.equals(e))
+      .subscribe(this.props.navigator.next)
+  }
+  ...
+}
+\end{JsCode}
+\end{program}
+%

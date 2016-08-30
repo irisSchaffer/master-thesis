@@ -263,50 +263,18 @@ means a navigation \emph{left} (left arrow key pressed, swipe left etc.) will no
 \section{Network Synchronisation Layer}
 \label{sec:implementation-network-sync}
 % Mention problems with socket io here! --> Corporate firewalls can block socket io entirely, etc.
-As mentioned before, the network synchronisation layer is responsible for the communcation between server and client using WebSockets. These are created with socket.io, a library which also provides fallbacks for browsers that do not support WebSockets yet. However, this library also has a few drawbacks, especially when it comes to corporate networks. As Rob Britton describes in \cite{socketio-problems}, socket.io seems to have problems getting through firewalls and can be blocked by some anti virus software.
+As mentioned before, the network synchronisation layer is responsible for the communcation between server and client using WebSockets. These are created using socket.io, a library which also provides fallbacks for browsers that do not support WebSockets yet. However, the library also has a few drawbacks, especially when it comes to corporate networks. As Rob Britton describes in \cite{socketio-problems}, socket.io seems to have problems getting through firewalls and can be blocked by some anti virus applications.
 Because mobile browser support is essential for this project, we still decided in favour of this library.
 
-The setup of the socket is simple: one helper function, called \texttt{createSocket} is called in the main entry point of the application to configure which server to connect to:
-%
-\begin{JsCode}
-import { createSocket } from 'unveil-network-sync'
-createSocket('46.101.166.172:9000')
-\end{JsCode}
-%
-This function creates the socket and returns it as a singleton, so every component uses the same connection. To make importing even easier, there is another helper, called \texttt{SocketIO} which dan be importet directly and internally calls \texttt{createSocket} to retrieve the singleton:
-%
-\begin{JsCode}
-import { SocketIO } from 'unveil-network-sync'
-\end{JsCode}
-%
+The socket is created by the speaker in the main entry point of the presentation by passing the IP-address of the WebSocket server to the function \texttt{createSocket}, which is directly exposed by \texttt{unveil-network-sync}. Internally the socket connection to the server is established and the then exposed as a singleton, so every component uses the same connection. Inside all controls communicating with the socket server, this connection can be imported through \texttt{SocketIO}, which internally retrieves the singleton:
 
-These sockets can then be used to listen to events or to emit them (see program \ref{prog:implementation-network-sync-navigation-receiver}) Like the state subject events, the socket.io events used in this library follow the naming convention of scoping the object targeted in by the event separated by slashes, followed by a colon and the name of the action, e.g. \texttt{state:change} or \texttt{state/slide/voting:start}.
+The connection can then be used to listen to events or to emit them (see program \ref{prog:usage-network-sync-navigation-receiver}). Like the state subject events, the socket.io events used in this library follow the naming convention of scoping the object targeted in by the event separated by slashes, followed by a colon and the name of the action, e.g. \texttt{state:change} or \texttt{state/slide/voting:start}.
 
-\begin{program}
-\caption{Shortened version of \texttt{NavigationReceiver}. First the inherited context properties are set up, then an observable waiting for \texttt{state:change} events from the socket is created. If the incoming request is not the currently displayed slide, the navigator will be pushed a new value.}
-\label{prog:implementation-network-sync-navigation-receiver}
-\begin{JsCode}
-// imports...
+% ADD GRAPHIC WITH NAVIGATION SENDER AND RECEIVER AND SINGLETON HERE!
 
-export default class NavigationReceiver extends React.Component {
-  static contextTypes = {
-    navigator:   React.PropTypes.object.isRequired,
-    routerState: React.PropTypes.object.isRequired
-  }
+Besides providing a way of connecting to the server, this library also offers the components \texttt{NavigationSender} and \texttt{NavigationReceiver} for synchronising the navigation state of the presentation between speaker and audience. As the names already say, the sender broadcasts the state update, while the receiver is waiting for state updates and starts the navigation process. By default, the latter is active in all modes (default, speaker and projector), whereas the sender is only added to the speaker mode, effectively only broadcasting the speaker's navigation changes. To make sure the sender does not end up in an infinite loop of sending and receiving their own state changes, the last received state is stored and only navigation events going to a different slide are processed further.
 
-  componentDidMount () {
-    this.observable = Observable.fromEvent(SocketIO, 'state:change')
-      .filter((e) => !this.context.routerState.indices.equals(e))
-      .subscribe(this.props.navigator.next)
-  }
-  ...
-}
-\end{JsCode}
-\end{program}
-%
-The second responisbilty of this library is synchronising the navigation state of the presentation between speaker and audience. To do this, two controls, \texttt{NavigationSender} and \texttt{NavigationReceiver} were implemented. As the names already say, the sender broadcasts the state update, while the receiver is waiting for state updates and starts the navigation process. The latter is used in all modes (default, speaker and projector), whereas the sender is only added to the speaker mode. To make sure the sender does not end up in an infinite loop of sending and receiving its own state changes, the last received state is stored and only navigation events going to a different slide are processed further.
-
-This mechanism, though relatively simple, already enables the audience to follow the presentation, the speaker to use his/her phone as a remote control and any number of projectors to be controlled by the speaker.
+This mechanism, though relatively simple, already enables the audience, and with that our listener Greg, to follow the presentation and the speaker Amy to use her phone or laptop as remote control for any number of connected projectors.
 
 \section{Interactive Extension}
 \label{sec:implementation-interactive}
@@ -379,67 +347,3 @@ The audience can start voting as soon as the speaker navigates to the slide with
 
 Once the voting has started, internally, the \texttt{Voting} component remembers which answer the user has clicked in the \texttt{answer} state variable. Once the submit button is pressed, a \texttt{state/slide/voting:answer} event is fired and broadcast to all clients, which update their internal voting results.
 Because the results of the voting should be available throughout the whole presentation and not be reset when leaving the slide, \texttt{Voting} also handles the communication with local storage, to store current results.
-
-\section{Example Application}
-\label{sec:implementation-client}
-% how is everything defined? what has to be included?
-% what are the steps of building an application with unveil?
-% how are the slides defined? how are they styled? what about the modes?
-
-To conclude this chapter, I want to show how all the discussed libraries in the end can be put together to a presentation. The whole presentation can be found in the unveil-client-server repository.
-
-The first step to use unveil.js and its extensions is to start a new project, require the necessary npm packages and set up an \texttt{index.html} page which includes the necessary stylesheets and scripts.
-The entry point for these scripts is the file \texttt{index.js}, in which the whole presentation is set up and unveil.js is configured by setting up its modes (see program \ref{prog:implementation-client-modes}). As explained before, slides are defined in HTML using the components unveil.js and its extensions provide. An example of this is shown in program \ref{prog:implementation-client-presentation}.
-
-\begin{program}
-\caption{Mode definition for setting up an unveil.js presentation. Speaker and projector modes are omitted to keep the example short but follow the same pattern as the default mode.}
-\label{prog:implementation-client-modes}
-\begin{JsCode}
-const modes = {
-  default: {
-    controls : [
-      KeyControls, TouchControls, UIControls,
-      NavigationReceiver,
-      MediaSender, MediaReceiver,
-      VotingNavigatableSetter, VotingReceiver
-    ],
-    presenter: Presenter
-  },
-  speaker: {...},
-  projector: {...}
-};
-\end{JsCode}
-\end{program}
-
-\begin{program}
-\caption{Creation of presentation using modes from program \ref{prog:implementation-client-modes}. Sets up two slides as an example. The DOM will be attached to the element of id \texttt{unveil} in the base HTML document.}
-\label{prog:implementation-client-presentation}
-\begin{JsCode}
-ReactDOM.render((
-  <UnveilApp modes={modes}>
-    <Slide name="start">
-      <h1>Unveil</h1>
-      <h2>a meta presentation</h2>
-    </Slide>
-    <Slide name="problem">
-      <img src="./img/problem.png" />
-      <Notes>someone always wanted to show something from their device</Notes>
-    </Slide>
-    ...
-  </UnveilApp>
-), document.getElementById('unveil'));
-\end{JsCode}
-\end{program}
-
-The styling of the presentation is handled by CSS. The \texttt{Slide} component automatically adds the name of a slide as its id, allowing to efficiently style slide by slide, as well as applying styles for all slides at once using the \texttt{.slide} class. Program \ref{prog:implementation-client-styles} shows an example of how to style slides.
-
-\begin{program}
-\caption{Example styling for slides using Sass. In this particular piece of code, the font family of all slides is set and a background image is added to the start slide.}
-\label{prog:implementation-client-styles}
-\begin{CssCode}
-  .slide
-    font-family: 'Open Sans'
-  #start
-    background-image: url('../img/explore.jpg')
-\end{CssCode}
-\end{program}
