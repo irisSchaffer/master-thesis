@@ -186,12 +186,8 @@ As an end note on React, and a transition to the core presentation library, it s
 % Give overview over controls in here.
 % Also talk about the mobile style sheets / responsive design and the TouchControls, which I also implemented alone.
 % (mention that this part is unit tested with jest(https://facebook.github.io/jest/))
-Although not initially planned, due to several shortcomings of other presentation libraries, this project builds upon the open-source JavaScript library \textit{unveil.js}, which we developed prior to this project and extended and adapted in an own fork\footnote{\url{https://github.com/irisSchaffer/unveil.js}} during the project. While other alternatives, such as \emph{impress.js}\footnote{\url{http://impress.github.io/impress.js}} or the popular \emph{reveal.js}\footnote{\url{http://lab.hakim.se/reveal-js/}}, exist, extensive research showed that neither of the two libraries offers the flexibility necessary to easily implement the discussed interactive mechanisms. They both were not built unleashing modern web technologies' full potential and practically consist of one big file of JavaScript, handling all functionality. We therefore decided to build our own presentation platform. Screenshots of an unveil.js presentation can be found in figure \ref{fig:implementation-technologies-unveil-screenshots}.
-%
-\begin{figure}\centering
-\includegraphics[width=0.65\textwidth]{presentation-screenshot}
-\caption{Screenshot of an example slide with unveil.js, using interactive extensions discussed in section \ref{sec:implementation-interactive}.}\label{fig:implementation-technologies-unveil-screenshots}\end{figure}
-%
+Although not initially planned, due to several shortcomings of other presentation libraries, this project builds upon the open-source JavaScript library \textit{unveil.js}, which we developed prior to this project and extended and adapted in an own fork\footnote{\url{https://github.com/irisSchaffer/unveil.js}} during the project. While other alternatives, such as \emph{impress.js}\footnote{\url{http://impress.github.io/impress.js}} or the popular \emph{reveal.js}\footnote{\url{http://lab.hakim.se/reveal-js/}}, exist, extensive research showed that neither of the two libraries offers the flexibility necessary to easily implement the discussed interactive mechanisms. They both were not built unleashing modern web technologies' full potential and practically consist of one big file of JavaScript, handling all functionality. We therefore decided to build our own presentation platform.
+
 Generally, unveil.js, like impress.js and reveal.js, is a library with which online presentations can be built. All three do not require a web server and can therefore be statically, and also locally served. Instead of building the presentation using a graphical user interface, all slides, transitions and styling are defined in HTML and CSS, meaning the presenter has to be familiar with basic front end web development techniques. Thanks to the use of React, unveil.js, in contrast to reveal.js and impress.js, however, does not depend on the usage of class names to identify the slide structure, but instead can make full use of semantically-named components, such as \texttt{<Slide/>} or \texttt{<Notes/>}. An example presentation can be found in program \ref{prog:implementation-client-presentation}.
 
 Like reveal.js, unveil.js operates on a $2$-dimensional slide-space: Every slide can have a next and previous slide in $x$ (main slide), as well as in $y$-direction (sub-slide). To generate the $y$ axis, slides are nested in other slides.
@@ -206,21 +202,14 @@ The core of unveil.js is \texttt{UnveilApp}, which all slides and sub-slides are
 \end{itemize}
 This allows anybody using unveil.js to define or overwrite modes, presenters and controls and thereby extend the base library as they wish. A few of these are already defined in the base library, namely a default \texttt{Presenter}, \texttt{UIControls} to navigate using buttons, \texttt{KeyControls} to navigate using the keyboard and \texttt{TouchControls} to navigate with swipe-gestures on touch screens. In section \ref{sec:implementation-client}, modes for the audience (\emph{default}), the speaker (\emph{speaker}) and for use on the projection device (\emph{projector}) will be introduced.
 
-For these controls and the entire presentation to be navigatable, \texttt{Un\-veil\-App} is responsible for the creation of two very important classes: \texttt{Router} and \texttt{Navigator}. These can be defined outside and passed into \texttt{UnveilApp} as properties, allowing other developers to customise their navigation logic.
-%
-The \texttt{Router} is the class handling everything connected to the current url. It receives the slide-tree and can compute the indices of a slide by its name and vice versa. Whenever the browser history changes, the router finds the corresponding slide-indices, computes an array of possible directions to go into from this slide and propagates the event to \texttt{UnveilApp}, which can then re-render the application.
-\texttt{Navigator}, in turn, receives these directions and is responsible for the mapping of directions (\emph{left}, \emph{right}, \emph{up}, \emph{down}) to slide-indices. Controls know the navigator and can push new directions to the navigator subject, thus starting the navigation process described in detail in figure \ref{fig:implementation-technologies-unveil-navigation}.
-
 \begin{figure}\centering\includegraphics[width=.85\textwidth]{navigation}
 \caption{Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. \texttt{KeyControls} listen for key events and process them, to then send a navigation request to go \emph{right} to the \texttt{Navigator}. This component then maps the direction to the next slide's indices ($1$). \texttt{UnveilApp} then adds other information necessary for the \texttt{Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt{UnveilApp} receives this event and re-renders the presentation.}
 \label{fig:implementation-technologies-unveil-navigation}\end{figure}
 
-%\subsection[socket.io]%%             {socket.io%%             \protect\footnote{\url{http://socket.io/}}}%
-%\label{sec:implementation-architecture-socketio}
-% problematic, talk about alternatives and problems in production, maybe even HTTP2
-% e.g. safari conntection issues
-% broadcasting functionality didn't quite work
-% corporate firewalls can be a problem! big, in comparison to others
+For these controls and the entire presentation to be navigatable, \texttt{Un\-veil\-App} is responsible for the creation of two very important classes: \texttt{Router} and \texttt{Navigator}. These can be defined outside and passed into \texttt{UnveilApp} as properties, allowing other developers to customise their navigation logic.
+%
+The \texttt{Router} is the class handling everything connected to the current url. It receives the slide-tree and can compute the indices of a slide by its name and vice versa. Whenever the browser history changes, the router finds the corresponding slide-indices, computes an array of possible directions to go into from this slide and propagates the event to \texttt{UnveilApp}, which can then re-render the application.
+\texttt{Navigator}, in turn, receives these directions and is responsible for the mapping of directions (\emph{left}, \emph{right}, \emph{up}, \emph{down}) to slide-indices. Controls know the navigator and can push new directions to the navigator subject, thus starting the navigation process described in detail in figure \ref{fig:implementation-technologies-unveil-navigation}.
 
 \section{Project Structure}
 \label{sec:implementation-structure}
@@ -242,7 +231,7 @@ As the puropose of this project was not only to experiment with different ways o
 \label{sec:implementation-unveil}
 % Add screenshots from biiiiiiig screen :)
 The biggest adaptions and additions were necessary in the main component \texttt{UnveilApp}. A state subject was added to allow all components in the presentation to interact with the application. This subject receives an event with type and data and depending on this type starts a certain state change. Two of these state events are the \texttt{state/navigation:enable} and \texttt{state/navigation:disable} events, which set a state-variable \texttt{navigatable} to true or false. This variable is used in the controls to determine navigatability, therefore making it possible to keep the audience locked to a slide, e.g. during votings.
-To make it possible for the audience to add subslides, as well as to dynamically add votings on-the-fly, another event is \texttt{state/slide:add}. It includes what slide to add (content), how (subslide or main slide) and where (under or after which slide). On occurence of this event, the slide-tree has to be re-built, the router and navigator re-started and the whole presentation re-rendered, which the library also had to be prepared for.
+To make it possible for the audience to add subslides, as well as to dynamically add votings on-the-fly, another event is \texttt{state/slide:add}. It includes what slide to add (content), how (subslide or main slide) and where (under or after which slide). On occurence of this event, the slide-tree has to be re-built, the router and navigator re-started and the whole presentation re-rendered, which the library also had to be prepared for. A complete list of all state events and who they are emitted by and listened to can be found in figure \ref{fig:implementation-events}.
 
 \begin{figure}\centering\includegraphics[width=.5\textwidth]{render-pipeline}\caption{Overview over the render-flow of the application in the extended version of unveil.js. \texttt{UnveilApp} renders the presenter, which then takes care of rendering the (current) slide and all controls.}\label{fig:implementation-unveil-render-pipeline}\end{figure}
 
@@ -259,6 +248,8 @@ Another part that was added to the unveil.js base library is the \texttt{Notes} 
 %
 means a navigation \emph{left} (left arrow key pressed, swipe left etc.) will not go to the previous slide defined in the slide-tree, but rather jump to the first slide (of index $0$).
 
+\begin{figure}\centering\includegraphics[width=\textwidth]{implementation-events}\caption{State and socket events sent and consumed by controls in the application, grouped by library.}\label{fig:implementation-events}\end{figure}
+
 
 \section{Network Synchronisation Layer}
 \label{sec:implementation-network-sync}
@@ -268,66 +259,56 @@ Because mobile browser support is essential for this project, we still decided i
 
 The socket is created by the speaker in the main entry point of the presentation by passing the IP-address of the WebSocket server to the function \texttt{createSocket}, which is directly exposed by \texttt{unveil-network-sync}. Internally the socket connection to the server is established and the then exposed as a singleton, so every component uses the same connection. Inside all controls communicating with the socket server, this connection can be imported through \texttt{SocketIO}, which internally retrieves the singleton:
 
-The connection can then be used to listen to events or to emit them (see program \ref{prog:usage-network-sync-navigation-receiver}). Like the state subject events, the socket.io events used in this library follow the naming convention of scoping the object targeted in by the event separated by slashes, followed by a colon and the name of the action, e.g. \texttt{state:change} or \texttt{state/slide/voting:start}.
+The connection can then be used to listen to events or to emit them (see program \ref{prog:usage-network-sync-navigation-receiver}). Like the state subject events, the socket.io events used in this library follow the naming convention of scoping the object targeted in by the event separated by slashes, followed by a colon and the name of the action, e.g. \texttt{state:change} or \texttt{state/slide/voting:start}. The list of all current socket events, together with state events can be found in figure \ref{fig:implementation-events}.
 
-% ADD GRAPHIC WITH NAVIGATION SENDER AND RECEIVER AND SINGLETON HERE!
+\begin{figure}\centering\includegraphics[width=.8\textwidth]{implementation-network-sync}\caption{Navigation synchronisation flow. \texttt{NavigationSender} emits a navigation change, which is sent to the server via WebSockets using the \texttt{SocketIO} helper and played back to the \texttt{NavigationReceiver} which is activated on all clients by default.}\label{fig:implementation-network-sync}\end{figure}
 
-Besides providing a way of connecting to the server, this library also offers the components \texttt{NavigationSender} and \texttt{NavigationReceiver} for synchronising the navigation state of the presentation between speaker and audience. As the names already say, the sender broadcasts the state update, while the receiver is waiting for state updates and starts the navigation process. By default, the latter is active in all modes (default, speaker and projector), whereas the sender is only added to the speaker mode, effectively only broadcasting the speaker's navigation changes. To make sure the sender does not end up in an infinite loop of sending and receiving their own state changes, the last received state is stored and only navigation events going to a different slide are processed further.
+Besides providing a way of connecting to the server, this library also offers the components \texttt{NavigationSender} and \texttt{NavigationReceiver} for synchronising the navigation state of the presentation between speaker and audience. As the names already say, the sender broadcasts the state update, while the receiver is waiting for state updates and starts the navigation process. By default, the latter is active in all modes (default, speaker and projector), whereas the sender is only added to the speaker mode, effectively only broadcasting the speaker's navigation changes (see figure \ref{fig:implementation-network-sync}). To make sure the sender does not end up in an infinite loop of sending and receiving their own state changes, the last received state is stored and only navigation events going to a different slide are processed further.
 
-This mechanism, though relatively simple, already enables the audience, and with that our listener Greg, to follow the presentation and the speaker Amy to use her phone or laptop as remote control for any number of connected projectors.
+This mechanism, though relatively simple, already enables the audience, and with that our listener Greg, to follow the presentation and the speaker Amy to use her phone or laptop as remote control for any number of connected projectors. Optionally, the \texttt{SynchronisableNavigationReceiver}, makes it possible to navigate entirely independently for listener and adds a button in the interface to switch back to the current presenter state.
 
 \section{Interactive Extension}
 \label{sec:implementation-interactive}
-The interactive library includes several parts which will be discussed here: a speaker presenter (section \ref{sec:implementation-interactive-speaker-presenter}) as well as different components connected to sharing media (section \ref{sec:implementation-interactive-media}) and voting (section \ref{sec:implementation-interactive-voting}). Additionally controls handling the \texttt{state:initial} event were implemented to redirect new listeners to the current slide in the presentation.
+The interactive library includes several parts which will be discussed here: a speaker presenter (section \ref{sec:implementation-interactive-speaker-presenter}) and different components connected to reactions (section \ref{sec:implementation-interactive-reactions}) sharing media (section \ref{sec:implementation-interactive-media}) and voting (section \ref{sec:implementation-interactive-voting}).
 
 \subsection{Speaker Presenter}
 \label{sec:implementation-interactive-speaker-presenter}
 
 The speaker presenter, like the normal presenter, is responsible for rendering controls and slides. In speaker mode, where this presenter is used, notes as well as the upcoming slides (right and down) are also shown (see figure \ref{fig:implementation-interactive-speaker-presenter}).
-This means the presenter has to find these next slides, using the router's information about the navigatable directions, and render them in a designated area. To make the presenter view usable on mobile devices, special attention was paid to mobile stylesheets (see figure \ref{fig:implementation-interactive-mobile} (b)). This ensures that everything is big enough to be readable and all buttons are clickable.
+This means the presenter has to find these next slides, using the router's information about the navigatable directions, and render them in a designated area. As mentioned before, special attention was paid to mobile stylesheets to make the presenter view usable on mobile devices. This ensures that everything is big enough to be readable and all buttons are clickable.
 
-\begin{figure}\centering\includegraphics[width=.65\textwidth]{media-accepted-screenshot}\caption{Screenshot of the speaker presenter with the current main slide, the upcoming slide to the right, available actions (muting and adding votings) and speaker notes.}\label{fig:implementation-interactive-speaker-presenter}\end{figure}
+\begin{figure}
+\centering
+\begin{tabular}{ccc}
+\includegraphics[width=.165\textwidth]{presenter-mode-mobile} &
+\includegraphics[width=.59\textwidth]{presenter-mode-desktop} \\
+(a) & (b)
+\end{tabular}
+\caption{Speaker Presenter on mobile (a) and desktop (b).}
+\label{fig:implementation-interactive-speaker-presenter}
+\end{figure}
 
-\begin{figure}\centering\small
-\begin{tabular}{cccc}\includegraphics[width=.2\textwidth]{presentation-screenshot-mobile} &
-\includegraphics[width=.2\textwidth]{speaker-presenter-screenshot-mobile} &
-\includegraphics[width=.2\textwidth]{voting-screenshot-mobile} &
-\includegraphics[width=.2\textwidth]{voting-results-screenshot-mobile} \\
-(a) & (b) & (c) & (d)
-\end{tabular}\caption{Mobile view of a presentation slide in (a) default mode and (b) speaker mode as well as (c) voting view before voting and (d) voting view after voting. Mind the share button in the left upper corner in (a) as well as the buttons to mute content requests and create votings in (b).}\label{fig:implementation-interactive-mobile}\end{figure}
+\subsection{Reactions}
+\label{sec:implementation-interactive-reactions}
+As with most other unveil library extensions described in here, the components for reactions also consist of a sender and a receiver: \texttt{ReactionSender} and \texttt{ReactionReceiver}. The principle is the same as with network synchronisation (see figure \ref{fig:implementation-network-sync}): When a listener chooses to send a reaction by clicking or tapping on an emoji, a \texttt{state/slide:reaction} is sent through the WebSocket. On the other side, the receiver is listening for the event and remembers which reactions have been sent on which slide, to display them. As a default, the sender is active in listener mode and the receiver is added to speaker and projector mode.
 
 \subsection{Media}
 \label{sec:implementation-interactive-media}
-Another responsibility of the interactive extension is the possibility for audience members to share content with the presentation. For this to work, three different controls were created: \texttt{MediaSender}, \texttt{MediaReceiver} and \texttt{MediaAcceptor}. The sender is used in the default mode so users can share their content (see figure \ref{fig:implementation-interactive-media} (a)), the acceptor is enabled in speaker mode, to accept or reject incoming media (see figure \ref{fig:implementation-interactive-media} (b)) and the receiver in the end handles the creation of a new slide if the content was accepted and is therefore necessary in all modes. As incoming content requests could disrupt the presentation flow and distract the speaker, an option to mute the requests was built into the application. If the \emph{do not disturb} mode is turned on, slides will silently be added as subslides, without causing the acceptor modal to open. This way the audience' additions can be re-visited after the end of the presentation. Generally, this feature can be used to either post a link to an interesting picture, website or even youtube video, or also as text input, for example to add a comment or a question regarding a certain slide. This works through the introduction of the presentation components \texttt{Media} and \texttt{IFrame}, which, depending on the shared content, render an image-tag, blockquote or IFrame. The differentiation of these is carried out with regular expressions, as the following to check if the content is the link to an image:
-\begin{JsCode}
-isImg (str) {
-  let imgRegex = new RegExp(/\.(jpe?g|png|gif|bmp)$/i)
-  return imgRegex.test(str)
-}
-\end{JsCode}
+Another responsibility of the interactive extension is the possibility for audience members to share content with the presentation. For this to work, five different controls were created: \texttt{MediaAcceptor}, \texttt{MediaReceiver} and the three senders \texttt{\texttt{MediaSender}, \texttt{\texttt{QuestionSender} and \texttt{\texttt{LinkSender}. The senders are used in the listener mode so users can share their content, the acceptor is enabled in speaker mode, to accept or reject incoming media and the receiver in the end handles the creation of a new slide if the content was accepted and is therefore necessary in all modes. As incoming content requests could disrupt the presentation flow and distract the speaker, an option to mute the requests was built into the application. If the \emph{do not disturb} mode is turned on, slides will silently be added as subslides, without causing the acceptor modal to open. This way the audience' additions can be re-visited after the end of the presentation. Generally, this feature can be used to either post a link to a picture, website or youtube video, for text input (i.e. questions) and to upload images directly from the listener's device. This works through the introduction of the presentation components \texttt{Media} and \texttt{IFrame}, which, depending on the shared content, render an image-tag, blockquote or IFrame. The differentiation of these is carried out using regular expressions.
 
-As far as the implementation of the controls is concerned, these ones are the first ones discussed in the present thesis makeing use of the \texttt{render()} method. It is used to output the \emph{share} button in the left upper corner in default mode (see figure \ref{fig:implementation-interactive-mobile} (a)) as well as the share modal opened when clicking on said button (see figure \ref{fig:implementation-interactive-media} (a)). The same happens in the \texttt{MediaAcceptor}, which uses the \texttt{render()} method to display the \emph{mute} button shown in figure \ref{fig:implementation-interactive-speaker-presenter} as well as the modal for accepting media (see figure \ref{fig:implementation-interactive-media} (b)).
+As far as the implementation of the controls is concerned, like the already discussed controls, they make use of the \texttt{SocketIO} helper to communicate with the server (see figure \ref{fig:implementation-events}). Additionally they use the \texttt{UnveilApp}'s state subject to start the process of adding a new slide. The component then inserts the new slide into the slide tree, re-computes the slide-map for the router and re-renders the entire presentation. The flow of the process is also outlined in figure \ref{fig:implementation-interactive-media-pipeline}.
+
+The controls used for sharing media are also responsible for rendering the share-buttons and their modals in the listener interface, show and hide the modals for incoming requests as well as the muting-button in speaker mode. It is used to output the \emph{share} button in the left upper corner in default mode (see figure \ref{fig:implementation-interactive-mobile} (a)) as well as the share modal opened when clicking on said button (see figure \ref{fig:implementation-interactive-media} (a)). The same happens in the \texttt{MediaAcceptor}, which uses the \texttt{render()} method to display the \emph{mute} button shown in figure \ref{fig:implementation-interactive-speaker-presenter} as well as the modal for accepting media (see figure \ref{fig:implementation-interactive-media} (b)).
 
 These are also the first controls using state: in the sender a click on the share button sets the state variable \texttt{sharingMode} to \texttt{true} and through that enables the rendering of the modal. In the acceptor an array of \texttt{requests} is filled as new content is shared and emptied again, as the speaker accepts or denies them.
 
-On event level, the socket events \texttt{state/slide/add:accept} and \texttt{state/ slide:add} are included in the process of sharing new content, in the end an unveil state event of type \texttt{state/slide:add} lets \texttt{UnveilApp} create the new slide and add it to the slide tree. The whole flow is outlined in details in figure \ref{fig:implementation-interactive-media-pipeline}.
-
-\begin{figure}\centering\small
-\begin{tabular}{cc}
-\includegraphics[width=.2\textwidth]{media-screenshot-mobile}
- &
-\includegraphics[width=.65\textwidth]{media-acceptor-screenshot} \\
-(a) & (b)
-\end{tabular}\caption{Screenshots of sharing content. (a) media sender on mobile phone shares youtube link (b) speaker receives content request.}\label{fig:implementation-interactive-media}\end{figure}
 
 \begin{figure}\centering\includegraphics[width=.8\textwidth]{media-pipeline}\caption{Flow of adding content, monospaced text symbolises type and name of events. First the \texttt{MediaSender} of the default mode sends a request, which the speaker mode's \texttt{MediaAcceptor} listens to. If the request is accepted by the speaker or requests are muted, another socket event is broadcast, which the \texttt{MediaReceiver} waits for. This component is enabled in all modes and emits the state subject event to add a new slide, which \texttt{UnveilApp} reacts to.}\label{fig:implementation-interactive-media-pipeline}\end{figure}
 
 \subsection{Voting}
 \label{sec:implementation-interactive-voting}
 
-The last group of components connected to the interactive extension covered in this chapter allow speakers to create votings (both during in the preparation of the presentation and on-the-fly as shown in figure \ref{fig:implementation-interactive-voting}) and members of the audience to vote (see figure \ref{fig:implementation-interactive-mobile} (c) and (d)).
-
-\begin{figure}\centering\includegraphics[width=.65\textwidth]{voting-creation-screenshot}\caption{Screenshot of the desktop speaker mode, creating a new voting, on-the-fly, during a presentation.}\label{fig:implementation-interactive-voting}\end{figure}
+The last group of components connected to the interactive extension covered in this chapter allow speakers to create votings (both during in the preparation of the presentation and on-the-fly as shown in figure \ref{fig:implementation-interactive-voting}) and members of the audience to vote.
 
 The main presentational component involved in the voting process is \texttt{Voting}, which keeps track of the current voting scores and has a \texttt{Question} and a number of \texttt{Answer} components as children (see program \ref{prog:implementation-interactive-structure}). \texttt{Voting} also remembers if an audience member has already voted and if so, displays \texttt{Result} components. In speaker and presenter mode only these results are shown.
 
