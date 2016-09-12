@@ -16,10 +16,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Abstract}{vii}{chapter*.4}
 \defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
-\select@language {english}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Kurzfassung}{viii}{chapter*.5}
 \defcounter {refsection}{0}\relax 
 \select@language {ngerman}
@@ -132,7 +128,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.2}Building a Presentation}{46}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Customisation and Extenstion}{46}{section.6.3}
+\contentsline {section}{\numberline {6.3}Customisation and Extension}{46}{section.6.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Discussion}{49}{chapter.7}
 \defcounter {refsection}{0}\relax 
@@ -146,8 +142,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {8}Conclusions}{54}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{55}{appendix*.30}
+\contentsline {chapter}{References}{56}{appendix*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{55}{section*.31}
+\contentsline {section}{Literature}{56}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{60}{section*.31}
+\contentsline {section}{Online sources}{61}{section*.31}
