@@ -1,6 +1,6 @@
 %% File encoding: ASCII
 %% Autor: Wilhelm Burger (wilhelm.burger@fh-hagenberg.at)
-%% Diese Datei ist Teil des hagenberg-Package zur Erstellung von 
+%% Diese Datei ist Teil des hagenberg-Package zur Erstellung von
 %% Bachelor- und Diplomarbeiten.
 
 \NeedsTeXFormat{LaTeX2e}
@@ -38,7 +38,7 @@
 
 \RequirePackage{graphicx}
 \RequirePackage[percent]{overpic} % to allow text/graphics overlays on pictures
-\RequirePackage{pict2e}           % extends the LaTeX 'picture' environment		
+\RequirePackage{pict2e}           % extends the LaTeX 'picture' environment
 
 \RequirePackage{xcolor}
 \newcommand{\@MissingArg}[1]{\textcolor{red}{#1}}
@@ -53,21 +53,21 @@
 %\RequirePackage[noadjust]{cite} % vermeidet zusaetzliches Spacing vor [..]
 
 \RequirePackage{ifpdf}
-\ifpdf % LaTeX is in native PDF mode (pdflatex) 
+\ifpdf % LaTeX is in native PDF mode (pdflatex)
   \RequirePackage{epstopdf}		% zur automatischen Konvertierung von EPS-Dateien nach PDF fuer pdflatex
 %  \pdfcompresslevel=0			  % 0 = keine Kompression, 9 = max. Kompression
 %  \pdfimageresolution=300
 \else % LaTeX is in emulation mode (DVI-PS-PDF)
   \RequirePackage[hyphenbreaks]{breakurl}	% erlaubt Zeilenumbruch von URLs auch ohne pdflatex (DIV, PS, PDF)
-\fi	
+\fi
 
 
 %% -----------  hyperref setup ------------------------
 
 \RequirePackage[unicode]{hyperref}	% utf8-change
 \hypersetup{
-	linktocpage = true,						% make page number, not text, be link on TOC, LOF and LOT 
-  colorlinks = false,						% don't uses colored links (because this shows up in printing!) 
+	linktocpage = true,						% make page number, not text, be link on TOC, LOF and LOT
+  colorlinks = false,						% don't uses colored links (because this shows up in printing!)
 	pdfborder = {0 0 0.5},				% use a thinner (0.5pt) border around all PDF links
 	allbordercolors = {0 0 0.8},	% dark blue border for all types of links
 	breaklinks = true							% allow links to break over lines by making links over multiple lines
@@ -118,7 +118,7 @@
 
 
 % Erzeugt einen neuen, nicht eingerückten Absatz mit zusaetzlichem Abstand:
-\newcommand{\SuperPar}[0]{% 
+\newcommand{\SuperPar}[0]{%
 \par\bigskip\noindent%
 }
 
@@ -129,8 +129,8 @@
 \linethickness{0.05mm}%
 \put(0,0){\dashbox{0.2}(#1,#2)%
 {\parbox{#1mm}{%
-\centering\footnotesize 
-%{\bf MESSBOX}\\ 
+\centering\footnotesize
+%{\bf MESSBOX}\\
 Breite $ = #1 {\rm\ mm}$\\
 H\"ohe $ = #2 {\rm\ mm}$
 }}}\end{picture}
@@ -173,7 +173,7 @@ H\"ohe $ = #2 {\rm\ mm}$
 \setlength{\abovecaptionskip}{10pt}
 \setlength{\belowcaptionskip}{10pt}
 
-% Make float placement easier    
+% Make float placement easier
 \renewcommand{\floatpagefraction}{.9}  % vorher: .5
 \renewcommand{\textfraction}{.1}      % vorher: .2
 \renewcommand{\topfraction}{.9}        % vorher: .7
@@ -186,16 +186,16 @@ H\"ohe $ = #2 {\rm\ mm}$
 %\RequirePackage[small,rm,loose]{subfigure}
 %\setlength{\subfigtopskip}{7pt}
 %\setlength{\subfigcapskip}{7pt}
-%\setlength{\subfigcaptopadj}{0pt} 
+%\setlength{\subfigcaptopadj}{0pt}
 %\setlength{\subfigbottomskip}{-3pt}
-%\setlength{\subfigcapmargin}{0pt} 
+%\setlength{\subfigcapmargin}{0pt}
 %\setlength{\subfiglabelskip}{0.33em plus 0.07em minus 0.03em}
 
 \RequirePackage{enumitem}	% fix excessive vertical spacing in lists
 \setlist{%
-	partopsep = .0ex plus .1ex, 
-	topsep = .6ex plus .3ex, 
-	itemsep = .0ex plus .1ex, 
+	partopsep = .0ex plus .1ex,
+	topsep = .6ex plus .3ex,
+	itemsep = .0ex plus .1ex,
 	parsep = .4ex plus .2ex
 }
 %\setlist{nolistsep}	% kein Spacing zwischen items
@@ -222,7 +222,7 @@ H\"ohe $ = #2 {\rm\ mm}$
 
 %\floatname{algorithm}{Algorithmus}
 %\DeclareCaptionLabelSeparator{colon}{: } % Anpassung an den standard caption style
-\DeclareCaptionStyle{ruled}{labelfont=bf,labelsep=colon} 
+\DeclareCaptionStyle{ruled}{labelfont=bf,labelsep=colon}
 
 % 'algorithmicx' liefert das Innere der Algorithmen (\begin{algorithmic}[1]...)
 \RequirePackage{algorithmicx}
@@ -241,7 +241,7 @@ H\"ohe $ = #2 {\rm\ mm}$
 %\floatname{program}{\@ProgramName}
 \floatstyle{plain}
 \restylefloat*{program}
-	
+
 \ifthenelse{\equal{\bbl@main@language}{german} \or \equal{\bbl@main@language}{ngerman}}%
 {	\floatname{program}{Programm}
   \floatname{algorithm}{Algorithmus}
@@ -290,10 +290,10 @@ H\"ohe $ = #2 {\rm\ mm}$
 {\end{list}}
 
 \newenvironment{FileList}[1]%
-{\paragraph{Pfad:} \url{#1}
+{\paragraph{Path:} \url{#1}
  \begin{list}{}%
 {\setlength{\leftmargin}{5cm}
- \setlength{\labelwidth}{4cm}
+ \setlength{\labelwidth}{4.25cm}
  \setlength{\labelsep}{0.25cm}
  \setlength{\rightmargin}{0cm}
  \setlength{\itemindent}{0cm}

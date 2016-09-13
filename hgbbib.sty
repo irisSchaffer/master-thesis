@@ -15,21 +15,25 @@
 \newcommand{\@bibtitle}{Quellenverzeichnis}
 \newcommand{\@bibtitleLiteratur}{Literatur}
 \newcommand{\@bibtitleAvmedia}{Filme und audiovisuelle Medien}
-\newcommand{\@bibtitleOnline}{Online-Quellen}	
+\newcommand{\@bibtitleSoftware}{Software und Libraries}
+\newcommand{\@bibtitleOnline}{Online-Quellen}
 
 \ifthenelse{\equal{\hgb@MainLanguage}{english}}{%
 	\renewcommand{\@bibtitle}{References}
 	\renewcommand{\@bibtitleLiteratur}{Literature}
-	\renewcommand{\@bibtitleAvmedia}{Films and audio-visual media}
-	\renewcommand{\@bibtitleOnline}{Online sources}	
+  \renewcommand{\@bibtitleAvmedia}{Films and audio-visual media}
+  \renewcommand{\@bibtitleSoftware}{Software and Libraries}
+	\renewcommand{\@bibtitleOnline}{Online sources}
 }{}
 
 \defbibfilter{literature}{
-	not ( type=movie or type=video or type=music or type=audio or 
+	not ( type=movie or type=video or type=music or type=audio or
 				type=online or type=electronic or type=www or type=software )}
 
 \defbibfilter{avmedia}{%
-	( type=movie or type=video or type=music or type=audio or type=software )}
+  ( type=movie or type=video or type=music or type=audio )}
+
+\defbibfilter{software}{( type=software )}
 
 \defbibfilter{online}{%
 	( type=online or type=electronic or type=www )}
@@ -40,8 +44,8 @@
 % utf8-change (deactivated):
 % German format in biblatex is flawed: it adds wrong spaces and prohibits
 % line breaking within date strings. Corrected by Wilbur as follows.
-% Taken from german.lbx: replaced \thinspace by breaking zero space \hskip0pt 
-%\DefineBibliographyExtras{ngerman}{% 
+% Taken from german.lbx: replaced \thinspace by breaking zero space \hskip0pt
+%\DefineBibliographyExtras{ngerman}{%
   %\def\mkbibdatelong#1#2#3{%
     %\iffieldundef{#3}
       %{\hskip0pt}
@@ -70,7 +74,7 @@
 % utf8-change (deactivated):
 % Similar problem with badly braking date strings in english.
 % Taken from english.lbx: added breaking zero space \hskip0pt to /
-%\DefineBibliographyExtras{english}{% 
+%\DefineBibliographyExtras{english}{%
   %\def\mkbibdatelong#1#2#3{%
     %\iffieldundef{#2}
       %{}
@@ -106,7 +110,7 @@
 }
 
 %See http://www.jr-x.de/publikationen/latex/tipps/zeilenumbruch.html
-\newenvironment{bibhyphenation}% 
+\newenvironment{bibhyphenation}%
 	{\hyphenpenalty=2%		(default 50)
 	 \tolerance=9999%			(default 200)
 	 \exhyphenpenalty=2%	(default 50)
@@ -124,7 +128,7 @@
 		{% create a single bibliography with all entries:
 			%\printbibheading[heading=bibintoc,title={#2}]
 			\printbibheading[heading=bibintoc,title={\@bibtitle}]
-			\begin{bibhyphenation}	
+			\begin{bibhyphenation}
 			\printbibliography[heading=noheader]
 			\end{bibhyphenation}
 		}
@@ -133,13 +137,14 @@
 			\printbibheading[heading=bibintoc,title={\@bibtitle}]
 			\begin{bibhyphenation}
 			\printbibliography[filter=literature,heading=subbibintoc,title={\@bibtitleLiteratur}]
-			\printbibliography[filter=avmedia,heading=subbibintoc,title={\@bibtitleAvmedia}]
+      \printbibliography[filter=avmedia,heading=subbibintoc,title={\@bibtitleAvmedia}]
+      \printbibliography[filter=software,heading=subbibintoc,title={\@bibtitleSoftware}]
 			\printbibliography[filter=online,heading=subbibintoc,title={\@bibtitleOnline}]
 			\end{bibhyphenation}
 		}%
 }
 
-% Suppress unusual "In:" within journal article references. 
+% Suppress unusual "In:" within journal article references.
 % see http://tex.stackexchange.com/questions/10682/suppress-in-biblatex
 \renewbibmacro{in:}{%
 	\ifentrytype{article}{}{%

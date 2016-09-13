@@ -299,7 +299,7 @@ siehe \url{http://creativecommons.org/licenses/by-nc-nd/3.0/at/}.}
 
 \newcommand{\@ccLicenseEn}{%
 This work is published under the conditions of the
-\textsl{Creative Commons License Attribution 4.0 International}
+\textsl{Cre\-ative Com\-mons Lic\-ense At\-tri\-bu\-tion 4.0 In\-ter\-na\-tio\-nal}
 (CC BY 4.0)---see
 \url{https://creativecommons.org/licenses/by/4.0/}.}
 

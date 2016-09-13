@@ -142,8 +142,26 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {8}Conclusions}{54}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{56}{appendix*.30}
+\contentsline {chapter}{\numberline {A}CD-ROM/DVD Contents}{56}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{56}{section*.31}
+\contentsline {paragraph}{Format:}{56}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{61}{section*.31}
+\contentsline {section}{\numberline {A.1}General}{56}{section.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Path:}{56}{section.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Copies of Online References}{56}{section.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Path:}{56}{section.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.3}Graphics}{57}{section.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Path:}{57}{section.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{58}{appendix*.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literature}{58}{section*.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Software and Libraries}{63}{section*.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Online sources}{64}{section*.31}
