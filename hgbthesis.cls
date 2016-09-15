@@ -292,16 +292,14 @@
 }
 
 \newcommand{\@ccLicenseAt}{%
-Diese Arbeit wird unter den Bedingungen der \textsl{Creative Commons Lizenz}
-\emph{Namens\-nennung--NichtKommerziell--Keine\-Bearbeitung \"Osterreich}
-(CC BY-NC-ND) ver\"offentlicht --
-siehe \url{http://creativecommons.org/licenses/by-nc-nd/3.0/at/}.}
+Diese Arbeit wird unter den Bedingungen der \textsl{GNU General Public License 3.0}
+(GPLv3) ver\"offentlicht --
+siehe \url{https://www.gnu.org/licenses/gpl-3.0.en.html}.}
 
 \newcommand{\@ccLicenseEn}{%
 This work is published under the conditions of the
-\textsl{Cre\-ative Com\-mons Lic\-ense At\-tri\-bu\-tion 4.0 In\-ter\-na\-tio\-nal}
-(CC BY 4.0)---see
-\url{https://creativecommons.org/licenses/by/4.0/}.}
+\textsl{GNU General Public License 3.0} (GPLv3) -- see
+\url{https://www.gnu.org/licenses/gpl-3.0.en.html}.}
 
 \newcommand{\cclicense}{%
 \ifthenelse{\equal{\hgb@MainLanguage}{german}}%

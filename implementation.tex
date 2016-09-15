@@ -23,7 +23,7 @@ In total, a front end heavy system was created which features several ways of in
 
 \begin{figure}
 \centering
-\includegraphics[width=0.65\textwidth]{implementation-setup}
+\includegraphics[width=.8\textwidth]{setup}
 \caption{Example application setup. A server serves the presentation and connects all clients (presenter devices, listener devices and projector) through WebSockets.}
 \label{fig:implementation-architecture-setup}
 \end{figure}
@@ -69,7 +69,7 @@ server.listen(9000, function () {
 
 \begin{figure}
 \centering
-\includegraphics[width=0.65\textwidth]{implementation-server-communication}
+\includegraphics[width=.8\textwidth]{server-communication}
 \caption{Client-server communication. The server receives the request from the client and forwards it to all clients.}
 \label{fig:implementation-client-server-communication}
 \end{figure}
@@ -210,7 +210,7 @@ This allows anybody using unveil.js to define or overwrite modes, presenters and
 
 \begin{figure}
 \centering
-\includegraphics[width=.85\textwidth]{navigation}
+\includegraphics[width=1\textwidth]{navigation-pipeline}
 \caption{Navigation pipeline from user's key press to re-render of the presentation. The monospaced text next to the arrows symbolises the data transmitted. \texttt{KeyControls} listen for key events and process them, to then send a navigation request to go \emph{right} to the \texttt{Navigator}. This component then maps the direction to the next slide's indices ($1$). \texttt{UnveilApp} then adds other information necessary for the \texttt{Router}, which then is responsible for updating the browser history, mapping the indices back to a human readable url and sending out a new router event. In the end \texttt{UnveilApp} receives this event and re-renders the presentation.}
 \label{fig:implementation-technologies-unveil-navigation}
 \end{figure}
@@ -244,7 +244,7 @@ To make it possible for the audience to add subslides, as well as to dynamically
 
 \begin{figure}
 \centering
-\includegraphics[width=.5\textwidth]{render-pipeline}
+\includegraphics[width=1\textwidth]{render-pipeline}
 \caption{Overview over the render-flow of the application in the extended version of unveil.js. \texttt{UnveilApp} renders the presenter, which then takes care of rendering the (current) slide and all controls.}
 \label{fig:implementation-unveil-render-pipeline}
 \end{figure}
@@ -267,7 +267,7 @@ means a navigation \emph{left} (left arrow key pressed, swipe left etc.) will no
 
 \begin{figure}
 \centering
-\includegraphics[width=0.66\textwidth]{implementation-events-network-sync}
+\includegraphics[width=.66\textwidth]{events-network-sync}
 \caption{State and socket events sent and consumed by controls in the network synchronisation layer.}
 \label{fig:implementation-events-network-sync}
 \end{figure}
@@ -283,7 +283,7 @@ The connection can then be used to listen to events or to emit them. Like the st
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{implementation-network-sync}
+\includegraphics[width=1\textwidth]{network-sync}
 \caption{Navigation synchronisation flow. \texttt{NavigationSender} emits a navigation change, which is sent to the server via WebSockets using the \texttt{SocketIO} helper and played back to the \texttt{NavigationReceiver} which is activated on all clients by default.}
 \label{fig:implementation-network-sync}
 \end{figure}
@@ -297,7 +297,7 @@ This mechanism, though relatively simple, already enables the audience, and with
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{implementation-events-interactive}
+\includegraphics[width=\textwidth]{events-interactive}
 \caption{Overview of state and socket events sent and consumed by controls in the interactive extension.}
 \label{fig:implementation-events-interactive}
 \end{figure}
@@ -335,7 +335,7 @@ The controls used for sharing content are also responsible for rendering the all
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{media-pipeline}
+\includegraphics[width=1\textwidth]{media-pipeline}
 \caption{Flow of adding content, monospaced text symbolises type and name of events. First the \texttt{MediaSender} of the listener mode sends a request, which the speaker mode's \texttt{MediaAcceptor} listens to. If the request is accepted by the speaker or requests are muted, another socket event is broadcast, which the \texttt{MediaReceiver} waits for. This component is enabled in all modes and emits the state subject event to add a new slide, which \texttt{UnveilApp} finally reacts to.}
 \label{fig:implementation-interactive-media-pipeline}
 \end{figure}
