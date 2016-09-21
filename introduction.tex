@@ -11,10 +11,17 @@ Mobile phones, tablets and laptops, however, hold the potential of challenging t
 
 \section{Goals}
 
+\begin{figure}
+\centering
+\includegraphics[width=.8\textwidth]{illustrations/meeting}
+\caption{Unveil presentation in action: the projector displays the current slide, listeners can follow and interact with presentations on their personal devices and listeners can control the presentation using theirs.}
+\label{fig:introduction-meeting}
+\end{figure}
+
 The main objective of the project consequently is the exploration of different ways of incorporating personal devices in presentations efficiently and productively. This involves both the conception of such mechanisms, as well as their implementation in an online presentation tool.
 Due to the high number of different settings and contexts in which talks can be given, and since we feel meetings and other business-related presentations with small numbers of attendees offer the perfect playground and most possibilities for interactive mechanisms, this thesis focuses on presentations in business-settings.
 
-The proposed presentation software includes device-independent altering of pre-defined $2$-dimensional slide-sets by listeners and presenters in real time. It allows audience members to view slides on their personal devices, either navigating freely or synchronised with the presenter. Additionally, the developed libraries offer support for real-time voting, as well as voting creation on-the-fly. Instantaneous audience reactions via emoji and different paths through the presentation were also realised.
+The proposed presentation software includes device-independent altering of pre-defined $2$-dimensional slide-sets by listeners and presenters in real time. It allows audience members to view slides on their personal devices, either navigating freely or synchronised with the presenter (see figure \ref{fig:introduction-meeting}). Additionally, the developed libraries offer support for real-time voting, as well as voting creation on-the-fly. Instantaneous audience reactions via emoji and different paths through the presentation were also realised.
 
 As far as the implementation is concerned, it was our declared goal to create a modular ecosystem other developers can tap into, reuse, overwrite and extend. Since the web was chosen as a platform for its rapid prototyping and iteration cylce possibilities, it was paramount to make the application feel as fast and responsive as possible, to give it the look and feel of a native application \cite{Charland:WebVsNative}. Therefore the user interface and interaction design were at the core of the project with the overall objective of creating an interface that works across all devices, without feeling unnatural.
 
@@ -29,7 +36,7 @@ Based on these requirements, chapter \ref{cha:design} goes into details on the i
 
 Chapter \ref{cha:implementation} lays out the entire implementation of the libraries involved in the presentation tool. It first defines the scope of the project \ref{sec:implementation-scope} to then cover the server setup \ref{sec:implementation-server}, before offering more insight into the underlying front end technologies used \ref{sec:implementation-technologies}. Finally the general project structure \ref{sec:implementation-structure}, as well as all developed libraries are discussed in detail.
 
-Since we pride ourselves in having developed an entirely open-sourced presentation ecosystem which we want others to explore, reuse and extend, chapter \ref{cha:usage} shortly addresses the usage of the resulting libraries from a developer's perspective.
+Since we pride ourselves in having developed an entirely open-sourced presentation ecosystem which we want others to explore, reuse and extend, chapter \ref{cha:results} shortly addresses the usage of the resulting libraries from a developer's perspective.
 
 Chapter \ref{cha:discussion} outlines the results of our informal evaluation and observation of the system in regards to its usability \ref{sec:discussion-usability} and the creation of presentations \ref{sec:discussion-dev}, to then reflect on the chosen architecture \ref{sec:discussion-architecture} and give an outlook on future work \ref{sec:discussion-future-work}.
 

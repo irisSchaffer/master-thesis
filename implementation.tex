@@ -6,7 +6,16 @@
 % Every slide deck is generally created with HTML and JavaScript and styled with CSS, individual slides are composed of JSX-components (see chapter \ref{cha:implementation}). This means the speaker has to have some knowledge of front-end web technologies to be able to author slides.
 % The finished slide deck is then either uploaded to a publicly accessible web server or, if all audience members are connected to the same wifi, can be served locally from the speaker's computer.
 
-This chapter dives into the technical implementation details, gives an over\-view of the used technologies and explains why these were chosen over others. Like many other projects in this area \cite{Bry:Backstage, Cheng:TreebasedOnlinePresentations, Esponda:ElectronicVotingOnTheFly, Inoue:RealTimeQuestionnaire, Teevan:MobileFeedbackDuringPresentation, Triglianos:InteractiveWebPresentationsImpress}, this project is realised using the web as a platform.
+This chapter dives into the technical implementation details, gives an over\-view of the used technologies and explains why these were chosen over others. In summary, four libraries were developed in course of this project. The base presentation library, unveil, was extended for this purpose, moreover a layer for network synchronisation and communication with the server was developed. The interactive mechanisms described in the last chapter were then implemented in an interactive extension (see figure \ref{fig:implementation-big-picture}).
+
+\begin{figure}
+\centering
+\includegraphics[width=.75\textwidth]{implementation-big-picture}
+\caption{Overview of created libraries and their components. Arrows indicate dependencies. At the bottom, the extended version of unveil provides all base functionality. The network synchronisation layer adds support for WebSocket communication with the server, building upon which the interactive extension adds all interactive mechanisms. Any presentation can then use the created libraries.}
+\label{fig:implementation-big-picture}
+\end{figure}
+
+Like many other projects in this area \cite{Bry:Backstage, Cheng:TreebasedOnlinePresentations, Esponda:ElectronicVotingOnTheFly, Inoue:RealTimeQuestionnaire, Teevan:MobileFeedbackDuringPresentation, Triglianos:InteractiveWebPresentationsImpress}, this project is realised using the web as a platform.
 % ADD HERE HOW EVERYTHING IS CONNECTED?!
 This has many advantages, from modern web technologies' quick prototyping capabilities to the web's general cross-platform and cross-device nature, the project has benefitted from the dynamicity of the internet and the rapid evolvement of JavaScript over the past years.
 Although native sharing features of smartphones cannot be used due to the choice of platform, we believe, the merits that come with this decision outweigh the disadvantages for both users and developers. As no app has to be downloaded, it is easier to bring the audience to use the developed application \cite{Triglianos:InteractiveWebPresentationsImpress}. The major advantage for developers on one hand is the ability to only focus on one platform instead of developing different applications for different operating systems, on the other hand the web is built for rapid prototyping as it is extremely easy and fast to roll out new updates without having to distribute them through the App Store or Play Store and without the need for users to manually update them. Since the JavaScript render layer this software was developed with \cite{react} also offers a library which can cross-compile JavaScript applications to different operating systems \cite{react-native}, the core code could potentially stay almost untouched, should the application be ported to other platforms in the future.
@@ -23,7 +32,7 @@ In total, a front end heavy system was created which features several ways of in
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{setup}
+\includegraphics[width=.6\textwidth]{setup}
 \caption{Example application setup. A server serves the presentation and connects all clients (presenter devices, listener devices and projector) through WebSockets.}
 \label{fig:implementation-architecture-setup}
 \end{figure}
@@ -184,7 +193,7 @@ export default class HelloWorld extends Component {
 %
 These updates, as well as construction and destruction of components are handled in \emph{lifecycle methods} \cite{react-docu}.
 
-As an end note on React, and a transition to the core presentation library, it should be added that React components can be nested arbitrarily deep, effectively creating semantic XML syntax which is directly linked to the rendering of the components. To make it as easy as possible for other developers to use the created libraries and components, presentations are built just as a usual HTML page, using these semantic XML tags, as will be shown in chapter \ref{cha:usage}.
+As an end note on React, and a transition to the core presentation library, it should be added that React components can be nested arbitrarily deep, effectively creating semantic XML syntax which is directly linked to the rendering of the components. To make it as easy as possible for other developers to use the created libraries and components, presentations are built just as a usual HTML page, using these semantic XML tags, as will be shown in chapter \ref{cha:results}.
 
 \subsection{unveil.js}
 \label{sec:implementation-technologies-unveil}
@@ -194,7 +203,7 @@ As an end note on React, and a transition to the core presentation library, it s
 % (mention that this part is unit tested with jest(https://facebook.github.io/jest/))
 Although not initially planned, due to several shortcomings of other presentation libraries, this project builds upon the open-source JavaScript library \emph{unveil.js} \cite{unveil}, which we developed prior to this project and extended and adapted in an own fork \cite{unveil-fork} during the project. While other alternatives, such as \emph{impress.js} \cite{impressjs} or the popular \emph{reveal.js} \cite{revealjs}, exist, extensive research showed that neither of the two libraries offers the flexibility necessary to easily implement the discussed interactive mechanisms. They both were not built unleashing modern web technologies' full potential and practically consist of one big file of JavaScript, handling all functionality. We therefore decided to build our own presentation platform.
 
-Generally, unveil.js, like impress.js and reveal.js, is a library with which online presentations can be built. All three do not require a web server and can therefore be statically, and also locally served. Instead of building the presentation using a graphical user interface, all slides, transitions and styling are defined in HTML and CSS, meaning the presenter has to be familiar with basic front end web development techniques. Thanks to the use of React, unveil.js, in contrast to reveal.js and impress.js, however, does not depend on the usage of class names to identify the slide structure, but instead can make full use of semantically-named components, such as \texttt{<Slide/>} or \texttt{<Notes/>}. More details about the usage of unveil will be covered in chapter \ref{cha:usage}.
+Generally, unveil.js, like impress.js and reveal.js, is a library with which online presentations can be built. All three do not require a web server and can therefore be statically, and also locally served. Instead of building the presentation using a graphical user interface, all slides, transitions and styling are defined in HTML and CSS, meaning the presenter has to be familiar with basic front end web development techniques. Thanks to the use of React, unveil.js, in contrast to reveal.js and impress.js, however, does not depend on the usage of class names to identify the slide structure, but instead can make full use of semantically-named components, such as \texttt{<Slide/>} or \texttt{<Notes/>}. More details about the usage of unveil will be covered in chapter \ref{cha:results}.
 
 Like reveal.js, unveil.js operates on a $2$-dimensional slide-space: Every slide can have a next and previous slide in $x$ (main slide), as well as in $y$-direction (sub-slide). To generate the $y$ axis, slides are nested in other slides.
 To be able to identify slides from a URL, slides have an optional unique name as well as an index in the slide-tree. Both the index and the name can be used to link to a certain slide, making it possible to share not only a whole presentation but also a certain slide.
@@ -206,7 +215,7 @@ The core of unveil.js is \texttt{UnveilApp}, which all slides and sub-slides are
 \item \textbf{Controls} control a part of the application. One example would be the navigating from one slide to the next using the arrow keys on the keyboard.
 \item \textbf{Modes} are what allow a speaker to have a different presenter and controls from an audience member. Each mode defines its own presenter and set of controls, the mode is determined by the url query parameter \texttt{mode}.
 \end{itemize}
-This allows anybody using unveil.js to define or overwrite modes, presenters and controls and thereby extend the base library as they wish. A few of these are already defined in the base library, namely a default \texttt{Presenter}, \texttt{UIControls} to navigate using buttons, \texttt{KeyControls} to navigate using the keyboard and \texttt{TouchControls} to navigate with swipe-gestures on touch screens. In chapter \ref{cha:usage}, modes for the audience (\texttt{de\-fault}), the speak\-er (\texttt{speak\-er}) and for use on the projection device (\texttt{projector}) will be set up.
+This allows anybody using unveil.js to define or overwrite modes, presenters and controls and thereby extend the base library as they wish. A few of these are already defined in the base library, namely a default \texttt{Presenter}, \texttt{UIControls} to navigate using buttons, \texttt{KeyControls} to navigate using the keyboard and \texttt{TouchControls} to navigate with swipe-gestures on touch screens. In chapter \ref{cha:results}, modes for the audience (\texttt{de\-fault}), the speak\-er (\texttt{speak\-er}) and for use on the projection device (\texttt{projector}) will be set up.
 
 \begin{figure}
 \centering
@@ -226,7 +235,7 @@ The \texttt{Router} is the class handling everything connected to the current ur
 % Which repos do I have and what do they include functionality-wise?
 % explain why different repos and how they are all own npm packages that can easily be included in other projects
 
-As the puropose of this project was not only to experiment with different ways of interacting with presentations using mobile devices, but also to create something worthwhile and contribute back to the vibrant open-source community, the project is enitrely open-source and separated into different repositories. These can be installed using npm, therefore allowing developers to rely only on the parts they really need.
+As the puropose of this project was not only to experiment with different ways of interacting with presentations using mobile devices, but also to create something worthwhile and contribute back to the vibrant open-source community, the project is enitrely open-source and separated into different repositories. These can be installed using npm, therefore allowing developers to rely only on the parts they really need. An overview can be found in the beginning of this chapter in figure \ref{fig:implementation-big-picture}.
 
 \paragraph{Extended unveil.js:} As discussed in section \ref{sec:implementation-technologies-unveil}, the project is based on the library unveil.js \cite{unveil}. During the development of the project, certain parts of the base library were improved to allow for even easier extensibility and new presentation logic was added. This happened in a fork of the original library, which will be examined in section \ref{sec:implementation-unveil}.
 
@@ -234,7 +243,7 @@ As the puropose of this project was not only to experiment with different ways o
 
 \paragraph{Interactive Extension:} As the name already suggests, this library is at the core of the present thesis: It includes a dedicated presenter for the speaker, implements the insertion of additional slides and subslides and by that allows the audience to share content with the presentation. Reactions, the voting mechanism, as well as the creation of new votings on-the-fly, also live within this library. The repository, called \emph{unveil-interactive} \cite{unveil-interactive} relies on unveil-network-sync for the socket-interaction and will be covered in section \ref{sec:implementation-interactive} of this chapter.
 
-\paragraph{Server and Example Presentation:} The last repository connected to this thesis \cite{unveil-client-server} includes a simple server as well as a real-world example of a presentation. In this chapter, one section was already dedicated to the server (\ref{sec:implementation-server}), a short introduction into the usage of the developed library will be given in chapter \ref{cha:usage}.
+\paragraph{Server and Example Presentation:} The last repository connected to this thesis \cite{unveil-client-server} includes a simple server as well as a real-world example of a presentation. In this chapter, one section was already dedicated to the server (\ref{sec:implementation-server}), a short introduction into the usage of the developed library will be given in chapter \ref{cha:results}.
 
 \section{Extended unveil.js}
 \label{sec:implementation-unveil}
@@ -307,19 +316,8 @@ The interactive library includes several parts which will be discussed here: a s
 \subsection{Speaker Presenter}
 \label{sec:implementation-interactive-speaker-presenter}
 
-The speaker presenter, like the normal presenter, is responsible for rendering controls and slides. In speaker mode, where this presenter is used, notes as well as the upcoming slides (right and down) are also shown (see figure \ref{fig:implementation-interactive-speaker-presenter}).
-This means the presenter has to find these next slides, using the router's information about the navigatable directions, and render them in a designated area. As mentioned before, special attention was paid to mobile stylesheets to make the presenter view usable on mobile devices. This ensures that everything is big enough to be readable and all buttons are clickable (see figure \ref{fig:implementation-interactive-speaker-presenter} (a)).
-
-\begin{figure}
-\centering
-\begin{tabular}{ccc}
-\includegraphics[width=.165\textwidth]{presenter-mode-mobile} &
-\includegraphics[width=.59\textwidth]{presenter-mode-desktop} \\
-(a) & (b)
-\end{tabular}
-\caption{Speaker Presenter on mobile (a) and desktop (b).}
-\label{fig:implementation-interactive-speaker-presenter}
-\end{figure}
+The speaker presenter, like the normal presenter, is responsible for rendering controls and slides. In speaker mode, where this presenter is used, notes as well as the upcoming slides (right and down) are also shown.
+This means the presenter has to find these next slides, using the router's information about the navigatable directions, and render them in a designated area. As mentioned before, special attention was paid to mobile stylesheets to make the presenter view usable on mobile devices. This ensures that everything is big enough to be readable and all buttons are clickable (screenshot can be found in figure \ref{fig:results-user-speaker-presenter}).
 
 \subsection{Reactions}
 \label{sec:implementation-interactive-reactions}

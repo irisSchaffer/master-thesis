@@ -1,16 +1,25 @@
 \chapter{Application Design}
 \label{cha:design}
 
-After defining the mechanisms which will be implemented, in a next step, the general application flow will be described, as well as offering insight into the user experience design of all parts of the application. What is important to note is that the design discussed here is just the default layout and can easily be changed and adapted by the presenter. All features identified in chapter \ref{cha:mechanisms} can be turned on or off, in the following it is assumed that all of them are enabled.
+After defining the mechanisms which will be implemented, in a next step, the design of the application will be discussed. First, the general setup and usage of the application will be covered. For this, we introduce a presenter called Amy, as well as a listener called Greg. These personas will also be used to describe the interaction with the presentation in the following chapters.
+Then, the general interface of the application for listeners, speakers and on the projector will be examined on the basis on several wireframes. Screenshots of the applications can be found in chapter \ref{cha:results}. Finally, we will talk about the interaction principles applied in the project and offer an insight into the user experience design of each of the previously defined interactive mechanisms.
+
+Although all features identified in chapter \ref{cha:mechanisms} can be turned on or off, in the following it is assumed that all of them are enabled. The authoring and creation of slides will not be covered in this chapter, but is instead part of chapter \ref{cha:results}.
 
 \section{Application Flow}
-The flow and usage of the application is separated into two parts: the creation and authoring of the presentation and giving the presentation. As the technical details of how slide decks are composed are covered in chapter \ref{cha:implementation}, this chapter focuses on the user interface and interaction design of the software from the speaker's and the audience's perspective, during the presentation.
 
-The typical setup of an unveil presentation is as follows: We assume a presenter called Amy, who has already prepared her presentation and a listener called Greg who wants to follow the presentation from his smartphone.
-The slides are generally served from a server. This can either be a publicly accessible server or, if all participants are in the same network, locally from Amy's computer. We assume Amy is serving the slides from her laptop, which is connected to a projector.
-At the beginning of the presentation, Greg and all other listeners navigate their personal devices' browsers to the set up address (usually a combination of IP address and port). To make this step easier, Amy has put a QR code pointing to the address on the first slide and sent out an e-mail with the link to all participants before the start of the presentation.
+\begin{figure}
+\centering
+\includegraphics[width=.8\textwidth]{illustrations/flow}
+\caption{Unveil presentation setup. All devices are connected to one central server, in this case the presenter's laptop (red). The projector (violet) displays the current slide, listeners use their smartphones (green) to follow and interact with the presentation and the presenter's smartphone (orange) serves as a remote control.}
+\label{fig:design-design-flow}
+\end{figure}
 
-The software supports three different modes out of the box: listener, speaker and projector mode. Depending on the mode, a certain set of features is activated, allowing Amy to have a different interface and more controls than Greg. Modes are activated via query parameters in the url: Amy navigates her laptop's browser to the url of the presentation and adds the query parameter \texttt{mode=projector}. On her smartphone, which she wants to use for remote controlling the presentation, the mode is set to \texttt{speaker}. If no query parameter is given, the application defaults to the listener mode, so Greg simply types in the address or follows the link in the url or QR code. Unveil generally offers a two-dimensional slide space, consisting of master slides (left to right) and subslides (top to bottom). Devices in speaker mode (in this example Amy's smartphone) can remote-control the presentation and navigate through said slides. All other devices (the laptop in projector mode and Greg's phone) are synchronised with the state of Amy's phone and automatically follow along in real-time.
+To depict the typical setup of an unveil presentation, we assume a speaker called Amy, who has already prepared her presentation, and a listener called Greg who wants to follow the slides from his smartphone.
+The slides are generally hosted on a server. This can either be a publicly accessible one or, if all participants are in the same network, locally from Amy's computer. We assume Amy is serving the slides from her laptop, which is also connected to a projector, moreover she is using her smartphone to navigate through the slide-set (see figure \ref{fig:design-flow}).
+At the beginning of the presentation, Greg and all other listeners navigate their mobile devices' browsers to the set up address (usually a combination of IP address and port). To make this step easier, Amy has added a QR code pointing to the address on the first slide and sent out an e-mail with the link to all participants before the start of the presentation.
+
+The software supports three different modes out of the box: listener, speaker and projector mode. Depending on the mode, a certain set of features is activated, allowing Amy to have a different interface and more controls than Greg. Modes are activated via query parameters in the url: Amy navigates her laptop's browser to the url of the presentation and adds the query parameter \texttt{mode=projector}. On her smartphone, which she will use to remotely control the presentation, the mode is set to \texttt{speaker}. If no query parameter is given, the application defaults to the listener mode, so Greg simply types in the address or follows the link in the url or QR code. Unveil generally offers a two-dimensional slide space, consisting of master slides (left to right) and subslides (top to bottom). Devices in speaker mode (in this example Amy's smartphone) can remote-control the presentation and navigate through said slides. All other devices (the laptop in projector mode and Greg's phone) are synchronised with the state of Amy's phone and automatically follow along in real-time.
 
 % Base CSS: responsive, if content is too big, everything is uniformly scaled.
 
@@ -18,32 +27,33 @@ The software supports three different modes out of the box: listener, speaker an
 % Design aspects, sketches, wireframes, thoughts and überlegungen behind design details
 
 \section{General Interface}
-The general requirement for the interface of the application is to work in all three modes, on any device, from mobile phones to desktops and projectors. When in projector mode, only the content of the current slide, as well as listener reactions are shown (see figure \ref{fig:design-interface-projector}). In listener mode, the interface is a lot richer and additionally features buttons for sharing media, links and asking questions, as well as six different reactions (see figure \ref{fig:design-interface-listener}), which will be discussed in more detail in section \ref{sec:design-reactions}. It also offers small arrow buttons, to navigate between slides. The speaker interface is the most intricate: Besides showing the current slide, we believe it should also include a preview of the upcoming slides in $x$ (master slide) and $y$ (subslide) direction, as well as speaker notes. Additionally to this interface, already familiar from PowerPoint or similar presentation software, buttons to mute incoming requests (media, link and questions) and to create new polls are provided (see figure \ref{fig:design-interface-presenter}). Since we expect presenters to switch between devices more often than listeners for more typing-intense tasks such as creating new polls, the mobile interface is as similar as possible to the desktop one and only re-arranges the displayed information to fit on smaller screens. The main difference between the mobile and desktop version of the listener interface is the design of the reactions: While desktop computers and tablets offer ample space for the placement of all six emoji, these are hidden behind a button in the mobile interface and only slide up upon a tap on said button.
 
 \begin{figure}
 \centering
-\includegraphics[width=.65\textwidth]{wireframes/projector-interface}
+\includegraphics[width=.8\textwidth]{wireframes/projector-interface}
 \caption{Wireframe of slide in projector mode, as seen on a projector. No visual controls are shown, only the current slide and listener reactions are displayed. The presentation progresses through the presenter mode's remote controlling feature.}
 \label{fig:design-interface-projector}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=.831\textwidth]{wireframes/listener-interface}
+\includegraphics[width=.8\textwidth]{wireframes/listener-interface}
 \caption{Wireframes of general interface in listener mode for mobile phones and desktops. Both offer buttons to share media, links and questions with the presenter, arrow buttons to navigate through the presentation and a possibility to react to the current slide. On mobile this feature is revealed with a tap on the \emph{reaction} button, to not cluster the interface.}
 \label{fig:design-interface-listener}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=.65\textwidth]{wireframes/speaker-interface}
+\includegraphics[width=.8\textwidth]{wireframes/speaker-interface}
 \caption{Wireframes of general interface in speaker mode for mobile phones and desktops. The interface consists of a preview of the current slide, the next main slide (\emph{right}) and the next subslide (\emph{down}), as well as showing presenter notes. It also offers buttons to toggle muting of incoming requests and creation of new polls.}
 \label{fig:design-interface-presenter}
 \end{figure}
 
+To not restrict Amy and Greg in their choice of device, the general requirement for the interface of the application is to work in all three modes and on every device from mobile phones to desktops and even projectors. When in projector mode, only the content of the current slide, as well as listener reactions are shown (see figure \ref{fig:design-interface-projector}). In listener mode, the interface is a lot richer and additionally features buttons for sharing media, links and asking questions, as well as six different reactions (see figure \ref{fig:design-interface-listener}), which will be discussed in more detail in section \ref{sec:design-reactions}. It also offers small arrow buttons, to navigate between slides. The speaker interface is the most intricate: Besides showing the current slide, we believe it should also include a preview of the upcoming slides in $x$ (master slide) and $y$ (subslide) direction, as well as speaker notes. Additionally to this interface, already familiar from PowerPoint or similar presentation software, buttons to mute incoming requests (media, link and questions) and to create new polls are provided (see figure \ref{fig:design-interface-presenter}). Since we expect presenters to switch between devices more often than listeners for more typing-intense tasks such as creating new polls, the mobile interface is as similar as possible to the desktop one and only re-arranges the displayed information to fit on smaller screens. The main difference between the mobile and desktop version of the listener interface is the design of the reactions: While desktop computers and tablets offer ample space for the placement of all six emoji, these are hidden behind a button in the mobile interface and only slide up upon a tap on said button.
+
 \begin{figure}
 \centering
-\includegraphics[width=.65\textwidth]{wireframes/modal-interface}
+\includegraphics[width=.8\textwidth]{wireframes/modal-interface}
 \caption{Wireframes of modal interface in speaker mode for mobile phones and desktops. The shown modal allows the presenter to add a listener-submitted video as a new main or subslide or dismiss the request. It pops up as soon as a listener wants to share content with the slide.}
 \label{fig:design-interface-modal}
 \end{figure}
@@ -84,14 +94,7 @@ While the voting is enabled (by Amy navigating to the slide with the poll and un
 \label{fig:design-polls}
 \end{figure}
 
-To create a new poll, the presenter presses or clicks the \emph{new poll} button in the controls section of the speaker interface, which opens a modal (see figure \ref{fig:design-polls-modal}). In the beginning, a question and two answer fields are provided, more answers can be added using the \emph{+} button. Once the question and answer options are entered, pressing the \emph{Create Voting} button will generate a new poll and add it as the next main slide.
-
-\begin{figure}
-\centering
-\includegraphics[width=.59\textwidth]{polls-modal}
-\caption{Poll creation modal in presenter mode on tablets, laptops and desktops.}
-\label{fig:design-polls-modal}
-\end{figure}
+To create a new poll, the presenter presses or clicks the \emph{new poll} button in the controls section of the speaker interface, which opens a modal (see chapter \ref{cha:results} for screenshots). In the beginning, a question and two answer fields are provided, more answers can be added using the \emph{+} button. Once the question and answer options are entered, pressing the \emph{Create Voting} button will generate a new poll and add it as the next main slide.
 
 \section{Reactions}
 \label{sec:design-reactions}
@@ -128,31 +131,8 @@ When it comes to displaying the reactions sent by the audience, as the presentat
 % Sharing: show that it's possible to take photos on the phone directly!
 % Explain muting
 % Maybe use greg and amy again to show how greg copies a youtube link over or something
-The last big module developed for the present thesis is the content sharing functionality. At the time of writing, the software allows for sharing photos (via links or from the computer or phone), websites, youtube videos and free text (including questions). In an earlier iteration, only one \emph{sharing} button was available in the interface, but feedback cycles with other web developers and designers have shown that it was not clear and intuitive enough which kind of content could be shared, which is why the functionality was now separated into three buttons: \emph{Media}, \emph{Link} and \emph{Question}. Coming back to Greg and Amy, Amy has just talked about functional programming and Greg wants to share a related video, of his favourite youtube channel funfunfunction\footnote{\url{https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q}}. He opens the youtube app on his phone, searches for the video he wants to share and copies its link into the provided text field (see figure \ref{fig:design-sharing-youtube} (a)). When pressing the \emph{Share} button, Amy will receive a pop-up in which she can review the request and then accept it as a new main or subslide or dismiss it (see figure \ref{fig:design-sharing-youtube} (b)). If she accepts, the video will be inserted in a new slide relative to the slide Greg sent the request from. Youtube videos and links to websites are embedded into the presentation, similarly to images and links to images, which are also directly included into the created slide. Text is simply displayed as a second-order heading.
+The last big module developed for the present thesis is the content sharing functionality. At the time of writing, the software allows for sharing photos (via links or from the computer or phone), websites, youtube videos and free text (including questions). In an earlier iteration, only one \emph{sharing} button was available in the interface, but feedback cycles with other web developers and designers have shown that it was not clear and intuitive enough which kind of content could be shared, which is why the functionality was now separated into three buttons: \emph{Media}, \emph{Link} and \emph{Question}. Coming back to Greg and Amy, Amy has just talked about functional programming and Greg wants to share a related video. He opens the youtube app on his phone, searches for the video he wants to share and copies its link into the provided text field. When pressing the \emph{Share} button, Amy will receive a pop-up in which she can review the request and then accept it as a new main or subslide or dismiss it (see figure \ref{fig:design-interface-modal}). The  If she accepts, the video will be inserted in a new slide relative to the slide Greg sent the request from. Youtube videos and links to websites are embedded into the presentation, similarly to images and links to images, which are also directly included into the created slide. Text is simply displayed as a second-order heading.
 
-\begin{figure}
-\centering
-\begin{tabular}{ccc}
-\includegraphics[width=.165\textwidth]{sharing-listener-youtube} &
-\includegraphics[width=.59\textwidth]{sharing-presenter-youtube} \\
-(a) & (b)
-\end{tabular}
-\caption{Sharing of a youtube video. Request from listener on a phone (a) and accepting-modal in presenter-view on a computer (b).}
-\label{fig:design-sharing-youtube}
-\end{figure}
-
-What was important to be able to include personal notes, is the ability to take photos and upload them to the presentation. This is possible in the \emph{Media} part of the content sharing feature (see figure \ref{fig:design-sharing-picture}) and makes use of the mobile operating system's native file uploads.
-
-\begin{figure}
-\centering
-\begin{tabular}{ccc}
-\includegraphics[width=.165\textwidth]{sharing-listener-1} &
-\includegraphics[width=.165\textwidth]{sharing-listener-2} &
-\includegraphics[width=.165\textwidth]{sharing-listener-3} \\
-(a) & (b) & (c)
-\end{tabular}
-\caption{Sharing of a picture from an iPhone's browser (Google Chrome on iOS $9.3.4$) in listener mode. First, the listener opens the \emph{Media} sharing feature (a). Then a file can be chosen from different sources, such as the camera roll, or a new picture can be taken (b). In a last step, the picture is uploaded to the application and can then be shared (c).}
-\label{fig:design-sharing-picture}
-\end{figure}
+What was important to be able to include personal notes, is the ability to take photos and upload them to the presentation. This is possible in the \emph{Media} part of the content sharing feature and makes use of the mobile operating system's native file uploads. Screenshots can be found in chapter \ref{cha:results}.
 
 Since such mechanisms can be fairly stressful for the presenter \cite{Teevan:MobileFeedbackDuringPresentation, Wacker:PresenterExperience}, we also built a feature to mute incoming requests. When muted, requests are automatically added as subslides to the slide the request was sent from, allowing all contributions to be collected without disturbing the flow of the presentation for the speaker \cite{Dieberger:NarrativeFlow}.
