@@ -124,48 +124,54 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Results}{46}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}From a User's Perspective}{46}{section.6.1}
+\contentsline {section}{\numberline {6.1}Application}{46}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}From a Developer's Perspective}{46}{section.6.2}
+\contentsline {subsection}{\numberline {6.1.1}Voting}{47}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Setup}{46}{section.6.3}
+\contentsline {subsection}{\numberline {6.1.2}Content Sharing}{48}{subsection.6.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Building a Presentation}{48}{section.6.4}
+\contentsline {section}{\numberline {6.2}Early User Study}{49}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Customisation and Extension}{50}{section.6.5}
+\contentsline {section}{\numberline {6.3}From a Developer's Perspective}{49}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Discussion}{51}{chapter.7}
+\contentsline {subsection}{\numberline {6.3.1}Setup}{49}{subsection.6.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Early User Study}{51}{section.7.1}
+\contentsline {subsection}{\numberline {6.3.2}Building a Presentation}{50}{subsection.6.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Library Usage for Developers}{53}{section.7.2}
+\contentsline {subsection}{\numberline {6.3.3}Customisation and Extension}{51}{subsection.6.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Architecture}{53}{section.7.3}
+\contentsline {chapter}{\numberline {7}Discussion}{53}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{55}{chapter.8}
+\contentsline {section}{\numberline {7.1}Early User Study}{53}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Future Work}{56}{section.8.1}
+\contentsline {section}{\numberline {7.2}Library Usage for Developers}{55}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}CD-ROM/DVD Contents}{58}{appendix.A}
+\contentsline {section}{\numberline {7.3}Architecture}{55}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Format:}{58}{appendix.A}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{57}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}General}{58}{section.A.1}
+\contentsline {section}{\numberline {8.1}Future Work}{58}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Path:}{58}{section.A.1}
+\contentsline {chapter}{\numberline {A}CD-ROM/DVD Contents}{60}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Copies of Online References}{58}{section.A.2}
+\contentsline {paragraph}{Format:}{60}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Path:}{58}{section.A.2}
+\contentsline {section}{\numberline {A.1}General}{60}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Graphics}{59}{section.A.3}
+\contentsline {paragraph}{Path:}{60}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Path:}{59}{section.A.3}
+\contentsline {section}{\numberline {A.2}Copies of Online References}{60}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{60}{appendix*.34}
+\contentsline {paragraph}{Path:}{60}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literature}{60}{section*.35}
+\contentsline {section}{\numberline {A.3}Graphics}{61}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Software and Libraries}{65}{section*.35}
+\contentsline {paragraph}{Path:}{61}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Online sources}{66}{section*.35}
+\contentsline {chapter}{References}{62}{appendix*.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literature}{62}{section*.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Software and Libraries}{67}{section*.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Online sources}{68}{section*.35}
