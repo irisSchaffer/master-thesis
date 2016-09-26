@@ -1,11 +1,11 @@
 \chapter{Results}
 \label{cha:results}
 
-This chapter offers insight into the outcome of our work. First, the final presentation system is presented, to then go over to the results of our early user studies. Since one of our objectives was to create a re-usable set of libraries, the usage of the unveil ecosystem from a developer's point of view will also be part of this chapter.
+This chapter offers insight into the outcome of our work. First, the final presentation system is presented, to then cover the results of our early user study. Since one of our objectives was to create a re-usable set of libraries, the usage of the unveil ecosystem from a developer's point of view will also be part of this chapter.
 
 \section{Application}
 \label{sec:results-user}
-In course of this thesis, we have developed three designated interfaces, one for the listener, one for the speaker and one for the projector. While the projector interface does not have any specific requirements, both the listener (see figure \ref{fig:implementation-unveil} in chapter \ref{cha:implementation}) and presenter view (see figure \ref{fig:results-user-speaker-presenter}) were optimised for devices with small screens.
+In course of this thesis, we have developed three designated interfaces, one for the listener, one for the speaker and one for the projector. While the projector interface does not have any specific requirements, both the listener and presenter view (see figure \ref{fig:results-user-speaker-presenter}) were optimised for devices with small screens.
 
 Our system offers several ways of interacting with a presentation using ones personal, mobile devices:
 \begin{itemize}
@@ -39,8 +39,8 @@ As the reaction feature of the application has already been covered in detail in
 \end{figure}
 
 \subsection{Voting}
-Votings can be prepared beforehands or on-the-fly -- during the presentation in the speaker interface (see figure \ref{fig:results-user-polls-modal} (a)). After the creation of a poll, the voting starts with the presenter navigating their browser to it.
-To ensure as many listeners as possible use their right to vote, all participants are locked to the voting screen for the time of the voting (i.e. until the speaker navigates away from the slide again) and cannot navigate individually anymore. Once a listener votes (see figure \ref{fig:results-user-polls-modal} (b)), they are presented with the current voting results, which are also displayed on the projector. Currently, only single-choice votings are supported by the system, however, free-text or mutliple-choice questionnairs as well as any other kind of form elements could easily be added in the future.
+Votings can be prepared beforehands or on-the-fly -- during the presentation in the speaker interface (see figure \ref{fig:results-user-polls-modal}(a)). After the creation of a poll, the voting starts with the presenter navigating their browser to it.
+To ensure as many listeners as possible use their right to vote, all participants are locked to the voting screen for the time of the voting (i.e. until the speaker navigates away from the slide again) and cannot navigate individually anymore. Once a listener votes (see figure \ref{fig:results-user-polls-modal}(b)), they are presented with the current voting results, which are also displayed on the projector. Currently, only single-choice votings are supported by the system, however, free-text or mutliple-choice questionnairs as well as any other kind of form elements could easily be added in the future.
 
 \subsection{Content Sharing}
 
@@ -79,13 +79,35 @@ The general process of sharing content is as follows: When a user presses one of
 
 In our opinion, all these mechanisms combined offer a good starting point for creating more interactive and engaging presentations. The potential of the developed features will be discussed in the next section.
 
-\section{Early User Study}
+\section{User Study}
 \label{sec:results-study}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{results}
+\caption{User study results, per mechanism. Participants were asked to report their agreement or disagreement to given statements on a 5-point Likert scale.}
+\label{fig:results-study-results}
+\end{figure}
+
+To measure the result of our work, we deployed the developed system in a presentation at the digital agency Oakwood Creative AB in Stockholm and asked the listeners to fill out a questionnaire (which can be found in the appendices). The results are summarised in figure \ref{fig:results-study-results}, a discussion follows in chapter \ref{cha:discussion}.
+
+The information gathered from the questionnaire consisted of general information about the device(s) the participants used, statements regarding the different mechanisms, which were weighted on a 5-point Likert scale, as well as an area for general feedback for each feature. The given presentation had all interactive mechanisms activated and included a poll about how rude the listeners perceived smartphone use in meetings and presentations. There was, however, only one path through the presentation, so this mechanism was not covered in the user study. The entire questionnaire can be found in the appendices.
+In total 9 people, all working in digital marketing, participated in the study. 7 of them used an iPhone to follow the presentation, one used a laptop. One participant interacted with the presentation both on a laptop and an iPhone. Most of the participants chose Safari as their browser on the phone (7 out of 8) and both laptop users chose Chrome.
+
+The vast majority of users agreed or strongly agreed that the application was generally easy and intuitive to use (88.89\%). 77.78\% of the listeners also agreed or strongly agreed that the application felt fast and responded instantaneously. These results confirm the design of the user interface and our choice of technologies.
+
+As far as following the slides on the mobile devices is concerned, the participants came to a similar conclusion: 75\% agreed (or strongly agreed) following the slides was intuitive, moreover 88.89\% reported they were able to see all necessary slide content on their devices. Furthermore, 77.78\% of the participants agreed or strongly agreed the mechanism made it possible for them to browse the slides at their own pace, which was the objective of this feature.
+
+The polling feature received the most positive feedback: All users agreed (44.44\%) or strongly agreed (55.56\%) that the mechanism was intuitive to use, moreover participants reported feeling more connected to other listeners (55.55\%) and the speaker (77.78\% ). In total, almost 80\% of the listeners felt more engaged in the presentation through this mechanism (77.78\%), which confirms our approach.
+
+The user acceptance of the instant reaction feature was also overwhelmingly positive: 87.5\% of the listeners (strongly) agreed the mechanism made it easier to give the presenter feedback. Moreover, we were initally concerned about the users' understanding of the emoji used. With 12.5\% of the participants agreeing and 87.5\% strongly agreeing they were familiar with the emoji and understood their meaning, this worry did not prove true.
+
+Somewhat surprising results, however, were recorded with the content sharing feature. While 71.43\% understood the distinction between sharing links, text and images, only 57.14\% said they felt more engaged in the presentation and like they could actively shape the presentation, with 28.57\% respectively 42.86\% feeling indifferent. 85.71\% however, thought the mechanism was intuitive to use, which shows at least the user interface was well designed.
 
 \section{From a Developer's Perspective}
 \label{sec:results-developer}
 
-Since one of our declared goals was the creation of reusable, extensible presentation libraries, a few words should also be spent on the usage of the system by other developers. This chapter will therefore go into details of how to set up an unveil presentation (section \ref{sec:usage-setup}), use the components (section \ref{sec:usage-components}) and lastly ways of customising, overwriting and extending behaviour (section \ref{sec:usage-customisation}). The code-examples of this chapter are based on \cite{unveil-client-server}.
+Since one of our declared goals was the creation of reusable, extensible presentation libraries, a few words should also be spent on the usage of the system by other developers. This chapter will therefore go into details of how to set up an unveil presentation (section \ref{sec:usage-setup}), use the components (section \ref{sec:usage-components}) and lastly ways of customising, overwriting and extending behaviour (section \ref{sec:usage-customisation}). The code-examples of this chapter are based on the unveil-client-server repository \cite{unveil-client-server}.
 
 \subsection{Setup}
 \label{sec:usage-setup}

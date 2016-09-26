@@ -2,6 +2,7 @@
 %% äöüÄÖÜß  <-- keine deutschen Umlaute hier? UTF-faehigen Editor verwenden!
 
 \documentclass[master,english]{hgbthesis}
+\usepackage{pdfpages}
 % Zulässige Class Options: 
 %   Typ der Arbeit: diplom, master (default), bachelor, praktikum 
 %   Hauptsprache: german (default), english
@@ -61,7 +62,7 @@
 %%%----------------------------------------------------------
 %%%Anhang
 \appendix
-\include{appendix_cd}
+\include{appendix_cd}\includepdf[pages=-]{questionnaire.pdf}
 
 %%%----------------------------------------------------------
 \MakeBibliography

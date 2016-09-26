@@ -12,12 +12,12 @@ Although all features identified in chapter \ref{cha:mechanisms} can be turned o
 \centering
 \includegraphics[width=.8\textwidth]{illustrations/flow}
 \caption{Unveil presentation setup. All devices are connected to one central server, in this case the presenter's laptop (red). The projector (violet) displays the current slide, listeners use their smartphones (green) to follow and interact with the presentation and the presenter's smartphone (orange) serves as a remote control.}
-\label{fig:design-design-flow}
+\label{fig:design-flow}
 \end{figure}
 
 To depict the typical setup of an unveil presentation, we assume a speaker called Amy, who has already prepared her presentation, and a listener called Greg who wants to follow the slides from his smartphone.
 The slides are generally hosted on a server. This can either be a publicly accessible one or, if all participants are in the same network, locally from Amy's computer. We assume Amy is serving the slides from her laptop, which is also connected to a projector, moreover she is using her smartphone to navigate through the slide-set (see figure \ref{fig:design-flow}).
-At the beginning of the presentation, Greg and all other listeners navigate their mobile devices' browsers to the set up address (usually a combination of IP address and port). To make this step easier, Amy has added a QR code pointing to the address on the first slide and sent out an e-mail with the link to all participants before the start of the presentation.
+At the beginning of the presentation, Greg and all other listeners navigate their mobile devices' browsers to the set up address (usually a combination of IP address and port). To make this step easier, Amy has added a QR code pointing to the address on the first slide and sent out an e-mail with the link to all participants.
 
 The software supports three different modes out of the box: listener, speaker and projector mode. Depending on the mode, a certain set of features is activated, allowing Amy to have a different interface and more controls than Greg. Modes are activated via query parameters in the url: Amy navigates her laptop's browser to the url of the presentation and adds the query parameter \texttt{mode=projector}. On her smartphone, which she will use to remotely control the presentation, the mode is set to \texttt{speaker}. If no query parameter is given, the application defaults to the listener mode, so Greg simply types in the address or follows the link in the url or QR code. Unveil generally offers a two-dimensional slide space, consisting of master slides (left to right) and subslides (top to bottom). Devices in speaker mode (in this example Amy's smartphone) can remote-control the presentation and navigate through said slides. All other devices (the laptop in projector mode and Greg's phone) are synchronised with the state of Amy's phone and automatically follow along in real-time.
 
@@ -30,21 +30,21 @@ The software supports three different modes out of the box: listener, speaker an
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{wireframes/projector-interface}
+\includegraphics[width=\textwidth]{wireframes/projector-interface}
 \caption{Wireframe of slide in projector mode, as seen on a projector. No visual controls are shown, only the current slide and listener reactions are displayed. The presentation progresses through the presenter mode's remote controlling feature.}
 \label{fig:design-interface-projector}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{wireframes/listener-interface}
+\includegraphics[width=\textwidth]{wireframes/listener-interface}
 \caption{Wireframes of general interface in listener mode for mobile phones and desktops. Both offer buttons to share media, links and questions with the presenter, arrow buttons to navigate through the presentation and a possibility to react to the current slide. On mobile this feature is revealed with a tap on the \emph{reaction} button, to not cluster the interface.}
 \label{fig:design-interface-listener}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{wireframes/speaker-interface}
+\includegraphics[width=\textwidth]{wireframes/speaker-interface}
 \caption{Wireframes of general interface in speaker mode for mobile phones and desktops. The interface consists of a preview of the current slide, the next main slide (\emph{right}) and the next subslide (\emph{down}), as well as showing presenter notes. It also offers buttons to toggle muting of incoming requests and creation of new polls.}
 \label{fig:design-interface-presenter}
 \end{figure}
@@ -53,7 +53,7 @@ To not restrict Amy and Greg in their choice of device, the general requirement 
 
 \begin{figure}
 \centering
-\includegraphics[width=.8\textwidth]{wireframes/modal-interface}
+\includegraphics[width=\textwidth]{wireframes/modal-interface}
 \caption{Wireframes of modal interface in speaker mode for mobile phones and desktops. The shown modal allows the presenter to add a listener-submitted video as a new main or subslide or dismiss the request. It pops up as soon as a listener wants to share content with the slide.}
 \label{fig:design-interface-modal}
 \end{figure}
@@ -86,8 +86,8 @@ While the voting is enabled (by Amy navigating to the slide with the poll and un
 \begin{figure}
 \centering
 \begin{tabular}{ccc}
-\includegraphics[width=.4\textwidth]{polls-voting} &
-\includegraphics[width=.4\textwidth]{polls-results} \\
+\FramePic{\includegraphics[width=.5\textwidth]{polls-voting}} &
+\FramePic{\includegraphics[width=.5\textwidth]{polls-results}} \\
 (a) & (b)
 \end{tabular}
 \caption{Details of polling interface for listeners before voting (a) and poll result after voting (b).}
@@ -107,7 +107,7 @@ Greg by default can choose from six pre-defined reactions: From the evaluation i
 
 The biggest challenge with displaying non-binary reactions was to find an intuitive and familiar visualisation which would not take up too much space on smaller screens. Since the introduction of emoji on Apple's keyboard in 2011 and on Android's one in 2013, emoji have become a ubiquitous, language-independent means of communication \cite{Instagramm:Emoji, Cappallo:ImageToEmoji}. Instagram has found that almost half of its comments and captions nowadays include emoji \cite{Instagramm:Emoji} and with Google \cite{Google:Emoji} and Bing \cite{Bing:Emoji} adding support for emoji-search and companies such as Facebook \cite{Facebook:Reactions} and GitHub \cite{Github:Reactions} offering emoji-based reaction systems, it is safe to assume the majority of regular internet users is familiar with the concept and meaning of emoji \cite{Cappallo:EmojiVideoSearch}. Although it would be possible to include a complete emoji-keyboard to allow for even more versatile feedback, we feel it is easier for less technology-oriented users to be provided only with a sub-set including a short description of each reaction (see figure \ref{fig:design-reactions}). However, it is worth noting that this sub-set can easily be extended or overwritten by the presenter.
 
-When it comes to displaying the reactions sent by the audience, as the presentation of feedback in \cite{Teevan:MobileFeedbackDuringPresentation} was perceived as a distraction from the presentation, the feedback mechanism proposed in the present work is either only shown to the presenter or displayed without any animations, in the lower-right corner of the projector interface, with only a small badge symbolising how many people have sent this reaction for the current slide (see figure \ref{fig:design-reactions-details} (a)). On the side of the listener, one detail worth mentioning is the styling of the hover-state. Especially on computers it is important to offer intuitive hover-states, to give the user a sense of what they are pointing at and if they can interact with the currently focused element \cite{hover}. The hover-state designed for this purpose includes a magnifying-effect as well as a light shadow around the emoji (see figure \ref{fig:design-reactions-details} (b)).
+When it comes to displaying the reactions sent by the audience, as the presentation of feedback in \cite{Teevan:MobileFeedbackDuringPresentation} was perceived as a distraction from the presentation, the feedback mechanism proposed in the present work is either only shown to the presenter or displayed without any animations, in the lower-right corner of the projector interface, with only a small badge symbolising how many people have sent this reaction for the current slide (see figure \ref{fig:design-reactions-details}(a)). On the side of the listener, one detail worth mentioning is the styling of the hover-state. Especially on computers it is important to offer intuitive hover-states, to give the user a sense of what they are pointing at and if they can interact with the currently focused element \cite{hover}. The hover-state designed for this purpose includes a magnifying-effect as well as a light shadow around the emoji (see figure \ref{fig:design-reactions-details}(b)).
 
 \begin{figure}
 \centering
